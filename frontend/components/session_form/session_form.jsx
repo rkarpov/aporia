@@ -19,6 +19,19 @@ class SessionForm extends React.Component {
         }
     }
 
+    addNameCredential(){
+        if (this.props.formType === 'Sign Up') {
+            return(
+                <div>
+                    <label>
+                        <input type="text" onChange={this.state.first_name} value={this.update('first_name')}/>
+                        <input type="text" onChange={this.state.last_name} value={this.update('first_name')}/>
+                    </label>
+                </div>
+            );
+        }
+    }
+
     render() {
 
         return(
@@ -28,10 +41,14 @@ class SessionForm extends React.Component {
 
                 <br/>
                 
+                <p>Continue With Email</p>
+                <p>By clicking "Sign Up" you indicate that you have read and agree to the Terms of Service and Privacy Policy.</p>
+   
                 <div className="login-form">    
                     <p>{this.props.formType}</p>
                     <form onSubmit={this.handleSubmit}>
                         <label>
+                            {/* {this.addNameCredential} */}
                             <input type="text" onChange={this.update('email')} value={this.state.email}/>
                             <br/>
                             <input type="password" onChange={this.update('password')} value={this.state.password}/>
