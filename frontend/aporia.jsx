@@ -18,5 +18,4 @@ document.addEventListener('DOMContentLoaded', () => {
     //TEST
 
     ReactDOM.render(<Root store={store}/>, root)
-    // ReactDOM.render(<h1>hello</h1>, root);
 }); 
