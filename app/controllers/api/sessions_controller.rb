@@ -17,7 +17,7 @@ class Api::SessionsController < ApplicationController
     def destroy
         if current_user
             logout
-            render "api/users/show" # what is the show page for?
+            render "api/users/show"
         else 
             render json: ["Nobody is signed in"], status: 404  
         end 

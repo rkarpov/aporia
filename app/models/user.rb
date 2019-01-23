@@ -2,6 +2,8 @@ class User < ApplicationRecord
     validates :username, :email, :password_digest, :session_token, presence: true
     validates :email, uniqueness: true
     validates :password, length: { minimum: 6, allow_nil: true }
+    
+    attr_reader :password
 
     after_initialize :ensure_token
 
@@ -16,7 +18,7 @@ class User < ApplicationRecord
     end
 
     def reset_token!
-        self.session_token = self.generate_token
+        self.session_token = User.generate_token
         self.save!
         self.session_token
     end
@@ -31,6 +33,6 @@ class User < ApplicationRecord
     end
 
     def ensure_token 
-        self.session_token || User.generate_token
+        self.session_token ||= User.generate_token
     end
 end
