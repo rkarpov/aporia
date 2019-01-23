@@ -19,22 +19,22 @@ class LoginForm extends React.Component {
         }
     }
 
-
     render() {
         return (
             <div className="session-form">
-                <h1>Aporia</h1>
+                <div className="header">
+                <h1 className="logo">Aporia</h1>
                 <h4>A Place to share knowledge and better understand the world</h4>
-                <br />
-
+                </div>
+                
                 <div className="login-form">
-                    <p>{this.props.formType}</p>
                     <form onSubmit={this.handleSubmit}>
+                    <p>{this.props.formType}</p>
                         <Link to={`/signup`}>Continue With Email</Link><br/>
-                        <input type="text" onChange={this.update('email')} value={this.state.email} />
-                        <br />
-                        <input type="password" onChange={this.update('password')} value={this.state.password} />
-                        <br />
+                        <div className="login-input-text">
+                            <input type="text" onChange={this.update('email')} value={this.state.email} />
+                            <input type="password" onChange={this.update('password')} value={this.state.password} />
+                        </div>
                         <input type="submit" value={this.props.formType} />
                     </form>
                 </div>
@@ -42,7 +42,5 @@ class LoginForm extends React.Component {
         );
     }
 }
-
-
 
 export default LoginForm;

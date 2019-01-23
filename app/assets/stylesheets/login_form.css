@@ -1,0 +1,19 @@
+
+.session-form {
+    text-align: center;
+    display: block;
+    border: solid rgba(160, 160, 160, 0.945) 1px;
+    width: 650px;
+}
+
+.logo {
+    color: rgba(189, 54, 54, 0.89);
+    font-size: 70px;
+    font-family: 'Libre Baskerville', serif;
+    
+}
+
+.login-form {
+    flex-direction: row-reverse;
+    width: 325px;
+}
