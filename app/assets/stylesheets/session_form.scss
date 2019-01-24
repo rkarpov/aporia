@@ -1,0 +1,192 @@
+.splash-img {
+    background: image-url('session_page.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.session-form-container {
+    /* justify-content: center; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* text-align: center; */
+    /* display: block; */
+    /* border: 1px solid #e2e2e2; */
+
+    margin: 0 auto;
+    width: 650px;
+    height: 500px;
+    border: solid rgba(160, 160, 160, 0.945) 1px;
+    // background: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 125px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #888;
+
+
+    background: rgba(230, 230, 230, 0.835); 
+    /* border: 1px solid #e2e2e2; */
+    /* border-radius: 4px; */
+    /* margin: 0 auto; */
+    /* width: 650px; */
+
+    /* padding-top: 25px; */
+    /* bottom: initial; */
+    // position: absolute; 
+    // left: 0;
+    // right: 0;
+    /* overflow-y: hidden; */
+    // top: 10%;
+}
+
+.session-description {
+    font-size: 19px;
+    font-weight: 400;
+    margin: 8px 0 32px;
+    text-align: center;
+    color: #686868;
+    font-family: Georgia,
+    Times,
+    "Times New Roman",
+    "Hiragino Kaku Gothic Pro",
+    "Meiryo",
+    serif;
+}
+
+.session-header-box {
+    text-align: center;
+    position: absolute;
+    padding: 10px;
+}
+
+.form-boxes {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    // justify-content: center;
+    // align-items: flex-start;
+}
+
+.session-logo {
+    color: rgb(37, 129, 109);
+    font-size: 70px;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    /* text-shadow: 0 0 1px #8a0b0b; */
+}
+
+.Sign.Up-button {
+    float: right;
+    padding: 5px 8px 5px 6px;
+    font-family: sans-serif;
+    border-radius: 3px;
+    color: white;
+    background: #3e78ad;
+    border: 1px solid rgb(78, 83, 162);
+    box-shadow: 0 0 5px #888;
+    margin-top: 13px;
+}
+
+.Login-button {
+    padding: 5px 8px 5px 6px;
+    font-family: sans-serif;
+    border-radius: 3px;
+    color: white;
+    background: #3e78ad;
+    border: 1px solid rgb(78, 83, 162);
+    box-shadow: 0 0 5px #888;
+    float: right;
+    margin-top: 13px;
+    // margin-right: 38px;
+    margin-bottom: 105px;
+}
+
+.signup-label {
+    /* font-size: 13px; */
+    margin-bottom: 50px;
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-weight: bold;
+}
+
+/* .session-form-body {
+    flex-direction: row;
+    width: 200px;
+} */
+
+.Sign.Up-name-field {
+    // border: 1px solid black;
+    // display: inline-block;
+    display: flex;
+    margin-top: 10px;
+}
+
+.Login-name-field {
+    // border: 1px solid black;
+    // display: inline-block;
+    // display: flex;
+    // margin-top: 5px;
+}
+
+.credentials-field {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.session-text-box{
+     height: 28px;
+     width: 260px;
+     border-radius: 3px;
+     border: 1px solid #e2e2e2;
+     background-color: #f6f6f6;
+    //  display: block;
+     box-sizing: border-box;
+     box-shadow: inset 0 1px 1px rgba(88, 88, 88, 0.3);
+     font-size: 13px;
+     margin-bottom: 13px;
+}
+
+.username-text-box {
+    margin-left: 2px;
+     height: 28px;
+     width: 130px;
+     border-radius: 3px;
+     border: 1px solid #e2e2e2;
+     background-color: #f6f6f6;
+    //  display: block;
+     box-sizing: border-box;
+     box-shadow: inset 0 1px 1px rgba(88, 88, 88, 0.3);
+     font-size: 13px;
+}
+
+.signup-agreement {
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgb(100, 100, 100);
+    width: 265px;
+    text-align: left;
+}
+
+.session-title {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+.Login-form {
+    padding-left: 20px;
+    //  box-sizing: border-box;
+    //  border-box-left: 1px solid black
+}
+
+.Sign.Up-form{
+    border-right: 1px solid gray;
+    padding-right: 20px;
+    // width: 325px;
+}

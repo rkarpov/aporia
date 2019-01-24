@@ -20,47 +20,52 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div className="session-form">
-                <div className={this.props.formType}>
-                    <h2>{this.props.formType}</h2>
-
-                    <form className="session-form-body" onSubmit={this.handleSubmit}>
-                    
-                    <div className="signup-username-fields">
-                        <div hidden={this.props.formType === 'Sign Up' ? null : "hidden"}>
-                            <label>FIRST NAME <br/>
-                            <input type="text" onChange={this.update('first_name')} value={this.state.first_name} />
-                            </label>
-                        </div>
-
-                        <div hidden={this.props.formType === 'Sign Up' ? null : "hidden"}>
-                            <label>LAST NAME <br/>
-                            <input type="text" onChange={this.update('last_name')} value={this.state.last_name} />
-                            </label>
-                        </div>
+            <form className={`${this.props.formType}-form`} onSubmit={this.handleSubmit}>
+                <h2 className="session-title">{this.props.formType}</h2>
+            
+                <div className={`${this.props.formType}-name-field`}>
+                    <div hidden={this.props.formType === 'Sign Up' ? null : "hidden"}>
+                        <label className="signup-label"> FIRST NAME <br/>
+                            <input className="username-text-box" type="text" onChange={this.update('first_name')} value={this.state.first_name} />
+                        </label>
                     </div>
 
-                        <div>
-                            <label hidden={this.props.formType === 'Sign Up' ? null : "hidden"}>EMAIL
-                            </label><br/>
-                            <input type="text" onChange={this.update('email')} value={this.state.email} />
-                        </div>
+                    <div hidden={this.props.formType === 'Sign Up' ? null : "hidden"}>
+                        <label className="signup-label">  LAST NAME <br/>
+                            <input className="username-text-box" type="text" onChange={this.update('last_name')} value={this.state.last_name} />
+                        </label>
+                    </div>
+                </div>
 
-                        <div>
-                            <label hidden={this.props.formType === 'Sign Up' ? null : "hidden"}>PASSWORD
-                            </label><br/>
-                            <input type="password" onChange={this.update('password')} value={this.state.password} />
-                        </div>
-
-                        <input className="session-button" type="submit" value={this.props.formType} />
-                    </form>
+                <div className="credentials-field">
+                    <div>
+                        <label className="signup-label" hidden={this.props.formType === 'Sign Up' ? null : "hidden"} >EMAIL
+                        </label><br/>
+                        <input 
+                            className="session-text-box"
+                            type="text" onChange={this.update('email')}
+                            value={this.state.email}
+                            placeholder={this.props.formType === 'Login' ? " Email" : null}
+                            />
+                    </div>
+                    <div>
+                        <label className="signup-label" hidden={this.props.formType === 'Sign Up' ? null : "hidden"}>PASSWORD
+                        </label><br/>
+                        <input
+                            className="session-text-box"
+                            type="password" onChange={this.update('password')}
+                            value={this.state.password}
+                            placeholder={this.props.formType === 'Login' ? " Password" : null}
+                            />
+                    </div>
 
                     <p className="signup-agreement" hidden={this.props.formType === 'Sign Up' ? null : "hidden"}>
                         By clicking "Sign Up" you indicate that you have read and
-                         agree to the Terms of Service and Privacy Policy.
+                        agree to the Terms of Service and Privacy Policy.
                     </p>
+                    <input className={`${this.props.formType}-button`} type="submit" value={this.props.formType} />
                 </div>
-            </div>
+            </form>
         );
     }
 

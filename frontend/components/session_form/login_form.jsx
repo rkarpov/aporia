@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SessionForm from './session_form';
 
 class LoginForm extends React.Component {
