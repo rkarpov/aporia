@@ -3,13 +3,16 @@ import React from 'react';
 import { signup } from '../../actions/session_actions';
 import SignupForm from './signup_form';
 
-const mapStateToProps = state => {
+const mapStateToProps = ({errors}) => {
+    
     return {
         formType: 'Sign Up',
         credentials: {
             first_name: '', last_name: '',
             email: '', password: '',
         },
+        errors: errors.session,
+        // signupErrors: errors.session,
     };
 };
 

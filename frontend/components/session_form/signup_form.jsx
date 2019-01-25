@@ -8,6 +8,8 @@ class SignupForm extends React.Component {
                 formType={this.props.formType}
                 credentials={this.props.credentials}
                 processForm={this.props.processForm}
+                errors={this.props.errors}
+                // signupErrors={this.props.signupErrors}
             />
         );
     }

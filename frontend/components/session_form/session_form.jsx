@@ -18,20 +18,75 @@ class SessionForm extends React.Component {
         }
     }
 
-    render() {
+    renderErrors() {
+     
+        // if (this.props.formType === 'Login') {
+        //     // debugger
+        //     // if (this.props.loginErrors.length === 0) {
+        //     return (
+        //         <ul>
+        //             {this.props.loginErrors.map((error, i) => (
+        //                 <li key={`error-${i}`}>
+        //                     {error}
+        //                 </li>
+        //             ))}
+        //         </ul>
+        //     );
+        // }  else {
+        //     // debugger
+        //     return (
+        //         <ul>
+        //             {this.props.signupErrors.map((error, i) => (
+        //                 <li key={`error-${i}`}>
+        //                     {error}
+        //                 </li>
+        //             ))}
+        //         </ul>
+        //     );
+        // }
+
+        // const errors = this.props.errors.map((error, i) => (
+            
+        // )
+
+        if (this.props.formType === 'Login'){
         return (
+            <div className={`${this.props.formType}-errors`}>
+              
+                <ul>
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+               
+
+            </div>
+        );
+                }
+    }
+
+
+
+    render() {
+        // const code snippet function can return either 
+        // nothing or code, and return will render const snippet
+        // debugger
+        return (
+            <>
             <form className={`${this.props.formType}-form`} onSubmit={this.handleSubmit}>
                 <h2 className="session-title">{this.props.formType}</h2>
-            
-                <div className={`${this.props.formType}-name-field`}>
+
+                <div className={`${this.props.formType}-name-field`} >
                     <div hidden={this.props.formType === 'Sign Up' ? null : "hidden"}>
-                        <label className="signup-label"> FIRST NAME <br/>
+                        <label className="name-label"> FIRST NAME <br/>
                             <input className="username-text-box" type="text" onChange={this.update('first_name')} value={this.state.first_name} />
                         </label>
                     </div>
 
                     <div hidden={this.props.formType === 'Sign Up' ? null : "hidden"}>
-                        <label className="signup-label">  LAST NAME <br/>
+                        <label className="name-label">  LAST NAME <br/>
                             <input className="username-text-box" type="text" onChange={this.update('last_name')} value={this.state.last_name} />
                         </label>
                     </div>
@@ -63,9 +118,19 @@ class SessionForm extends React.Component {
                         By clicking "Sign Up" you indicate that you have read and
                         agree to the Terms of Service and Privacy Policy.
                     </p>
-                    <input className={`${this.props.formType}-button`} type="submit" value={this.props.formType} />
+                    <div className={`${this.props.formType}-button-container`}>
+                        <input className={`${this.props.formType}-button`} type="submit" value={this.props.formType} />
+                    </div>
+                {/* <div className="errors" hidden={this.props.formType === 'Sign Up' ? "hidden" : null}>
+                    {this.renderErrors()}
+                </div> */}
                 </div>
+                    {this.props.errors ? this.renderErrors() : null}
+                {/* <div hidden={this.props.formType === 'Sign Up' ? "hidden" : null} className={`${this.props.formType}-errors`}> */}
             </form>
+                {/* <div className={`${this.props.formType}-errors`}> */}
+                {/* </div> */}
+            </>
         );
     }
 
