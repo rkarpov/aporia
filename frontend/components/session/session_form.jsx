@@ -72,7 +72,6 @@ class SessionForm extends React.Component {
     render() {
         // const code snippet function can return either 
         // nothing or code, and return will render const snippet
-        // debugger
         return (
             <>
             <form className={`${this.props.formType}-form`} onSubmit={this.handleSubmit}>

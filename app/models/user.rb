@@ -4,8 +4,11 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6, allow_nil: true }
     
     attr_reader :password
-
     after_initialize :ensure_token
+
+    has_many :questions,
+        foreign_key: :author_id,
+        class_name: 'Question'
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
