@@ -34,20 +34,21 @@ class QuestionForm extends React.Component {
                     </div>
 
                     <div className="question-input-container">
-                        <input
+                        <textarea 
                             className="question-input-field"
-                            type="text" onChange={this.update('body')}
+                            onChange={this.update('body')}
                             value={this.state.body}
                             placeholder='Start your question with "What", "How", "Why", etc.'
                         />
                     </div>
                     <footer className="question-modal-footer">
-                    {/* <div className="cancel-question"> */}
-                        <input onClick={() => this.props.closeModal()}type="submit" value="Cancel"/>
-                    {/* </div> */}
+                        {/* <div className="cancel-question"> */}
+                            < input className="cancel-question" onClick={() => this.props.closeModal()}type="submit" value="Cancel"/>
+                        {/* </div> */}
 
-                    {/* <div className="add-question-button"> */}
-                        <input type="submit" value="Add Question" />
+                        <div className="add-question-container">
+                            <input className="add-question-button" type="submit" value="Add Question" />
+                        </div>
                     </footer>
                 </form>
             </div>
