@@ -13,13 +13,13 @@ const indexPageContainer = () => (
 
         <div className="index-body-container">
             <div className="feed-container">
-                <input type="text" value="FEED"/>
+                <input type="text"/>
             </div>
 
             <QuestionIndexContainer/>
 
             <div className="placeholder-container">
-                <input className="placeholder" type="text" value="placeholder user review"/>
+                <input className="placeholder" type="text" />
             </div>
         </div>
     </div>

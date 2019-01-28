@@ -16,28 +16,58 @@
        border: 1px solid rgba(0, 0, 255, 0.795);
        margin-right: 7px;
        width: 24px;
-       height: 24px;
+       height: 23px;
        border-radius: 50%;
        background: rgb(110, 120, 255);
        box-shadow: 0 0 3px black;
 }
 
 .index-username {
-        margin-top: 4px;
-        color: rgba(6, 112, 6, 0.897);
-        font-size: 15px;
-        font-family: sans-serif;
-        color: rgb(160, 160, 160);
-        // font-weight: bold;
+    text-transform: capitalize;
+    margin-top: 4px;
+    color: rgba(6, 112, 6, 0.897);
+    font-size: 15px;
+    font-family: sans-serif;
+    color: rgb(160, 160, 160);
+    // font-weight: bold;
 }
 
 .ask-question-button {
     padding-top: 4px;
-          font-size: 20px;
-          font-style: sans-serif;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        color: rgb(150, 150, 150);
-        font-weight: bold;
+    font-size: 20px;
+    font-style: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(150, 150, 150);
+    font-weight: bold;
+}
+
+
+.question-index-item-container {
+    padding-left: 15px;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+// how do i make first letter of question caps?
+// .question-body::first-letter {
+//      text-transform: capitalize;
+// }
+
+.question-body {
+    font-weight: 400;
+    font-family: "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+    font-size: 20px;
+    // // line-height: 1.4;
+    
+      font-weight: bold;
+}
+
+.question-index-header-container {
+    padding-top: 10px;
+    display: flex;
 }

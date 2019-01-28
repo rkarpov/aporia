@@ -12,9 +12,11 @@ const msp = ({errors}) => {
     }
 }
 
-const mdp = dispatch => ({
-    processForm: (user) => dispatch(login(user))
-})
+const mdp = dispatch => {
+    return ({
+        processForm: (user) => dispatch(login(user))
+    })
+}
 
 export default connect(msp, mdp)(LoginForm)
 

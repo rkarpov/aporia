@@ -1,3 +1,6 @@
+json.questions @questions.each do |question|
+    json.body question.body
+end
 # json.questions do
 #     @questions.each do |question|
 #         json.set! question.id do 

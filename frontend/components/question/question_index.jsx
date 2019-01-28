@@ -11,13 +11,24 @@ class QuestionIndex extends React.Component {
     }
 
     render() {
+        let username = (this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name);
 
+        let initials = ''
+        initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
+        initials = initials.toUpperCase();
+
+        const currentUser = this.props.currentUser
+        const deleteQuestion = this.props.deleteQuestion
         const questions = this.props.questions.map( question => {
-            <QuestionIndexItem
-                key={this.props.questionId}
-                question={question}
-                deleteQuestion={this.props.deleteQuestion}
-            />
+            debugger
+           return (
+                <QuestionIndexItem
+                    key={question.id}
+                    question={question}
+                    deleteQuestion={deleteQuestion}
+                    currentUser={currentUser}
+                />
+            )
         })
 
         return (
@@ -26,9 +37,9 @@ class QuestionIndex extends React.Component {
                 <div className="ask-question-container">
                     <div className="current-user-container">
                         <div className="profile-index-container">
-                            <p className="avatar-initials" type="text">FL</p>
+                            <p className="avatar-initials" type="text">{initials}</p>
                         </div>
-                        <p className="index-username">First Last</p>
+                        <p className="index-username">{username}</p>
                     </div>
 
                     <button

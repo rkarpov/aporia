@@ -23,7 +23,7 @@ const App = () => {
             <Switch>
                 <AuthRoute exact path="/" component={SessionFormContainer} />
                 {/* <Route exact path="/" component={SessionFormContainer} /> */}
-                <Route exact path="/index" component={IndexPageContainer} />   
+                <ProtectedRoute exact path="/index" component={IndexPageContainer} />   
                 {/* <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} /> */}
             </Switch>
         </div>

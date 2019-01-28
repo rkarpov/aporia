@@ -82,11 +82,18 @@
     border-radius: 50%;
     background: rgb(110, 120, 255);
     box-shadow: 0 0 3px black;
+    
 }
 
 .avatar-initials {
-    margin-top: 5px;
-    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+        // vertical-align: middle;
+        // font-size: calc(86.545%);
+    // margin-top: 5px;
+    // margin-left: 5px;
     color: white;
     font-size: calc(75%);
     font-family: sans-serif;
