@@ -27,8 +27,9 @@ class QuestionIndexItem extends React.Component {
         let initials = ''
         initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
         initials = initials.toUpperCase();
+
         return (
-            <div>
+            <div className={`question-${this.props.question.id}`}>
                 
                 <div className="question-index-item-container">
                     <header className="question-index-header-container">
@@ -44,11 +45,11 @@ class QuestionIndexItem extends React.Component {
                         </div>
                     </header>
 
-
+                  
                     <Link to={`/questions/${this.props.question.id}`} className="question-body">
-                        {this.props.question.body}
+                            <p className="testing">{this.props.question.body}</p>
                     </Link>
-                    {/* <div className="first-letter">{this.props.question.body[0]}</div> */}
+           
 
                 <div>
                     {/* <Link to={`/questions/${this.props.question.id}`}>question show</Link> */}

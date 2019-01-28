@@ -47,13 +47,13 @@
 .question-index-item-container {
     padding-left: 15px;
     margin-top: 20px;
-    border: 1px solid black;
+    border: 1px solid #dadadae0;
 }
 
 // how do i make first letter of question caps?
-// .question-body::first-letter {
-//      text-transform: capitalize;
-// }
+.testing::first-letter {
+     text-transform: uppercase;
+}
 
 .question-body {
     font-weight: 400;
@@ -62,9 +62,7 @@
     Arial,
     sans-serif;
     font-size: 20px;
-    // // line-height: 1.4;
-    
-      font-weight: bold;
+    font-weight: bold;
 }
 
 .question-index-header-container {

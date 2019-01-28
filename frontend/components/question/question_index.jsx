@@ -17,17 +17,20 @@ class QuestionIndex extends React.Component {
         initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
         initials = initials.toUpperCase();
 
+        // const author = this.props.author
         const currentUser = this.props.currentUser
         const deleteQuestion = this.props.deleteQuestion
         const questions = this.props.questions.map( question => {
             debugger
            return (
-                <QuestionIndexItem
-                    key={question.id}
-                    question={question}
-                    deleteQuestion={deleteQuestion}
-                    currentUser={currentUser}
-                />
+               <li key={`question-${question.id}`}>
+                    <QuestionIndexItem
+                        question={question}
+                        deleteQuestion={deleteQuestion}
+                        currentUser={currentUser}
+                        // author={author}
+                    />
+                </li>
             )
         })
 
