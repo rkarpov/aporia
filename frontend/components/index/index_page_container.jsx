@@ -2,17 +2,26 @@ import React from 'react';
 import QuestionIndexContainer from '../question/question_index_container';
 import CreateQuestionContainer from '../question/create_question_container';
 import EditQuestionContainer from '../question/edit_question_container';
+import NavbarContainer from '../../components/navbar/navbar_container';
 
 const indexPageContainer = () => (
     
     <div className="index-main">
-        
-        <div className="">
-            <h1>nav container goes here</h1> <br/>
-            <QuestionIndexContainer/>
-            {/* <CreateQuestionContainer/> */}
+        <div className="index-header-container">
+            <NavbarContainer/>
         </div>
 
+        <div className="index-body-container">
+            <div className="feed-container">
+                <input type="text" value="FEED"/>
+            </div>
+
+            <QuestionIndexContainer/>
+
+            <div className="placeholder-container">
+                <input className="placeholder" type="text" value="placeholder user review"/>
+            </div>
+        </div>
     </div>
 );
 

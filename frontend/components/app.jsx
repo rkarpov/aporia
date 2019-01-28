@@ -21,10 +21,10 @@ const App = () => {
             <Modal />
           
             <Switch>
-                <Route exact path="/" component={SessionFormContainer} />
+                <AuthRoute exact path="/" component={SessionFormContainer} />
                 {/* <Route exact path="/" component={SessionFormContainer} /> */}
                 <Route exact path="/index" component={IndexPageContainer} />   
-                <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} />
+                {/* <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} /> */}
             </Switch>
         </div>
     );
