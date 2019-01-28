@@ -27,7 +27,7 @@ class Navbar extends React.Component {
 
                     <div className="profile-modal-container">
                         <p className="avatar-initials" type="text">FL</p>
-                        {/* <button onClick={ () => this.props.logout()}>Logout</button> */}
+                        <button onClick={ () => this.props.logout()}>Logout</button>
                     </div>
 
                     <button 

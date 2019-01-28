@@ -22,12 +22,23 @@ class QuestionIndex extends React.Component {
 
         return (
             <div className="index-page-container">
-                <div>
-                    {/* <Link to="/questions/new">What is your question?</Link> */}
-                    <button onClick={() => this.props.openModal('createQuestion')}>What is your question?</button>
-                    
+
+                <div className="ask-question-container">
+                    <div className="current-user-container">
+                        <div className="profile-index-container">
+                            <p className="avatar-initials" type="text">FL</p>
+                        </div>
+                        <p className="index-username">First Last</p>
+                    </div>
+
+                    <button
+                        className="ask-question-button"
+                        onClick={() => this.props.openModal('createQuestion')}
+                        >What is your question? Click here to ask...
+                    </button>
                 </div>
-                <div className="Questions-container">
+
+                <div className="questions-container">
                     <ul className="question-item-box">
                         { questions }
                     </ul>
