@@ -7,6 +7,9 @@ class Question < ApplicationRecord
         foreign_key: :author_id,
         class_name: 'User'
 
+    has_many :answers,
+        foreign_key: :question_id,
+        class_name: 'Answer'
     # belongs_to :topic,
     #     foreign_key: :topic_id,
     #     class_name: 'Topic'

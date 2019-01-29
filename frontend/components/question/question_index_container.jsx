@@ -5,7 +5,7 @@ import QuestionIndex from './question_index'
 import { openModal } from '../../actions/modal_actions';
 
 const msp = state => {
-    debugger
+    // debugger
     return {
         questions: Object.values(state.entities.questions),
         currentUser: state.entities.users[state.session.id],
@@ -13,7 +13,7 @@ const msp = state => {
 }
 
 const mdp = dispatch => {
-    debugger
+    // debugger
     return {
         requestQuestions: () => dispatch(requestQuestions()),
         deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),

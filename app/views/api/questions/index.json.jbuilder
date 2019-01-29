@@ -8,6 +8,22 @@ end
 # refactor to have author object outside the question body but inside the entiteis state
 # do so by fetching author id
 
+# json.questions @questions.each do |question|
+#     json.body question.body 
+#     json.authorId question.author.id
+# end
+
+# json.users do
+#   @questions.each do |question|
+#     author = question.author
+#     json.set! author.id do
+#       json.extract! author, :id, :first_name, :last_name
+#     end
+#   end
+# end
+
+
+
 
 # json.questions do
 #     @questions.each do |question|

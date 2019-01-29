@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import CreateAnswerContainer from '../../components/answer/create_answer_container';
+import AnswerIndexContainer from '../../components/answer/answer_index_container';
 
 class QuestionIndexItem extends React.Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class QuestionIndexItem extends React.Component {
  
     handleSubmit(e){
         e.preventDefault;
-        debugger
+        // debugger
         // return (id) => this.deleteQuestion(id)
     }
 
@@ -24,8 +25,9 @@ class QuestionIndexItem extends React.Component {
     // </div>
 
     render(){
+        // debugger
         let initials = ''
-        initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
+        initials += this.props.question.authorFirstName[0] + this.props.question.authorLastName[0];
         initials = initials.toUpperCase();
 
         return (
@@ -58,7 +60,14 @@ class QuestionIndexItem extends React.Component {
                 </div>
 
                 <footer>
-                    <Link to="">Answer</Link>
+                    {/* <Link to="">Answer</Link> */}
+                    <CreateAnswerContainer
+                        questionId={this.props.question.id}
+                    />
+                    <AnswerIndexContainer 
+                        questionId={this.props.question.id}
+                    />
+                    {/* onClick handle submit and call render of <CreateAnswerContainer/> */}
                 </footer>
                 </div>
 

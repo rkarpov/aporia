@@ -1,0 +1,55 @@
+import { connect } from 'react-redux';
+// import AnswerIndexItem from './answer_index_item';
+import AnswerIndex from './answer_index';
+import { requestAnswers, deleteAnswer } from '../../actions/answer_actions';
+
+// const getAnswersByQuestionId = state => {
+//     const answers = {};
+//     const questions = Object.values(state.entities.questions);
+//     debugger
+//     questions.forEach((question) => {
+//         answers[question_id] = question.answers.id.map((id) => {
+//             return state.entities.answers[id];
+//         });
+//     });
+//     return answers;
+// };
+
+// const allTodos = ({ todos }) => Object.keys(todos).map(id => todos[id]);
+
+const answersByQuestionId = (state, ownProps) => {
+    const answers = [];
+    Object.keys(state.entities.answers).forEach(answerId => {
+        // const answer = answers[answerId];
+        if (state.entities.answers[answerId].question_id === ownProps.questionId) answers.push(state.entities.answers[answerId])
+    })
+    // debugger
+    return answers;
+};
+
+
+const msp = (state, ownProps) => {
+    // debugger
+    // const allAnswers = Object.values(state.entities.answers)
+    // const answers = allAnswers.filter( answer => {
+    //     answer.question_id === ownProps.questionId
+    // });
+
+    // debugger
+    return ({
+        questionId: ownProps.questionId,
+        // answers: Object.values(state.entities.answers), // have answers.question id match questionId
+        answers: answersByQuestionId(state, ownProps),
+        currentUser: state.entities.users[state.session.id]
+    })
+}
+
+const mdp = dispatch => {
+    return {
+        // action: (answer) => dispatch(updateAnswer(answer)),
+        requestAnswers: (questionId) => dispatch(requestAnswers(questionId)),
+        deleteAnswer: (answerId) => dispatch(deleteAnswer(answerId))
+    }
+}
+
+export default connect(msp, mdp)(AnswerIndex);

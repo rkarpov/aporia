@@ -9,7 +9,8 @@ import SessionFormContainer from '../components/session/session_form_container';
 // import IndexPageContainer from '../components/question/question_index_container';
 import IndexPageContainer from '../components/index/index_page_container'
 import Modal from '../components/modal/modal';
-import CreateQuestionContainer from './question/create_question_container';
+// import CreateQuestionContainer from './question/create_question_container';
+
 const App = () => {
     return (
         <div className="app-main">
@@ -24,6 +25,7 @@ const App = () => {
                 <AuthRoute exact path="/" component={SessionFormContainer} />
                 {/* <Route exact path="/" component={SessionFormContainer} /> */}
                 <ProtectedRoute exact path="/index" component={IndexPageContainer} />   
+                {/* <Route path="/answers/:answerId/edit" component={EditAnswerFormContainer}/> */}
                 {/* <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} /> */}
             </Switch>
         </div>
