@@ -1,49 +1,60 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateAnswer, fetchAnswer } from '../../actions/question_actions';
-import AnswerForm from './answer_form';
+import { updateAnswer, requestAnswer } from '../../actions/answer_actions';
+import AnswerEditForm from './answer_edit_form';
+
 
 const msp = (state, ownProps) => {
-    // debugger
+    const defaultAnswer = { body: '', id: ownProps.match.params.answerId}
+    const answer = state.entities.answers[ownProps.match.params.answerId] || defaultAnswer;
+    
+    
     return ({
+        answer,
         formType: 'editAnswer',
-        answer: state.answers[ownProps.match.params.answerId],
-        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.entities.users[state.session.id],
     })
 }
 
 const mdp = dispatch => {
+    // debugger
     return ({
-        // fetchQuestion: (id) => dispatch(fetchQuestion(id)),
-        fetchAnswer: (id) => dispatch(fetchAnswer(id)),
+        requestAnswer: (id) => dispatch(requestAnswer(id)),
         action: (answer) => dispatch(updateAnswer(answer))
     })
 }
 
-class EditReportForm extends React.Component {
-    // componentWillMount(){
-    //     fetchAnswer(this.props.match.params.answerId)
-    // }
+// class EditAnswerContainer extends React.Component {
+//     // componentWillMount(){
+//     //     requestAnswer(this.props.match.params.answerId)
+//     // }
 
-    componentDidMount() {
-        this.props.fetchAnswer(this.props.match.params.answerId)
-    }
+//     componentDidMount() {
+//         debugger
+//         this.props.requestAnswer(this.props.match.params.answerId)
+//     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.answer.id != this.props.match.params.answerId) {
-            this.props.fetchAnswer(this.props.match.params.answerId);
-        }
-    }
+//     componentDidUpdate(prevProps) {
+//         debugger
+//         if (prevProps.answer.id != this.props.match.params.answerId) {
+//             this.props.requestAnswer(this.props.match.params.answerId);
+//         }
+//     }
 
-    render() {
-        const { action, formType, answer } = this.props;
-        return (
-            <AnswerForm
-                action={action}
-                formType={formType}
-                answer={answer} />
-        );
-    }
-}
+//     render() {
+//         const { action, formType, answer } = this.props;
+//         debugger
+//         return (
+//             <AnswerEditForm
+//                 action={action}
+//                 formType={formType}
+//                 answer={answer} />
+//         );
 
-export default connect(msp, mdp)(EditReportForm);
+
+
+//     }
+// }
+
+// export default connect(msp, mdp)(EditAnswerContainer);
+export default connect(msp, mdp)(AnswerEditForm);

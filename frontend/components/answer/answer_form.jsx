@@ -3,11 +3,11 @@ import { withRouter } from 'react-router-dom';
 
 class AnswerForm extends React.Component {
     constructor(props){
-        // debugger
+        
         super(props)
         this.state = this.props.answer;
         this.handleSubmit = this.handleSubmit.bind(this);
-        // debugger
+      
     }
 
     handleSubmit(e){

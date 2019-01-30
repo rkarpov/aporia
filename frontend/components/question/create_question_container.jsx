@@ -13,7 +13,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  debugger
   return {
     action: (question) => dispatch(createQuestion(question)),
     closeModal: () => dispatch(closeModal())

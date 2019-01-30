@@ -7,7 +7,6 @@ import CreateQuestionContainer from '../question/create_question_container';
 // import SignupFormContainer from '../session_form/signup_form_container';
 
 const Modal = ({ modal, closeModal }) => {
-    debugger
     if (!modal) {
         return null;
     }

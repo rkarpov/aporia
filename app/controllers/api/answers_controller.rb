@@ -5,7 +5,8 @@ class Api::AnswersController < ApplicationController
         # @answers = Question.find(params[:question_id]).answers # why is question id undefined?! its nested
         # @question = Question.find(params(:question_id))
         @answers = Answer.all
-        render json: @answers
+        render :index
+        # render json: @anwsers
     end
 
 # steps = Todo.find(params[:todo_id]).steps
@@ -29,6 +30,7 @@ class Api::AnswersController < ApplicationController
     end
 
     def update
+        # debugger
         @answer = Answer.find(params[:id])
         if @answer.update_attributes(answer_params)
            render :show 

@@ -1,1 +1,1 @@
-json.extract! answer, :id, :body, :author_id, :question_id, :created_at
+json.extract! answer, :id, :author_id, :question_id, :body, :created_at

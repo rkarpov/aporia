@@ -20,7 +20,6 @@ import { requestAnswers, deleteAnswer } from '../../actions/answer_actions';
 const answersByQuestionId = (state, ownProps) => {
     const answers = [];
     Object.keys(state.entities.answers).forEach(answerId => {
-        // const answer = answers[answerId];
         if (state.entities.answers[answerId].question_id === ownProps.questionId) answers.push(state.entities.answers[answerId])
     })
     // debugger
@@ -29,6 +28,7 @@ const answersByQuestionId = (state, ownProps) => {
 
 
 const msp = (state, ownProps) => {
+    
     return ({
         questionId: ownProps.questionId,
         answers: answersByQuestionId(state, ownProps),

@@ -21,7 +21,6 @@ class QuestionIndex extends React.Component {
         const currentUser = this.props.currentUser
         const deleteQuestion = this.props.deleteQuestion
         const questions = this.props.questions.map( question => {
-            debugger
            return (
           
                     <QuestionIndexItem

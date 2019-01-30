@@ -12,7 +12,7 @@ class AnswerIndex extends React.Component {
       
 
         const answerItems = this.props.answers.map( answer => {
-            // debugger
+            
             return (
                 // <ul className="answer-item-container">
                     // AnswerId {answer.id}

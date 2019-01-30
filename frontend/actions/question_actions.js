@@ -14,7 +14,7 @@ const receiveAllQuestions = ({questions, users}) => {
 }
 
 const receiveQuestion = (question) => {
-    debugger
+    
     return {
         type: RECEIVE_QUESTION,
         question
@@ -34,7 +34,7 @@ const receiveErrors = (errors) => {
 }
 
 export const requestQuestions = (questions) => dispatch => {
-
+debugger
     return QuestionApiUtil.fetchQuestions(questions).then((questions) => dispatch(receiveAllQuestions(questions)))
 }
 
@@ -44,7 +44,7 @@ export const fetchQuestion = (id) => dispatch => {
 
 export const createQuestion = (question) => dispatch => {
 
-    debugger
+    
     return QuestionApiUtil.createQuestion(question).then((question) => dispatch(receiveQuestion(question))),
         error => (dispatch(receiveErrors(error.responseJSON)))
 }
