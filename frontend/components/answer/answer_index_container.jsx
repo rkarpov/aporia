@@ -29,16 +29,8 @@ const answersByQuestionId = (state, ownProps) => {
 
 
 const msp = (state, ownProps) => {
-    // debugger
-    // const allAnswers = Object.values(state.entities.answers)
-    // const answers = allAnswers.filter( answer => {
-    //     answer.question_id === ownProps.questionId
-    // });
-
-    // debugger
     return ({
         questionId: ownProps.questionId,
-        // answers: Object.values(state.entities.answers), // have answers.question id match questionId
         answers: answersByQuestionId(state, ownProps),
         currentUser: state.entities.users[state.session.id]
     })

@@ -2,9 +2,9 @@ class Api::AnswersController < ApplicationController
 
     def index
         # debugger
-        @answers = Question.find(params[:question_id]).answers # why is question id undefined?! its nested
+        # @answers = Question.find(params[:question_id]).answers # why is question id undefined?! its nested
         # @question = Question.find(params(:question_id))
-        # @answers = Answer.all
+        @answers = Answer.all
         render json: @answers
     end
 

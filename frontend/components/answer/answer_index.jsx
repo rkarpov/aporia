@@ -14,14 +14,15 @@ class AnswerIndex extends React.Component {
         const answerItems = this.props.answers.map( answer => {
             // debugger
             return (
-                <div className="answer-item-container">
+                // <ul className="answer-item-container">
+                    // AnswerId {answer.id}
                     <AnswerIndexItem
                         key={answer.id}
                         answer={answer}
                         deleteAnswer={this.props.deleteAnswer}
                         currentUser={this.props.currentUser}
                     />
-                </div> 
+                // </ul> 
             )})
 
         return (
