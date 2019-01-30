@@ -26,9 +26,16 @@ class QuestionIndexItem extends React.Component {
 
     render(){
         // debugger
+        // let initials = ''
+        // initials += this.props.question.authorFirstName[0] + this.props.question.authorLastName[0];
+        // initials = initials.toUpperCase();
         let initials = ''
-        initials += this.props.question.authorFirstName[0] + this.props.question.authorLastName[0];
-        initials = initials.toUpperCase();
+        // let username;
+        if (this.props.currentUser) {
+            // username = (this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name); ``
+            initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
+            initials = initials.toUpperCase();
+        }
 
         return (
             <div className={`question-${this.props.question.id}`}>

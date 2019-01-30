@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
     validates :body, presence: true
-    validates :body, length: {minimum: 5, maximum: 250}, allow_blank: true
+    # validates :body, length: {minimum: 5, maximum: 250}, allow_blank: true
     # validates an associated entry in question topics table  (cannot create question if topic id is null in joins table)
 
     belongs_to :author,

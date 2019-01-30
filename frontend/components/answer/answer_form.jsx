@@ -25,12 +25,13 @@ class AnswerForm extends React.Component {
     }
 
     render(){
-        
-        let username = (this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name);
-
         let initials = ''
-        initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
-        initials = initials.toUpperCase();
+        let username;
+        if (this.props.currentUser) {
+            username = (this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name);``
+            initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
+            initials = initials.toUpperCase();
+        }
 
         return(
                 <form className="answer-form" onSubmit={this.handleSubmit}>

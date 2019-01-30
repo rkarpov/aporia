@@ -4,9 +4,10 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 
-//TEST
+// TEST
+import { createQuestion } from '../frontend/actions/question_actions';
 // import * as SessionApiUtil from `./util/session_api_util`
-//TEST
+// TEST
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //TEST
         window.getState = store.getState;
         window.dispatch = store.dispatch;
+        window.createQuestion = createQuestion;
         //TEST
 
     ReactDOM.render(<Root store={store}/>, root)

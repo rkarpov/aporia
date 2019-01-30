@@ -17,7 +17,7 @@ class AnswerIndex extends React.Component {
                 // <ul className="answer-item-container">
                     // AnswerId {answer.id}
                     <AnswerIndexItem
-                        key={answer.id}
+                        key={`answer-${answer.id}`}
                         answer={answer}
                         deleteAnswer={this.props.deleteAnswer}
                         currentUser={this.props.currentUser}

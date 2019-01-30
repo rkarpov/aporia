@@ -12,7 +12,7 @@ Question.delete_all
 
 # first seed file should dispatch action that logsi n the first seed user as demo user
 
-user1 = User.create!(email: "demouser@demo.com", password: 'login1', first_name: "Demo", last_name: "User")
+user1 = User.create!(email: "demoUser@demo.com", password: '123456', first_name: "Demo", last_name: "User")
 user2 = User.create!(email: "bakerStreetLondon@aol.com", password: 'login1', first_name: "Sherlock", last_name: "Holmes")
 user3 = User.create!(email: "catInTheBox@hotmail.com", password: 'login1', first_name: "Shro", last_name: "Dinger")
 user4 = User.create!(email: "nyu.com", password: 'login1', first_name: "Ned", last_name: "Block")

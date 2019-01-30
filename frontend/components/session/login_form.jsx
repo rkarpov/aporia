@@ -9,7 +9,6 @@ class LoginForm extends React.Component {
                 credentials={this.props.credentials}
                 processForm={this.props.processForm}
                 errors={this.props.errors}
-                // loginErrors={this.props.loginErrors}
             />
         );
     }

@@ -3,6 +3,7 @@ import * as QuestionApiUtil from '../util/question_api_util';
 export const RECEIVE_ALL_QUESTIONS = 'RECEIVE_ALL_QUESTIONS';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
+export const RECEIVE_QUESTION_ERRORS = 'RECEIVE_QUESTION_ERRORS'
 
 const receiveAllQuestions = ({questions, users}) => {
     return {
@@ -13,6 +14,7 @@ const receiveAllQuestions = ({questions, users}) => {
 }
 
 const receiveQuestion = (question) => {
+    debugger
     return {
         type: RECEIVE_QUESTION,
         question
@@ -26,6 +28,11 @@ const removeQuestion = (questionId) => {
     }
 }
 
+const receiveErrors = (errors) => {
+    type: RECEIVE_QUESTION_ERRORS,
+    errors
+}
+
 export const requestQuestions = (questions) => dispatch => {
 
     return QuestionApiUtil.fetchQuestions(questions).then((questions) => dispatch(receiveAllQuestions(questions)))
@@ -36,13 +43,18 @@ export const fetchQuestion = (id) => dispatch => {
 }
 
 export const createQuestion = (question) => dispatch => {
-    return QuestionApiUtil.createQuestion(question).then((question) => dispatch(receiveQuestion(question)))
+
+    debugger
+    return QuestionApiUtil.createQuestion(question).then((question) => dispatch(receiveQuestion(question))),
+        error => (dispatch(receiveErrors(error.responseJSON)))
 }
 
 export const updateQuestion = (question) => dispatch => {
-    return QuestionApiUtil.updateQuestion(question).then((question) => dispatch(receiveQuestion(question)))
+    return QuestionApiUtil.updateQuestion(question).then((question) => dispatch(receiveQuestion(question))),
+        error => (dispatch(receiveErrors(error.responseJSON)))
 }
 
 export const deleteQuestion = (questionId) => dispatch => {
-    return QuestionApiUtil.deleteQuestion(questionId).then(() => dispatch(removeQuestion(questionId)))
+    return QuestionApiUtil.deleteQuestion(questionId).then(() => dispatch(removeQuestion(questionId))),
+        error => (dispatch(receiveErrors(error.responseJSON)))
 }

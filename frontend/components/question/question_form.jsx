@@ -6,12 +6,13 @@ class QuestionForm extends React.Component {
         super(props)
         this.state = this.props.question
         this.handleSubmit = this.handleSubmit.bind(this);
-        
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault;
-        this.props.action(this.state).then(() => this.props.history.push('/'));
+        this.props.action(this.state)//.then(this.props.closeModal())
+        this.props.closeModal();
     }
 
     update(field) {
@@ -21,7 +22,7 @@ class QuestionForm extends React.Component {
     }
 
     render() {
-        const currentUserName = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
+        // const currentUserName = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
         return (
             <div>
                 <form className="question-modal" onSubmit={this.handleSubmit}>

@@ -188,7 +188,8 @@
 
 
 .Login-form {
-    // overflow: auto;
+    margin-bottom: 120px;
+
     padding-left: 20px;
     // margin: -10px;
     // padding-bottom: 50px;
@@ -228,9 +229,9 @@
 // }
 
 .Login-button-container {
-    padding-bottom: 100px;
+    // padding-bottom: 100px;
     // padding-inline-end: 50px;
-    padding-block-end: 50px;
+    // padding-block-end: 50px;
     
 }
 
@@ -245,29 +246,52 @@
     box-shadow: 0 0 5px #888;
     float: right;
     margin-top: 13px;
-    margin-bottom: 40px;
+    // margin-bottom: 106px;
     // margin-right: 38px;
     // margin-bottom: 105px;
     // overflow: auto;
     // position: fixed;
         //  position: fixed;
 }
+.demo-container {
+    position: absolute;
+    top: 451px;
+    left: 540px;
+}
+
+.demo-button {
+     padding: 5px 8px 5px 6px;
+     font-family: sans-serif;
+     border-radius: 3px;
+     color: white;
+     background: #3e78ad;
+     border: 1px solid rgb(78, 83, 162);
+     box-shadow: 0 0 5px #888;
+     float: right;
+     margin-top: 13px;
+}
 
 
 .Login-errors {
-    margin-top: 0;
-    // overflow: auto;
+   position: absolute;
+   top: 510px;
+//    left: 225px;
+   height: 50px;
+//    width: 300px;
+//    background: red;
+    // margin-top: 0;
+    // // overflow: auto;
     width: 260px;
     color: red;
-    float: right;
-    // position: absolute;
-    // right: 0px;
-    // margin-right: 170px;
-    // width: 260px;
-    // padding: 10px;
-    // border: 2px solid black;
-    font-size: 14px;
-    // text-align: left;
+    // float: right;
+    // // position: absolute;
+    // // right: 0px;
+    // // margin-right: 170px;
+    // // width: 260px;
+    // // padding: 10px;
+    // // border: 2px solid black;
+    // font-size: 14px;
+    // // text-align: left;
     // margin-top: 50px;
     // padding-top: 10px;
     // display: flex;

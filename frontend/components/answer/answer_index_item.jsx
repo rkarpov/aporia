@@ -13,7 +13,7 @@ const AnswerIndexItem = (props) => {
             </div>
             {/* {<EditAnswerContainer />} */}
             {/* <Link className="edit-answer-button" to={`/answers/${props.answer.id}/edit`}>Edit</Link> */}
-            <button className="edit-answer-button" onClick={ () => <EditAnswerContainer/>}>Edit</button>
+            {/* <button className="edit-answer-button" onClick={ () => <EditAnswerContainer/>}>Edit</button> */}
             <button className="delete-answer-button" onClick={ () => props.deleteAnswer(props.answer.id)}>
                 Delete
             </button>
