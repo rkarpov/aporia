@@ -6,6 +6,7 @@
     justify-content: space-around;
     border-bottom: 1px solid #dadadae0;
     box-shadow: 0 0 3px #888;
+    background: lightgoldenrodyellow;
 }
 
 .app-title {
@@ -36,6 +37,8 @@
 }
 
 .app-search-bar {
+    padding-left: 5px;
+    background: white;
     font-family: sans-serif;
     font-size: 15px;
     color: rgb(175, 175, 175);

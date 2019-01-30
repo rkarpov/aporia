@@ -7,7 +7,7 @@ const msp = (state, ownProps) => {
     
     return ({
         answer: { 
-            body: " Write your answer", 
+            body: "", 
             author_id: state.session.id, 
             question_id: ownProps.questionId,
         },

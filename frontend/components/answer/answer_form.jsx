@@ -25,23 +25,38 @@ class AnswerForm extends React.Component {
     }
 
     render(){
+        
+        let username = (this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name);
+
+        let initials = ''
+        initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
+        initials = initials.toUpperCase();
 
         return(
-                <form onSubmit={this.handleSubmit}>
-                    <h2>
-                        user credentials and profile
-                    </h2>
-                    <label>
-                        enriched text options
-                    </label>
-                    <div>
+                <form className="answer-form" onSubmit={this.handleSubmit}>
+                    <div className="add-answer-header-container">
+                        {/* <div className="current-user-container"> */}
+                            <div className="profile-index-container">
+                                <p className="avatar-initials" type="text">{initials}</p>
+                            </div>
+                            <p className="index-username">{username}</p>
+                        {/* </div> */}
+                    </div>
+                        <div className="enriched-text">
+                            Enriched text options
+                        </div>
+                    <div className="answer-input-container">
                         <textarea
+                        className="answer-input-field"
+                            placeholder="Write your answer"
                             onChange={this.update('body')} 
                             value={this.state.body}>
                         </textarea>
                     </div>
-                    <footer>
-                        <input type="submit" value="Submit"/>
+                    
+                    <footer className="add-answer-footer">
+                        < input className="cancel-answer" onClick={() => this.props.closeDropDown()} type="submit" value="Cancel" />
+                        <input className="add-answer-button" type="submit" value="Submit"/>
                     </footer>
                 </form>
         )

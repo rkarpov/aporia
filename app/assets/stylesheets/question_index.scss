@@ -1,9 +1,12 @@
 .ask-question-container {
+    background: white;
     border: 1px solid #dadadae0;
     margin-top: 30px;
     width: 600px;
     height: 80px;
     padding-left: 15px;
+           border-radius: 3px;
+
 }
 
 .current-user-container {
@@ -44,10 +47,18 @@
 }
 
 
+
 .question-index-item-container {
+           border-radius: 3px;
+
+        width: 585px;
+        // height: 80px;
     padding-left: 15px;
+    padding-right: 15px;
+    // padding-right: 15px;
     margin-top: 20px;
     border: 1px solid #dadadae0;
+    background: white;
 }
 
 // how do i make first letter of question caps?

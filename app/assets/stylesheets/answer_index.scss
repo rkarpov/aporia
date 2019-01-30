@@ -1,3 +1,54 @@
-// .answer-item-container {
+.answer-item-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+        border-top: 1px solid #b9b9b9;
+        border-bottom: 1px solid #b9b9b9;
+       border-radius: 3px;
+    padding-bottom: 10px;
+}
 
-// }
+.delete-answer-button {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-weight: 500;
+    // color: rgba(6, 112, 6, 0.897); // green letters for no button background
+    color: white;
+    margin-right: 20px;
+    margin-left: 10px;
+    padding: 4px 6px;
+    background: #3e78ad;
+    border: 1px solid rgb(78, 83, 162);
+    box-shadow: 0 0 5px #888;
+    font-family: sans-serif;
+    border-radius: 3px;
+}
+
+.edit-answer-button {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-weight: 500;
+    // color: rgba(6, 112, 6, 0.897); // green letters for no button background
+    color: white;
+    margin-right: 5px;
+    margin-left: 10px;
+    padding: 4px 6px;
+    background: #3e78ad;
+    border: 1px solid rgb(78, 83, 162);
+    box-shadow: 0 0 5px #888;
+    font-family: sans-serif;
+    border-radius: 3px;
+}
+
+.answer-body { 
+      margin-top: 10px;
+          margin-left: 10px;
+
+      font-size: 14px;
+      font-weight: bold;
+      font-family: sans-serif;
+      
+}

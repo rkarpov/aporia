@@ -9,6 +9,8 @@ class AnswerIndex extends React.Component {
     }
 
     render() {
+      
+
         const answerItems = this.props.answers.map( answer => {
             // debugger
             return (

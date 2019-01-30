@@ -23,7 +23,7 @@ class Navbar extends React.Component {
                 <Link className="nav-answer-icon" to="/index">Answer</Link>
 
                 <div className="app-search-bar-container">
-                    <textarea className="app-search-bar" defaultValue=" Search Aporia"></textarea>
+                    <textarea className="app-search-bar" placeholder="Search Aporia"></textarea>
                 </div>
 
 

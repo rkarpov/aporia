@@ -6,10 +6,10 @@ const AnswerIndexItem = (props) => {
     return(
         <li>
             <div className="answer-body-container">
-                <p className="answer-body">{props.answer.body}</p>
+                <p className="answer-body testing">{props.answer.body}</p>
             </div>
-            <Link to={`/answers/${props.answer.id}/edit`}>Edit</Link>
-            <button onClick={ () => props.deleteAnswer(props.answer.id)}>
+            <Link className="edit-answer-button" to={`/answers/${props.answer.id}/edit`}>Edit</Link>
+            <button className="delete-answer-button" onClick={ () => props.deleteAnswer(props.answer.id)}>
                 Delete
             </button>
         </li>
