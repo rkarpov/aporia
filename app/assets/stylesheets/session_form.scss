@@ -188,8 +188,7 @@
 
 
 .Login-form {
-    margin-bottom: 120px;
-
+    margin-bottom: 110px;
     padding-left: 20px;
     // margin: -10px;
     // padding-bottom: 50px;
@@ -253,11 +252,13 @@
     // position: fixed;
         //  position: fixed;
 }
-.demo-container {
-    position: absolute;
-    top: 451px;
-    left: 540px;
-}
+// .demo-container {
+//     position: absolute;
+//     top: 451px;
+//     left: 540px;
+//              width: 370px;
+
+// }
 
 .demo-button {
      padding: 5px 8px 5px 6px;
@@ -269,6 +270,7 @@
      box-shadow: 0 0 5px #888;
      float: right;
      margin-top: 13px;
+    margin-right: 10px;
 }
 
 

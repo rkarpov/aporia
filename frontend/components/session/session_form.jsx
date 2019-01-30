@@ -1,4 +1,5 @@
 import React from 'react';
+import DemoFormContainer from './demo_form_container';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -117,8 +118,13 @@ class SessionForm extends React.Component {
                         By clicking "Sign Up" you indicate that you have read and
                         agree to the Terms of Service and Privacy Policy.
                     </p>
+                    {/* <DemoFormContainer hidden={this.props.formType === 'Sign Up' ? null : "hidden"}/> */}
+                
                     <div className={`${this.props.formType}-button-container`}>
                         <input className={`${this.props.formType}-button`} type="submit" value={this.props.formType} />
+                    </div>
+                    <div hidden={this.props.formType === "Login" ? null : "hidden"}>
+                        <DemoFormContainer />
                     </div>
                 {/* <div className="errors" hidden={this.props.formType === 'Sign Up' ? "hidden" : null}>
                     {this.renderErrors()}
