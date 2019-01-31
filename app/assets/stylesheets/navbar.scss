@@ -79,13 +79,27 @@
 
 .profile-modal-container {
     border: 1px solid rgba(0, 0, 255, 0.795);
-    margin-right: 17px;
+    margin-right: 30px;
     width: 27px;
     height: 27px;
     border-radius: 50%;
     background: rgb(110, 120, 255);
     box-shadow: 0 0 3px black;
     
+}
+
+.navbar-avatar-initials:hover {
+    cursor: pointer;
+}
+
+.navbar-avatar-initials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+    color: white;
+    font-size: calc(75%);
+    font-family: sans-serif;
 }
 
 .avatar-initials {
