@@ -25,33 +25,37 @@ class QuestionIndexItem extends React.Component {
     // </div>
 
     render(){
-        // debugger
-        // let initials = ''
-        // initials += this.props.question.authorFirstName[0] + this.props.question.authorLastName[0];
-        // initials = initials.toUpperCase();
-        let initials = ''
+
         // let username;
-        if (this.props.currentUser) {
+        // if (this.props.currentUser) {
             // username = (this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name); ``
-            initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
-            initials = initials.toUpperCase();
-        }
+            // initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
+            // initials = initials.toUpperCase();
+            // }
+
+        let authorInitials = ''
+        const names = this.props.author.split(' ')
+        authorInitials += names[0][0] + names[1][0];
+        authorInitials = authorInitials.toUpperCase();
 
         return (
             <div className={`question-${this.props.question.id}`}>
                 
                 <div className="question-index-item-container">
                     <header className="question-index-header-container">
-                        <div className="profile-index-container">
-                            <p className="avatar-initials" type="text">
-                                {initials}
-                            </p>
-                        </div>
                         <div className="question-index-topics-container">
                             <p className="question-topics">
-                                topics
+                                General Topic
                             </p>
                         </div>
+                        {/* <div className="pleasework">
+                            <div className="profile-index-container">
+                                <p className="avatar-initials" type="text">
+                                    {authorInitials}
+                                </p>
+                            </div>
+                            <p className="authorname">{this.props.author}</p>
+                        </div> */}
                     </header>
 
                   
@@ -66,7 +70,7 @@ class QuestionIndexItem extends React.Component {
                     {/* <button onClick={() => this.props.deleteQuestion(this.props.question.id)}>delete</button> */}
                 </div>
 
-                <footer>
+                    <footer hidden={this.props.pageType === 'mainIndex' ? null : "hidden"}>
                     {/* <Link to="">Answer</Link> */}
                     <CreateAnswerContainer
                         questionId={this.props.question.id}

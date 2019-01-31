@@ -18,8 +18,8 @@
 .profile-index-container {
        border: 1px solid rgba(0, 0, 255, 0.795);
        margin-right: 7px;
-       width: 24px;
-       height: 23px;
+       width: 30px;
+       height: 30px;
        border-radius: 50%;
        background: rgb(110, 120, 255);
        box-shadow: 0 0 3px black;
@@ -79,4 +79,11 @@
 .question-index-header-container {
     padding-top: 10px;
     display: flex;
+    flex-direction: column;
 }
+
+.pleasework{ 
+    width: 580px;
+    display: flex;
+}
+

@@ -1,31 +1,44 @@
 
 
 
-
-
+// Navbar Dropdown Styling
  .dropdown {
      position: relative;
      display: inline-block;
-         margin-right: 50px;
+        //  margin-right: 50px;
  }
 
  .dropdown-content {
     //  display: none;
-     position: absolute;
-     top: 35px;
-     background-color: #f9f9f9;
-     width: 18®0px;
-     height: 35px;
-     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    //  padding: 12px 16px;
-     z-index: 1;
-
-     border: 1px solid #b9b9b9;
-        // box-shadow: 0 0 5px #888;
-        border-radius: 3px;
+    position: absolute;
+    top: 40px;
+    background-color: #f9f9f9;
+    width: 175px;
+    height: 64px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    // padding: 12px 16px;
+    z-index: 1;
+    border-top: 1px solid #b9b9b9;
+    border-left: 1px solid #b9b9b9;
+    border-right: 1px solid #b9b9b9;
+    border-radius: 3px;
  }
 
  .dropdown:hover .dropdown-content {
      display: block;
  }
 
+
+ .dropdown-items-list {
+       display: flex;
+       flex-direction: column;
+ }
+
+ .dropdown-item {
+     border-bottom: 1px solid #b9b9b9;
+     font-size: 15px;
+     font-family: sans-serif;
+     padding-left: 15px;
+     padding-top: 7px;
+     padding-bottom: 7px;
+ }

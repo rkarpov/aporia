@@ -4,9 +4,10 @@ import { requestQuestions, deleteQuestion } from '../../actions/question_actions
 import QuestionIndex from './question_index'
 import { openModal } from '../../actions/modal_actions';
 
-const msp = state => {
+const msp = (state, ownProps) => {
     // debugger
     return {
+        pageType: 'mainIndex',
         questions: Object.values(state.entities.questions),
         currentUser: state.entities.users[state.session.id],
     }

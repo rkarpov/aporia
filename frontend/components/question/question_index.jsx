@@ -11,6 +11,7 @@ class QuestionIndex extends React.Component {
     }
 
     render() {
+        // debugger
         let username = (this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name);
 
         let initials = ''
@@ -21,14 +22,18 @@ class QuestionIndex extends React.Component {
         const currentUser = this.props.currentUser
         const deleteQuestion = this.props.deleteQuestion
         const questions = this.props.questions.map( question => {
-           return (
+            let author;
+            author = question.authorFirstName + ' ' + question.authorLastName;
+
+            return (
           
                     <QuestionIndexItem
                         key={`question-${question.id}`}
                         question={question}
                         deleteQuestion={deleteQuestion}
                         currentUser={currentUser}
-                        // author={author}
+                        pageType={this.props.pageType}
+                        author={author}
                     />
              
             )
@@ -37,7 +42,10 @@ class QuestionIndex extends React.Component {
         return (
             <div className="index-page-container">
 
-                <div className="ask-question-container">
+                <div
+                    className="ask-question-container"
+                    hidden={this.props.pageType === 'mainIndex' ? null : "hidden"}
+                >
                     <div className="current-user-container">
                         <div className="profile-index-container">
                             <p className="avatar-initials" type="text">{initials}</p>

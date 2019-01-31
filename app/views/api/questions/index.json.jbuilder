@@ -2,6 +2,7 @@ json.questions @questions.each do |question|
     json.body question.body
     json.authorFirstName question.author.first_name
     json.authorLastName question.author.last_name
+    json.author question.author.email
     json.id question.id
 end
 

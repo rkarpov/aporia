@@ -61,8 +61,8 @@ class AnswerEditForm extends React.Component {
                         />
                     </div>
                     <footer className="add-answer-footer">
-                        <input className="cancel-answer" onClick={() => this.props.closeDropDown()} type="submit" value="Cancel" />
-                        {/* {/* <Link to="/" className="cancel-answer">Cancel</Link> */}
+                        {/* <input className="cancel-answer" onClick={() => this.props.closeDropDown()} type="submit" value="Cancel" /> */}
+                        <Link to="/" className="cancel-answer">Cancel</Link>
                         <input className="add-answer-button" type="submit" value="Submit" />
                     </footer>
                 </form>

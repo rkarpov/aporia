@@ -11,6 +11,7 @@ import IndexPageContainer from '../components/index/index_page_container'
 import Modal from '../components/modal/modal';
 // import CreateQuestionContainer from './question/create_question_container';
 import EditAnswerContainer from '../components/answer/edit_answer_container';
+import ContentContainer from '../components/content/content_container';
 
 const App = () => {
     return (
@@ -27,6 +28,7 @@ const App = () => {
                 {/* <Route exact path="/" component={SessionFormContainer} /> */}
                 <ProtectedRoute exact path="/index" component={IndexPageContainer} />   
                 <ProtectedRoute exact path="/answers/:answerId/edit" component={EditAnswerContainer}/>
+                <ProtectedRoute exact path="/api/content" component={ContentContainer} />
                 {/* <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} /> */}
             </Switch>
         </div>

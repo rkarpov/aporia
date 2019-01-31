@@ -28,11 +28,11 @@ const answersByQuestionId = (state, ownProps) => {
 
 
 const msp = (state, ownProps) => {
-    
     return ({
         questionId: ownProps.questionId,
         answers: answersByQuestionId(state, ownProps),
         currentUser: state.entities.users[state.session.id]
+                // author: state.entities.questions.author
     })
 }
 

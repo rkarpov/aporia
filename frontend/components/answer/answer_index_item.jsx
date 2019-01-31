@@ -7,20 +7,36 @@ import EditAnswerContainer from './edit_answer_container';
 class AnswerIndexItem extends React.Component {
     constructor(props) {
         super(props)
-        // this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    // handleSubmit(){
-    //     return (
-    //         <EditAnswerContainer />
-    //     );
-    // };
+
 
 
     render() {
-        
+
+        let authorInitials = ''
+        let author;
+        if (this.props.answer && this.props.answer.authorFirstName) {
+            author = this.props.answer.authorFirstName + ' ' + this.props.answer.authorLastName
+            let authorName = author.split(' ')
+            authorInitials += authorName[0][0] + authorName[1][0];
+            authorInitials = authorInitials.toUpperCase();
+        } else if (this.props.answer) {
+            author = this.props.currentUser.first_name + this.props.currentUser.last_name;
+            authorInitials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
+            authorInitials = authorInitials.toUpperCase();
+        }
+
     return(
         <li className="answer-item-container">
+            <div className="pleasework">
+                <div className="profile-index-container">
+                    <p className="avatar-initials" type="text">
+                        {authorInitials}
+                    </p>
+                </div>
+                <p className="authorname">{author}</p>
+            </div>
             <div className="answer-body-container">
                 <p className="answer-body testing">{this.props.answer.body}</p>
             </div>
