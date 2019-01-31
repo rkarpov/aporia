@@ -3,16 +3,13 @@ import { withRouter } from 'react-router-dom';
 
 class AnswerForm extends React.Component {
     constructor(props){
-        
         super(props)
         this.state = this.props.answer;
         this.handleSubmit = this.handleSubmit.bind(this);
-      
     }
 
     handleSubmit(e){
-        e.preventDefault();
-        
+        e.preventDefault();        
         // const answer = Object.assign({}, this.state);
         this.props.action(this.state)
         // .then(this.setState(this.props.body))

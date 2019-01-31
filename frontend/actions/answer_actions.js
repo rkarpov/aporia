@@ -13,7 +13,7 @@ export const REMOVE_ANSWER = 'REMOVE_ANSWER';
 // }
 
 const receiveAllAnswers = (answers) => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_ANSWERS,
         answers
@@ -21,7 +21,7 @@ const receiveAllAnswers = (answers) => {
 }
 
 const receiveAnswer = (answer) => {
-    debugger
+    // debugger
     return {
         type: RECEIVE_ANSWER,
         answer
@@ -42,7 +42,7 @@ const removeAnswer = (answerId) => {
 // }
 
 export const requestAnswers = (questionId) => dispatch => {
-    debugger
+    // debugger
     return (
         AnswerApiUtil.fetchAnswers(questionId).then((answers) => dispatch(receiveAllAnswers(answers)))
     )
@@ -63,7 +63,7 @@ export const createAnswer = (answer) => dispatch => {
 }
 
 export const updateAnswer = (answer) => dispatch => {
-    debugger
+    // debugger
     return (
         AnswerApiUtil.updateAnswer(answer).then((answer) => dispatch(receiveAnswer(answer)))
     )
