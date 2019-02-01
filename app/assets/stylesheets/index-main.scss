@@ -10,15 +10,18 @@
 }
 
 .index-body-container {
-    margin-top: 80px;
+    padding-top: 80px;
     display: flex;
     justify-content: space-between;
     background: rgb(250, 250, 250);
     padding-bottom: 50px;
-    height: 100%;
+    height: fit-content;
+    // min-height: 1000px;
+    // position: absolute;
     width: 100%;
 }
 
 .placeholder-container {
      background: rgb(250, 250, 250);
+     
 }

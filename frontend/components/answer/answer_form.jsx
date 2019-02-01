@@ -53,7 +53,7 @@ class AnswerForm extends React.Component {
                     </div>
                     
                     <footer className="add-answer-footer">
-                        <input className="cancel-answer" onClick={() => this.props.closeDropDown()} type="submit" value="Cancel" />
+                        <a className="cancel-answer" onClick={this.props.toggleDropdown} type="text">Cancel</a>
                         <input className="add-answer-button" type="submit" value="Submit"/>
                     </footer>
                 </form>

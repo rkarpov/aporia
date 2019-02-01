@@ -63,9 +63,9 @@ class Navbar extends React.Component {
         return (
             <header className="navbar-container">
                 
-                <h1 className="app-title">
+                <Link to="/" className="app-title">
                     Aporia
-                </h1>
+                </Link>
 
                 {/* <Link to="/index">Home</Link> */}
                 <div className="navbar-icon-container">

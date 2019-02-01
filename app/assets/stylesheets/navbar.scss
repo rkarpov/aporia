@@ -121,10 +121,10 @@
    height: 50px;
    font-size: 20px;
    display: flex;
-   justify-content: center;
+   justify-content: flex-end;
    align-items: center;
    margin-right: 50px;
-   min-width: 250px;
+//    min-width: 250px;
 }
 
 .profile-modal-container {

@@ -26,6 +26,7 @@ class QuestionIndexItem extends React.Component {
         if (this.state.dropdown) {
             dropdown =
                 <CreateAnswerContainer
+                    toggleDropdown={this.toggleDropdown}
                     questionId={this.props.question.id}
                 />
         }
