@@ -6,10 +6,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script type="text/javascript"> window.sessionURL = "<%= image_url('session_page.png') %>" </script>
+    <script type="text/javascript"> window.answerIcon = '<%= image_url("answer-icon.svg") %>' </script>
+    <script type="text/javascript"> window.newsIcon = '<%= image_url("news-icon.svg") %>' </script>
+    <script type="text/javascript"> window.searchIcon = '<%= image_url("search-icon.svg") %>' </script>
+
   </head>
 
   <body>
     <%= yield %>
   </body>
 </html>
+
+
+
+

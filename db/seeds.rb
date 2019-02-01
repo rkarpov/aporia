@@ -33,10 +33,10 @@ user18 = User.create!(email: "dummy15@email.com", password: 'login1', first_name
 
 question1 = Question.create!(body: "what is consciousness?", author_id: user3.id)
 question2 = Question.create!(body: "Why is there something rather than nothing?", author_id: user9.id)
-question3 = Question.create!(body: "Where is the safest place to stand outside in a thunderstorm?", author_id: user3.id)
+question3 = Question.create!(body: "Where is the safest place to stand outside in a thunderstorm?", author_id: user13.id)
 question4 = Question.create!(body: "What is OK short for?", author_id: user10.id)
-question5 = Question.create!(body: "What is a hiccup?", author_id: user3.id)
-question6 = Question.create!(body: "Why do I get more car sick in the back?", author_id: user3.id)
+question5 = Question.create!(body: "What is a hiccup?", author_id: user14.id)
+question6 = Question.create!(body: "Why do I get more car sick in the back?", author_id: user7.id)
 # question7 = Question.create!(body: "", author_id: user3.id)
 # question8 = Question.create!(body: "", author_id: user3.id)
 # question9 = Question.create!(body: "", author_id: user3.id)
