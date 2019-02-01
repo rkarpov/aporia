@@ -1,8 +1,9 @@
 .answer-item-container {
-    margin-top: 15px;
+    // margin-top: 15px;
+    padding-top: 15px;
     margin-bottom: 15px;
         border-top: 1px solid #b9b9b9;
-        border-bottom: 1px solid #b9b9b9;
+        // border-bottom: 1px solid #b9b9b9;
        border-radius: 3px;
     padding-bottom: 10px;
 }
@@ -44,11 +45,55 @@
 }
 
 .answer-body { 
-      margin-top: 10px;
-          margin-left: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
 
-      font-size: 14px;
-      font-weight: bold;
-      font-family: sans-serif;
-      
+.answer-index-container {
+    display: flex;
+}
+
+.answer-button-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.answer-button:hover {
+    cursor: pointer;
+}
+
+.answer-index-container {
+    padding-bottom: 5px;
+    // padding: 5px;
+    margin-left: 20px;
+}
+
+
+.answer-index-svg {
+    height: 25px;
+    width: 25px;
+}
+
+.answer-icon-container {
+
+}
+
+.answer-icon-container:hover {
+    cursor: pointer;
+}
+
+.answer-button {
+    margin-top: 6px;
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: rgb(110, 110, 110);
+    margin-right: 20px;
+    font-family: sans-serif;
+    border-radius: 3px;
 }

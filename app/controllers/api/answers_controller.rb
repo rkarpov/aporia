@@ -27,6 +27,7 @@ class Api::AnswersController < ApplicationController
 
     def show
         @answer = Answer.find(params[:id])
+        render :show
     end
 
     def update

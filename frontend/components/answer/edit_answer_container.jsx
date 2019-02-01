@@ -5,7 +5,7 @@ import AnswerEditForm from './answer_edit_form';
 
 
 const msp = (state, ownProps) => {
-    const defaultAnswer = { body: '', id: ownProps.match.params.answerId}
+    const defaultAnswer = { body: '', }
     const answer = state.entities.answers[ownProps.match.params.answerId] || defaultAnswer;
     
     

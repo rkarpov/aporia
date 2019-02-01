@@ -34,7 +34,6 @@ const receiveErrors = (errors) => {
 }
 
 export const requestQuestions = (questions) => dispatch => {
-debugger
     return QuestionApiUtil.fetchQuestions(questions).then((questions) => dispatch(receiveAllQuestions(questions)))
 }
 

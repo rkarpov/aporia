@@ -6,41 +6,54 @@ import AnswerIndexContainer from '../../components/answer/answer_index_container
 class QuestionIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        
-        // this.props.deleteQuestion = this.props.deleteQuestion.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = { dropdown: false };
+        this.toggleDropdown = this.toggleDropdown.bind(this);
     };
- 
-    handleSubmit(e){
-        e.preventDefault;
-        // debugger
-        // return (id) => this.deleteQuestion(id)
+
+    toggleDropdown(e) {
+        e.preventDefault();
+        this.setState({
+            dropdown: !this.state.dropdown
+        });
     }
 
-    // renderTopics(){
+    dropdown() {
+        let initials = ''
+        initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
+        initials = initials.toUpperCase();
 
-    // }
-    // <div className="question-topics-header">
-    //     renderTopics()
-    // </div>
+        let dropdown;
+        if (this.state.dropdown) {
+            dropdown =
+                <CreateAnswerContainer
+                    questionId={this.props.question.id}
+                />
+        }
+
+        return (
+            <div className="dropdown">
+                <div className="answer-index-container">
+                    <div className="answer-icon-container">
+                        <img className="answer-index-svg" onClick={this.toggleDropdown} src={window.answerIcon} />
+                    </div>
+                    <a className="answer-button" onClick={this.toggleDropdown} type="text">Answer</a>
+                </div>
+                {dropdown}
+            </div>
+        );
+    }
 
     render(){
-
-        // let username;
-        // if (this.props.currentUser) {
-            // username = (this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name); ``
-            // initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
-            // initials = initials.toUpperCase();
-            // }
-
+        // renders undefined undefined upon creating an answer,
+        // unless using similar logic to answerIndexItem
+        
         let authorInitials = ''
         const names = this.props.author.split(' ')
         authorInitials += names[0][0] + names[1][0];
         authorInitials = authorInitials.toUpperCase();
 
         return (
-            <div className={`question-${this.props.question.id}`}>
-                
+            <div className={`question-${this.props.question.id}`}>     
                 <div className="question-index-item-container">
                     <header className="question-index-header-container">
                         <div className="question-index-topics-container">
@@ -48,6 +61,7 @@ class QuestionIndexItem extends React.Component {
                                 General Topic
                             </p>
                         </div>
+                        {/* Question avatar icon & username */}
                         {/* <div className="pleasework">
                             <div className="profile-index-container">
                                 <p className="avatar-initials" type="text">
@@ -58,30 +72,24 @@ class QuestionIndexItem extends React.Component {
                         </div> */}
                     </header>
 
-                  
                     <Link to={`/questions/${this.props.question.id}`} className="question-body">
                             <p className="testing">{this.props.question.body}</p>
                     </Link>
            
-
-                <div>
-                    {/* <Link to={`/questions/${this.props.question.id}`}>question show</Link> */}
-                    {/* <Link to={`/questions/${props.question.id}/edit`}>Edit</Link> */}
-                    {/* <button onClick={() => this.props.deleteQuestion(this.props.question.id)}>delete</button> */}
+                    <footer >
+                        <div>
+                            {this.dropdown()}
+                            {/* <CreateAnswerContainer
+                                questionId={this.props.question.id}
+                            /> */}
+                        </div>
+                            <div>
+                            <AnswerIndexContainer 
+                                questionId={this.props.question.id}
+                            />
+                        </div>
+                    </footer>
                 </div>
-
-                    <footer hidden={this.props.pageType === 'mainIndex' ? null : "hidden"}>
-                    {/* <Link to="">Answer</Link> */}
-                    <CreateAnswerContainer
-                        questionId={this.props.question.id}
-                    />
-                    <AnswerIndexContainer 
-                        questionId={this.props.question.id}
-                    />
-                    {/* onClick handle submit and call render of <CreateAnswerContainer/> */}
-                </footer>
-                </div>
-
             </div>
         )
     }

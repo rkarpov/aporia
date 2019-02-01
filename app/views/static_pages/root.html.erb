@@ -4,6 +4,9 @@
       "api/users/user.json.jbuilder",
       user: current_user
     ).html_safe %>
+    window.answerIcon = '<%= image_url("answer-icon.svg") %>'
+    window.newsIcon = '<%= image_url("news-icon.svg") %>'
+    window.searchIcon = '<%= image_url("search-icon.svg") %>'
   </script>
 <% end %>
 

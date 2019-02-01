@@ -1,9 +1,12 @@
 .navbar-container {
-    min-width: 960px;;
-    padding-left: 30px;
-    padding-right: 30px;;
+    z-index: 10000;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    // max-width: 960px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-evenly;
     border-bottom: 1px solid #dadadae0;
     box-shadow: 0 0 3px #888;
     background: lightgoldenrodyellow;
@@ -16,6 +19,25 @@
     font-family: 'Libre Baskerville',
     serif;
     font-weight: bold;
+}
+
+.nav-answer-svg {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 40px;
+    width: 35px;
+
+}
+
+.nav-news-svg {
+    padding-top: 9px;
+    height: 27px;
+    width: 35px;
+    margin-right: 5px;
+}
+
+.navbar-icon-container {
+    display: flex;
 }
 
 .nav-answer-icon {
@@ -36,8 +58,34 @@
     font-weight: bold;
 }
 
-.app-search-bar {
+.app-search-bar-container {
+   display: flex;
+   flex-direction: row;
+   min-width: 180px;
+   // background: image-url('search.png') no-repeat 10px center;
+   background-size: 15px 15px;
+   outline: 0;
+   border: 1px solid #e2e2e2;
+   border-radius: 3px;
+   border: none;
+   box-shadow: inset 0 1px 1px rgba(200, 200, 200, 0.3);
+}
+
+.search-icon {
+    position: absolute;
     padding-left: 5px;
+    // background: white;
+    height: 23px;
+    margin-top: 8px;
+    padding-top: 5px;
+    width: 20px;
+//   border: 1px solid #dadadae0;
+//    box-shadow: inset 0 1px 1px rgba(200, 200, 200, 0.3);
+    //    border-radius: 3px;
+}
+
+.app-search-bar {
+    padding-left: 26px;
     background: white;
     font-family: sans-serif;
     font-size: 15px;
@@ -75,9 +123,12 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   margin-right: 50px;
+   min-width: 250px;
 }
 
 .profile-modal-container {
+    // margin-left: 60px;
     border: 1px solid rgba(0, 0, 255, 0.795);
     margin-right: 30px;
     width: 27px;

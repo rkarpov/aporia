@@ -68,12 +68,21 @@ class Navbar extends React.Component {
                 </h1>
 
                 {/* <Link to="/index">Home</Link> */}
-                <Link to="/"
-                    // activeClassName="selected"
-                    className="nav-home-icon">Home</Link>
-                <Link className="nav-answer-icon" to="/index">Answer</Link>
+                <div className="navbar-icon-container">
+                    <img className="nav-news-svg" src={window.newsIcon} />
+
+                    <Link to="/"
+                        // activeClassName="selected"
+                        className="nav-home-icon">Home</Link>
+                </div>
+
+                <div className="navbar-icon-container">
+                    <img className="nav-answer-svg" src={window.answerIcon} />
+                    <Link className="nav-answer-icon" to="/index">Answer</Link>
+                </div>
 
                 <div className="app-search-bar-container">
+                    <img className="search-icon" src={window.searchIcon} />
                     <textarea className="app-search-bar" placeholder="Search Aporia"></textarea>
                 </div>
 

@@ -13,7 +13,6 @@ class AnswerIndexItem extends React.Component {
 
 
     render() {
-
         let authorInitials = ''
         let author;
         if (this.props.answer && this.props.answer.authorFirstName) {
@@ -26,6 +25,8 @@ class AnswerIndexItem extends React.Component {
             authorInitials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
             authorInitials = authorInitials.toUpperCase();
         }
+        let date;
+        date = this.props.answer.date || new Date().toDateString();
 
     return(
         <li className="answer-item-container">
@@ -35,7 +36,10 @@ class AnswerIndexItem extends React.Component {
                         {authorInitials}
                     </p>
                 </div>
-                <p className="authorname">{author}</p>
+                <div>
+                    <p className="authorname">{author}</p>
+                    <p>Answered {date}</p>
+                </div>
             </div>
             <div className="answer-body-container">
                 <p className="answer-body testing">{this.props.answer.body}</p>

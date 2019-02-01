@@ -2,8 +2,10 @@ json.questions @questions.each do |question|
     json.body question.body
     json.authorFirstName question.author.first_name
     json.authorLastName question.author.last_name
-    json.author question.author.email
+    json.authorId question.author.id
+    json.email question.author.email
     json.id question.id
+    json.date question.created_at.strftime("%b %d, %y")
 end
 
 # refactor to have author object outside the question body but inside the entiteis state
