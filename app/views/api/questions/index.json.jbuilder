@@ -1,11 +1,14 @@
-json.questions @questions.each do |question|
-    json.body question.body
-    json.authorFirstName question.author.first_name
-    json.authorLastName question.author.last_name
-    json.authorId question.author.id
-    json.email question.author.email
-    json.id question.id
-    json.date question.created_at.strftime("%b %d, %y")
+@questions.each do |question|
+    # json.body question.body
+    # json.authorFirstName question.author.first_name
+    # json.authorLastName question.author.last_name
+    # json.authorId question.author.id
+    # json.email question.author.email
+    # json.id question.id
+    # json.date question.created_at.strftime("%b %d, %y")
+      json.set! question.id do 
+        json.partial! '/api/questions/question', question: question 
+      end
 end
 
 # refactor to have author object outside the question body but inside the entiteis state

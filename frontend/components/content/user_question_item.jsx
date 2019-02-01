@@ -6,7 +6,6 @@ class UserQuestionItem extends React.Component {
 
 
     render() {
-        debugger
         if (this.props.currentUser.id === this.props.question.authorId) {
             return (
                 // <div className={`question-${this.props.question.id}`}>

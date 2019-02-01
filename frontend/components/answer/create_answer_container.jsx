@@ -17,7 +17,6 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = dispatch => {
-    // debugger
     return ({
         action: (answer) => dispatch(createAnswer(answer)),
         // implement some toggle to open dropdown for answer form
@@ -38,7 +37,6 @@ export default connect(msp, mdp)(AnswerForm);
 
 // const msp = (state, { question_id } ) => {
 // // const msp = (state) => {
-//     debugger
 //     return ({
 //         answers: answersByQuestionId(state, question_id),
 //         formType: 'CreateAnswer',
@@ -48,7 +46,6 @@ export default connect(msp, mdp)(AnswerForm);
 // }
 
 // const mdp = dispatch => {
-//     // debugger
 //     return ({
 //         // fetchQuestion: (id) => dispatch(fetchQuestion(id)),
 //         action: (...args) => dispatch(createAnswer(...args)),

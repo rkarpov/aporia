@@ -11,7 +11,6 @@ class QuestionIndex extends React.Component {
     }
 
     render() {
-        // debugger
         let username = (this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name);
 
         let initials = ''

@@ -1,5 +1,5 @@
 export const fetchAnswers = (question_id) => {
-    // debugger
+    
     return $.ajax({
         method: `GET`,
         url: `/api/questions/${question_id}/answers`
@@ -7,7 +7,6 @@ export const fetchAnswers = (question_id) => {
 }
 
 export const fetchAnswer = (id) => {
-    // debugger
     return $.ajax({
         method: `GET`,
         url: `/api/answers/${id}`
@@ -25,7 +24,7 @@ export const createAnswer = (answer) => {
 }
 
 export const updateAnswer = (answer) => {
-    // debugger
+    
     return $.ajax({
         method: `PATCH`,
         url: `/api/answers/${answer.id}`,

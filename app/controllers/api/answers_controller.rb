@@ -1,7 +1,6 @@
 class Api::AnswersController < ApplicationController
 
     def index
-        # debugger
         # @answers = Question.find(params[:question_id]).answers # why is question id undefined?! its nested
         # @question = Question.find(params(:question_id))
         @answers = Answer.all
@@ -17,7 +16,6 @@ class Api::AnswersController < ApplicationController
         @answer = Answer.new(answer_params)
         # @answer.author_id = current_user.id 
         # @answer.question = params[:question_id]
-        # debugger
         if @answer.save
             render :show 
         else 
@@ -31,7 +29,6 @@ class Api::AnswersController < ApplicationController
     end
 
     def update
-        # debugger
         @answer = Answer.find(params[:id])
         if @answer.update_attributes(answer_params)
            render :show 

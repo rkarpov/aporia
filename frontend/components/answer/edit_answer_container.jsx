@@ -17,7 +17,6 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = dispatch => {
-    // debugger
     return ({
         requestAnswer: (id) => dispatch(requestAnswer(id)),
         action: (answer) => dispatch(updateAnswer(answer))
@@ -30,12 +29,10 @@ const mdp = dispatch => {
 //     // }
 
 //     componentDidMount() {
-//         debugger
 //         this.props.requestAnswer(this.props.match.params.answerId)
 //     }
 
 //     componentDidUpdate(prevProps) {
-//         debugger
 //         if (prevProps.answer.id != this.props.match.params.answerId) {
 //             this.props.requestAnswer(this.props.match.params.answerId);
 //         }
@@ -43,7 +40,6 @@ const mdp = dispatch => {
 
 //     render() {
 //         const { action, formType, answer } = this.props;
-//         debugger
 //         return (
 //             <AnswerEditForm
 //                 action={action}

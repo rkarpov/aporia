@@ -6,7 +6,6 @@ import { requestAnswers, deleteAnswer } from '../../actions/answer_actions';
 // const getAnswersByQuestionId = state => {
 //     const answers = {};
 //     const questions = Object.values(state.entities.questions);
-//     debugger
 //     questions.forEach((question) => {
 //         answers[question_id] = question.answers.id.map((id) => {
 //             return state.entities.answers[id];
@@ -22,7 +21,6 @@ const answersByQuestionId = (state, ownProps) => {
     Object.keys(state.entities.answers).forEach(answerId => {
         if (state.entities.answers[answerId].question_id === ownProps.questionId) answers.push(state.entities.answers[answerId])
     })
-    // debugger
     return answers;
 };
 

@@ -8,7 +8,6 @@ json.partial! '/api/questions/question', question: @question
 # above is payload for the (question) below in resulting ajax request. examine it to see what data we get from view
 
 # const receiveQuestion = (question) => {
-#     debugger
 #     return {
 #         type: RECEIVE_QUESTION,
 #         question
@@ -34,7 +33,6 @@ json.partial! '/api/questions/question', question: @question
 # question here is from user input that we manage via forms and props. Either user can give bad info, or other front end issues
 
 # export const createQuestion = (question) => {
-#     debugger
 #     return $.ajax ({
 #         method: `POST`,
 #         url: `/api/questions`,

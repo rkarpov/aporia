@@ -22,7 +22,6 @@ class SessionForm extends React.Component {
     renderErrors() {
      
         // if (this.props.formType === 'Login') {
-        //     // debugger
         //     // if (this.props.loginErrors.length === 0) {
         //     return (
         //         <ul>
@@ -34,7 +33,6 @@ class SessionForm extends React.Component {
         //         </ul>
         //     );
         // }  else {
-        //     // debugger
         //     return (
         //         <ul>
         //             {this.props.signupErrors.map((error, i) => (

@@ -5,13 +5,12 @@ export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 export const RECEIVE_QUESTION_ERRORS = 'RECEIVE_QUESTION_ERRORS'
 
-const receiveAllQuestions = ({questions, users}) => {
+const receiveAllQuestions = (questions) => {
     return {
         type: RECEIVE_ALL_QUESTIONS,
-        questions,
-        users,
+        questions
     }
-}
+} // THIS IS THE LOGGER ACTION
 
 const receiveQuestion = (question) => {
     
@@ -33,8 +32,9 @@ const receiveErrors = (errors) => {
     errors
 }
 
-export const requestQuestions = (questions) => dispatch => {
-    return QuestionApiUtil.fetchQuestions(questions).then((questions) => dispatch(receiveAllQuestions(questions)))
+export const requestQuestions = () => dispatch => {
+    
+    return QuestionApiUtil.fetchQuestions().then((questions) => dispatch(receiveAllQuestions(questions)))
 }
 
 export const fetchQuestion = (id) => dispatch => {

@@ -5,7 +5,8 @@ import errors from './errors_reducer';
 import ui from './ui_reducer';
 
 const rootReducer = combineReducers({
-    entities,
+    entities, // key of entitites ppointing to return value of entities reducer. 
+    // shapes entities key in states
     session,
     errors,
     ui

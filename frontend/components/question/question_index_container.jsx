@@ -5,7 +5,6 @@ import QuestionIndex from './question_index'
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    // debugger
     return {
         pageType: 'mainIndex',
         questions: Object.values(state.entities.questions),
@@ -14,7 +13,6 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = dispatch => {
-    // debugger
     return {
         requestQuestions: () => dispatch(requestQuestions()),
         deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),

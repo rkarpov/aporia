@@ -23,7 +23,6 @@ class UsersQuestionsIndex extends React.Component {
             let author;
             author = question.authorFirstName + ' ' + question.authorLastName;
 
-            debugger
             
             return (
 
