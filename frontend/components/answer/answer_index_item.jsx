@@ -10,8 +10,6 @@ class AnswerIndexItem extends React.Component {
     }
 
 
-
-
     render() {
         let authorInitials = ''
         let author;
@@ -28,6 +26,7 @@ class AnswerIndexItem extends React.Component {
         let date;
         date = this.props.answer.date || new Date().toDateString();
 
+        debugger
     return(
         <li className="answer-item-container">
             <div className="pleasework">
@@ -44,13 +43,14 @@ class AnswerIndexItem extends React.Component {
             <div className="answer-body-container">
                 <p className="answer-body testing">{this.props.answer.body}</p>
             </div>
-            {/* {<EditAnswerContainer />} */}
-            {/* <Link className="edit-answer-button" to={`/answers/${props.answer.id}/edit`}>Edit</Link> */}
+
+            <div hidden={this.props.answer.author_id === this.props.currentUser.id ? null : "hidden"} >
+
             <Link to={`/answers/${this.props.answer.id}/edit`} className="edit-answer-button" >Edit</Link>
-            {/* <EditAnswerContainer /> */}
             <button className="delete-answer-button" onClick={ () => this.props.deleteAnswer(this.props.answer.id)}>
                 Delete
             </button>
+            </div>
         </li>
     )   
     }
