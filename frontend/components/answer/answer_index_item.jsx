@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import EditAnswerContainer from './edit_answer_container';
+import EditAnswerContainer from './answer_edit_container';
  
 
 
@@ -26,8 +26,7 @@ class AnswerIndexItem extends React.Component {
         let date;
         date = this.props.answer.date || new Date().toDateString();
 
-        debugger
-    return(
+        return(
         <li className="answer-item-container">
             <div className="pleasework">
                 <div className="profile-index-container">

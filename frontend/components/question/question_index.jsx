@@ -18,24 +18,28 @@ class QuestionIndex extends React.Component {
         initials = initials.toUpperCase();
 
         // const author = this.props.author
-        const currentUser = this.props.currentUser
-        const deleteQuestion = this.props.deleteQuestion
-        const questions = this.props.questions.map( question => {
-            let author;
-            author = question.authorFirstName + ' ' + question.authorLastName;
+        // const questions = this.props.questions.map( question => {
+        let questions = [];
+        this.props.questions.forEach( question => {
 
-            return (
-          
-                    <QuestionIndexItem
-                        key={`question-${question.id}`}
-                        question={question}
-                        deleteQuestion={deleteQuestion}
-                        currentUser={currentUser}
-                        pageType={this.props.pageType}
-                        author={author}
-                    />
-             
-            )
+            // let author;
+            // author = question.authorFirstName + ' ' + question.authorLastName;          
+
+            const item = <QuestionIndexItem
+                key={`question-${question.id}`}
+                question={question}
+                deleteQuestion={this.props.deleteQuestion}
+                currentUser={this.props.currentUser}
+                pageType={this.props.pageType}
+                // author={author}
+            />
+
+            if ((this.props.pageType === 'unansweredQuestions') && (question.answerIds.length === 0)) {
+                questions.push(item);
+            } else if (this.props.pageType !== 'unansweredQuestions') {
+                questions.push(item)
+            }
+        
         })
 
         return (

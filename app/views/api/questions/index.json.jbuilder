@@ -6,10 +6,17 @@
     # json.email question.author.email
     # json.id question.id
     # json.date question.created_at.strftime("%b %d, %y")
-      json.set! question.id do 
-        json.partial! '/api/questions/question', question: question 
-      end
+  answerIds = []
+  question.answers.each do |answer|
+    answerIds << answer.id 
+  end 
+
+  json.set! question.id do 
+    json.partial! '/api/questions/question', question: question 
+    json.answerIds answerIds
+  end
 end
+
 
 # refactor to have author object outside the question body but inside the entiteis state
 # do so by fetching author id

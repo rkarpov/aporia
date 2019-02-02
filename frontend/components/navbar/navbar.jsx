@@ -78,7 +78,7 @@ class Navbar extends React.Component {
 
                 <div className="navbar-icon-container">
                     <img className="nav-answer-svg" src={window.answerIcon} />
-                    <Link className="nav-answer-icon" to="/index">Answer</Link>
+                    <Link className="nav-answer-icon" to="/answer">Answer</Link>
                 </div>
 
                 <div className="app-search-bar-container">

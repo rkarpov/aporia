@@ -48,10 +48,10 @@ class QuestionIndexItem extends React.Component {
         // renders undefined undefined upon creating an answer,
         // unless using similar logic to answerIndexItem
         
-        let authorInitials = ''
-        const names = this.props.author.split(' ')
-        authorInitials += names[0][0] + names[1][0];
-        authorInitials = authorInitials.toUpperCase();
+        // let authorInitials = ''
+        // const names = this.props.author.split(' ')
+        // authorInitials += names[0][0] + names[1][0];
+        // authorInitials = authorInitials.toUpperCase();
 
         return (
             <div className={`question-${this.props.question.id}`}>     
