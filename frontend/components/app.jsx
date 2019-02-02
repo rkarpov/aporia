@@ -13,20 +13,17 @@ import Modal from '../components/modal/modal';
 import EditAnswerContainer from '../components/answer/answer_edit_container';
 import userQuestionsContainer from '../components/content/user_questions_container';
 import QuestionUnansweredContainer from '../components/question/question_unanswered_container';
+import QuestionIndexContainer from './question/question_index_container';
 
 const App = () => {
     return (
         <div className="app-main">
-            {/* <IndexPageContainer/> */}
-                {/* <SessionFormContainer/> */}
-                {/* <Route exact path="/login" component={LogInFormContainer} /> */}
-                {/* <Route exact path="/signup" component={SignUpFormContainer} />    */}
-            {/* <IndexPageContainer/> */}
             <Modal />
           
             <Switch>
                 <AuthRoute exact path="/" component={SessionFormContainer} />
-                <ProtectedRoute exact path="/index" component={IndexPageContainer} />   
+                {/* <ProtectedRoute exact path="/index" component={IndexPageContainer} />    */}
+                <ProtectedRoute exact path="/index" component={QuestionIndexContainer} />   
                 <ProtectedRoute exact path="/answer" component={QuestionUnansweredContainer} />   
                 <ProtectedRoute exact path="/answers/:answerId/edit" component={EditAnswerContainer}/>
                 <ProtectedRoute exact path="/api/content" component={userQuestionsContainer} />

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import { openModal } from '../../actions/modal_actions';
 import QuestionIndexItem from './question_index_item';
-
+import NavbarContainer from '../navbar/navbar_container';
 
 class QuestionIndex extends React.Component {
 
@@ -33,16 +33,27 @@ class QuestionIndex extends React.Component {
                 pageType={this.props.pageType}
                 // author={author}
             />
-
             if ((this.props.pageType === 'unansweredQuestions') && (question.answerIds.length === 0)) {
                 questions.push(item);
-            } else if (this.props.pageType !== 'unansweredQuestions') {
-                questions.push(item)
+            } else if (this.props.pageType === 'mainIndex') {
+                questions.push(item);
+            } else if ((this.props.pageType === 'userContent') && (this.props.currentUser.id === question.authorId)) {
+                questions.push(item);
             }
-        
         })
 
         return (
+<div className="index-main">
+    <div className="index-header-container">
+        <NavbarContainer />
+    </div>
+
+    <div className="index-body-container">
+        <div className="feed-container">
+            <input type="text" />
+        </div>
+
+
             <div className="index-page-container">
 
                 <div
@@ -69,6 +80,12 @@ class QuestionIndex extends React.Component {
                     </ul>
                 </div>
             </div>
+
+        <div className="placeholder-container">
+            <input className="placeholder" type="text" />
+        </div>
+    </div>
+</div>            
         )
     }
 }

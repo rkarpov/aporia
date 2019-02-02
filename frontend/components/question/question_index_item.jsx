@@ -54,7 +54,6 @@ class QuestionIndexItem extends React.Component {
         // authorInitials = authorInitials.toUpperCase();
 
         return (
-            <div className={`question-${this.props.question.id}`}>     
                 <div className="question-index-item-container">
                     <header className="question-index-header-container">
                         <div className="question-index-topics-container">
@@ -84,14 +83,13 @@ class QuestionIndexItem extends React.Component {
                                 questionId={this.props.question.id}
                             /> */}
                         </div>
-                            <div>
+                    <div hidden={this.props.location.pathname !== "/api/content" ? null : "hidden"} >
                             <AnswerIndexContainer 
                                 questionId={this.props.question.id}
                             />
                         </div>
                     </footer>
                 </div>
-            </div>
         )
     }
 }
