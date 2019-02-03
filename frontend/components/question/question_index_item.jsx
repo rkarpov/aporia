@@ -2,14 +2,15 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import CreateAnswerContainer from '../../components/answer/create_answer_container';
 import AnswerIndexContainer from '../../components/answer/answer_index_container';
-import QuestionEditContainer from './edit_question_container';
+const ClickOutHandler = require('react-onclickout');
 
 class QuestionIndexItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = { dropdown: false, options: false };
         this.toggleDropdown = this.toggleDropdown.bind(this);
-        // this.toggleOptions = this.toggleOptions.bind(this);
+        this.toggleOptions = this.toggleOptions.bind(this);
+        this.onClickOut = this.onClickOut.bind(this);
     };
 
     toggleDropdown(e) {
@@ -20,7 +21,7 @@ class QuestionIndexItem extends React.Component {
     }
 
     dropdown() {
-        //not sure if i need this
+
         // let initials = ''
         // initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
         // initials = initials.toUpperCase();
@@ -47,43 +48,51 @@ class QuestionIndexItem extends React.Component {
         );
     }
 
-    // toggleOptions(e) {
-    //     e.preventDefault();
-    //     this.setState({
-    //         options: !this.state.options
-    //     })
-    // }
+    // event listener for clicking outside <ClickOutHandler/> component
+    onClickOut(e) {
+        if (this.state.toggleOptions) {
+            this.setState({
+                toggleOptions: !this.state.toggleOptions
+            });
+        }
+    }
 
-    // options() {
-    //     let options;
-    //     debugger
-    //     if (this.state.options) {
-    //         options = 
-    //             // <div className="navbar-question-container">
-    //             //     <button
-    //             //         className="navbar-question-modal"
-    //             //         onClick={() => this.props.openModal(this.props.formType)}
-    //             //     >Edit Question</button>
-    //             // </div>
-    //         <QuestionEditContainer
-    //             toggleOptions={this.toggleOptions}
-    //             questionId={this.props.question.id}
-    //         />
-         
-    //     }
+    toggleOptions(e) {
+        e.preventDefault();
+        this.setState({
+            options: !this.state.options
+        })
+    }
 
-    //     return (
-    //         <div className="dropdown">
-    //             <div className="dropdown-content">
-    //                 <div className="options-icon-container">
-    //                 content
-    //                     {/* <img className="options-icon" onClick={this.toggleOptions} src={window.optionsIcon} /> */}
-    //                 </div>
-    //             {options}
-    //             </div>
-    //         </div>
-    //     )
-    // }
+    options() {
+        let options;
+        debugger
+        if (this.state.options) {
+            options = 
+                <div className="options-content" >
+                    <div className="dropdown-items-list">
+                        <button
+                            className="dropdown-item"  
+                            onClick={() => this.props.openModal({ modal: 'editQuestion', questionId: this.props.question.id })}
+                        >Edit Question</button>
+                        <button
+                            className="dropdown-item"  
+                        >Edit Topics</button>
+                    </div>
+                </div>
+        }
+
+        return (
+            <ClickOutHandler onClickOut={() => this.onClickOut()}>
+                <div className="dropdown">
+                        <div className="options-icon-container">
+                            <img className="options-icon-svg" onClick={this.toggleOptions} src={window.optionsIcon} />
+                        </div>
+                    {options}
+                </div>
+            </ClickOutHandler>
+        )
+    }
 
     render(){
         // renders undefined undefined upon creating an answer,
@@ -95,7 +104,7 @@ class QuestionIndexItem extends React.Component {
         // authorInitials = authorInitials.toUpperCase();
 
         return (
-                <div className="question-index-item-container">
+                <div className="question-index-item-container" >
                     <header className="question-index-header-container">
                         <div className="question-index-topics-container">
                             <p className="question-topics">
@@ -116,20 +125,13 @@ class QuestionIndexItem extends React.Component {
                     <Link to={`/questions/${this.props.question.id}`} className="question-body">
                             <p className="question-body testing">{this.props.question.body}</p>
                     </Link>
-                    {/* <img className="answer-index-svg" src={window.optionsIcon} onClick={this.options} /> */}
-                <div className="navbar-question-container">
-                    <button
-                        className="navbar-question-modal"
-                        onClick={() => this.props.openModal({ modal: 'editQuestion', questionId: this.props.question.id })}
-                    >Edit Question</button>
-                </div>
            
                     <footer hidden={this.props.location.pathname !== "/api/content" ? null : "hidden"} >
                         <div hidden={this.props.formType === 'editQuestion' ? "hidden" : null}>
                             {this.dropdown()}
-                            {/* <CreateAnswerContainer
-                                questionId={this.props.question.id}
-                            /> */}
+                            <span className="options-container">
+                                {this.options()}
+                            </span>
                         </div>
                         <div >
                             <AnswerIndexContainer 
