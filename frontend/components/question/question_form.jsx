@@ -27,7 +27,7 @@ class QuestionForm extends React.Component {
                 <form className="question-modal" onSubmit={this.handleSubmit}>
                     <div className="question-modal-header-container">
                         <h2 className="question-modal-header">
-                            Add Question
+                            {this.props.formType}
                         </h2>
 
                         <div className="close-modal-container">
@@ -49,7 +49,7 @@ class QuestionForm extends React.Component {
                         {/* </div> */}
 
                         <div className="add-question-container">
-                            <input className="add-question-button" type="submit" value="Add Question" />
+                            <input className="add-question-button" type="submit" value={this.props.formType === 'Edit Question' ? "Update Question" : "Add Question"} />
                         </div>
                     </footer>
                 </form>

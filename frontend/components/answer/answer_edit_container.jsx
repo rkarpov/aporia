@@ -33,7 +33,6 @@ class AnswerEditForm extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger
         if (prevProps.answer.id != this.props.answerId) {
             this.props.requestAnswer(this.props.answerId);
         }

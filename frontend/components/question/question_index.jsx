@@ -31,6 +31,7 @@ class QuestionIndex extends React.Component {
                 deleteQuestion={this.props.deleteQuestion}
                 currentUser={this.props.currentUser}
                 pageType={this.props.pageType}
+                openModal={this.props.openModal}
                 // author={author}
             />
             if ((this.props.pageType === 'unansweredQuestions') && (question.answerIds.length === 0)) {

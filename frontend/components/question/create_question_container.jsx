@@ -7,7 +7,7 @@ const mapStateToProps = state => {
   
   return {
     question: { body: "",  author_id: state.session.id },
-    formType: 'createQuestion',
+    formType: 'Add Question',
     currentUser: state.entities.users[state.session.id],
   };
 };

@@ -56,9 +56,8 @@
 
 
 .question-index-item-container {
-           border-radius: 3px;
-
-        width: 585px;
+    border-radius: 3px;
+    width: 585px;
         // height: 80px;
     padding-left: 15px;
     padding-right: 15px;
@@ -97,4 +96,10 @@
 
 .authorname {
     text-transform: capitalize;
+}
+
+
+.options-icon-svg {
+    height: 50px;
+    width: 50px;
 }
