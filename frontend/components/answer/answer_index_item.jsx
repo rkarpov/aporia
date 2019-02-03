@@ -1,14 +1,49 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import EditAnswerContainer from './answer_edit_container';
+import AnswerEditContainer from './answer_edit_container';
  
 
 
 class AnswerIndexItem extends React.Component {
     constructor(props) {
         super(props)
+        this.state = { dropdown: false };
+        this.toggleEdit = this.toggleEdit.bind(this);
     }
 
+    toggleEdit(e) {
+        e.preventDefault();
+        this.setState({
+            dropdown: !this.state.dropdown
+        });
+    }
+
+    dropdown() {
+        let initials = ''
+        initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
+        initials = initials.toUpperCase();
+
+        let dropdown;
+        if (this.state.dropdown) {
+            dropdown =
+                <AnswerEditContainer
+                    toggleEdit={this.toggleEdit}
+                    answerId={this.props.answer.id}
+                />
+        }
+
+        return (
+            <div className="dropdown">
+                <div className="answer-index-container">
+                    <a className="edit-answer-button" onClick={this.toggleEdit} type="text">Edit</a>
+                    <button className="delete-answer-button" onClick={() => this.props.deleteAnswer(this.props.answer.id)}>
+                        Delete
+                    </button>
+                </div>
+                {dropdown}
+            </div>
+        );
+    }
 
     render() {
         let authorInitials = ''
@@ -27,31 +62,27 @@ class AnswerIndexItem extends React.Component {
         date = this.props.answer.date || new Date().toDateString();
 
         return(
-        <li className="answer-item-container">
-            <div className="pleasework">
-                <div className="profile-index-container">
-                    <p className="avatar-initials" type="text">
-                        {authorInitials}
-                    </p>
+            <li className="answer-item-container">
+                <div className="pleasework">
+                    <div className="profile-index-container">
+                        <p className="avatar-initials" type="text">
+                            {authorInitials}
+                        </p>
+                    </div>
+                    <div>
+                        <p className="authorname">{author}</p>
+                        <p>Answered {date}</p>
+                    </div>
                 </div>
-                <div>
-                    <p className="authorname">{author}</p>
-                    <p>Answered {date}</p>
+                <div className="answer-body-container">
+                    <p className="answer-body testing">{this.props.answer.body}</p>
                 </div>
-            </div>
-            <div className="answer-body-container">
-                <p className="answer-body testing">{this.props.answer.body}</p>
-            </div>
 
-            <div hidden={this.props.answer.author_id === this.props.currentUser.id ? null : "hidden"} >
-
-            <Link to={`/answers/${this.props.answer.id}/edit`} className="edit-answer-button" >Edit</Link>
-            <button className="delete-answer-button" onClick={ () => this.props.deleteAnswer(this.props.answer.id)}>
-                Delete
-            </button>
-            </div>
-        </li>
-    )   
+                <div hidden={this.props.answer.author_id === this.props.currentUser.id ? null : "hidden"} >
+                    {this.dropdown()}
+                </div>
+            </li>
+        )   
     }
 }
 

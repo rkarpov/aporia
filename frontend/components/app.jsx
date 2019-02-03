@@ -25,7 +25,7 @@ const App = () => {
                 {/* <ProtectedRoute exact path="/index" component={IndexPageContainer} />    */}
                 <ProtectedRoute exact path="/index" component={QuestionIndexContainer} />   
                 <ProtectedRoute exact path="/answer" component={QuestionUnansweredContainer} />   
-                <ProtectedRoute exact path="/answers/:answerId/edit" component={EditAnswerContainer}/>
+                {/* <ProtectedRoute exact path="/answers/:answerId/edit" component={EditAnswerContainer}/> */}
                 <ProtectedRoute exact path="/api/content" component={userQuestionsContainer} />
                 {/* <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} /> */}
             </Switch>

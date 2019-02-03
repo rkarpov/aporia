@@ -76,14 +76,14 @@ class QuestionIndexItem extends React.Component {
                             <p className="testing">{this.props.question.body}</p>
                     </Link>
            
-                    <footer >
+                    <footer hidden={this.props.location.pathname !== "/api/content" ? null : "hidden"} >
                         <div>
                             {this.dropdown()}
                             {/* <CreateAnswerContainer
                                 questionId={this.props.question.id}
                             /> */}
                         </div>
-                    <div hidden={this.props.location.pathname !== "/api/content" ? null : "hidden"} >
+                        <div >
                             <AnswerIndexContainer 
                                 questionId={this.props.question.id}
                             />
