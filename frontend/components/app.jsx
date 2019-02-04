@@ -14,6 +14,7 @@ import EditAnswerContainer from '../components/answer/answer_edit_container';
 import userQuestionsContainer from '../components/content/user_questions_container';
 import QuestionUnansweredContainer from '../components/question/question_unanswered_container';
 import QuestionIndexContainer from './question/question_index_container';
+import QuestionShowContainer from './question/question_show_container';
 
 const App = () => {
     return (
@@ -28,6 +29,7 @@ const App = () => {
                 {/* <ProtectedRoute exact path="/answers/:answerId/edit" component={EditAnswerContainer}/> */}
                 <ProtectedRoute exact path="/api/content" component={userQuestionsContainer} />
                 {/* <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} /> */}
+                <ProtectedRoute exact path="/api/questions/:questionId" component={QuestionShowContainer} />
             </Switch>
         </div>
     );

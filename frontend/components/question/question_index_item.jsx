@@ -66,7 +66,6 @@ class QuestionIndexItem extends React.Component {
 
     options() {
         let options;
-        debugger
         if (this.state.options) {
             options = 
                 <div className="options-content" >
@@ -122,7 +121,7 @@ class QuestionIndexItem extends React.Component {
                         </div> */}
                     </header>
 
-                    <Link to={`/questions/${this.props.question.id}`} className="question-body">
+                    <Link to={`/api/questions/${this.props.question.id}`} className="question-body">
                             <p className="question-body testing">{this.props.question.body}</p>
                     </Link>
            

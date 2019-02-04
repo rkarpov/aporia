@@ -11,14 +11,12 @@ const Modal = ({ modal, closeModal }) => {
     if (!modal) {
         return null;
     }
-    debugger
     let component;
     switch (modal.modal || modal) {
         case 'createQuestion':
             component = <CreateQuestionContainer />;
             break;
         case 'editQuestion':
-        debugger 
             component = <EditQuestionContainer 
             questionId={modal.questionId}
             />

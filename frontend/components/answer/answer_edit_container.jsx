@@ -5,7 +5,6 @@ import { updateAnswer, requestAnswer } from '../../actions/answer_actions';
 import AnswerForm from './answer_form';
 
 const msp = (state, ownProps) => {
-    debugger
     const defaultAnswer = { body: '', }
     // const answer = state.entities.answers[ownProps.match.params.answerId] || defaultAnswer;
     const answer = state.entities.answers[ownProps.answerId] || defaultAnswer;

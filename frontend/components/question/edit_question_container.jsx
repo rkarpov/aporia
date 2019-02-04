@@ -5,7 +5,6 @@ import QuestionForm from './question_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    debugger
     return {
         question: state.entities.questions[ownProps.questionId],
         formType: 'Edit Question',
@@ -21,12 +20,10 @@ const mdp = dispatch => ({
 
 class EditQuestionForm extends React.Component {
     componentDidMount() {
-        debugger
         this.props.fetchQuestion(this.props.questionId)
     }
 
     componentDidUpdate(prevProps){
-        debugger
         if (prevProps.question.id != this.props.questionId) {
             this.props.fetchQuestion(this.props.questionId);
         }   

@@ -17,32 +17,37 @@ class QuestionIndex extends React.Component {
         initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
         initials = initials.toUpperCase();
 
-        // const author = this.props.author
-        // const questions = this.props.questions.map( question => {
         let questions = [];
-        this.props.questions.forEach( question => {
-
-            // let author;
-            // author = question.authorFirstName + ' ' + question.authorLastName;          
-
+        if (this.props.pageType !== 'ignore' && this.props.pageType === 'showQuestion') {
             const item = <QuestionIndexItem
-                key={`question-${question.id}`}
-                question={question}
+                key={`question-${this.props.question.id}`}
+                question={this.props.question}
                 deleteQuestion={this.props.deleteQuestion}
                 currentUser={this.props.currentUser}
                 pageType={this.props.pageType}
                 openModal={this.props.openModal}
-                // author={author}
             />
-            if ((this.props.pageType === 'unansweredQuestions') && (question.answerIds.length === 0)) {
-                questions.push(item);
-            } else if (this.props.pageType === 'mainIndex') {
-                questions.push(item);
-            } else if ((this.props.pageType === 'userContent') && (this.props.currentUser.id === question.authorId)) {
-                questions.push(item);
-            }
-        })
+            questions.push(item);
+        } else if (this.props.pageType !== 'ignore') {
+            this.props.questions.forEach( question => {
 
+                const item = <QuestionIndexItem
+                    key={`question-${question.id}`}
+                    question={question}
+                    deleteQuestion={this.props.deleteQuestion}
+                    currentUser={this.props.currentUser}
+                    pageType={this.props.pageType}
+                    openModal={this.props.openModal}
+                />
+                if ((this.props.pageType === 'unansweredQuestions') && (question.answerIds.length === 0)) {
+                    questions.push(item);
+                } else if (this.props.pageType === 'mainIndex') {
+                    questions.push(item);
+                } else if ((this.props.pageType === 'userContent') && (this.props.currentUser.id === question.authorId)) {
+                    questions.push(item);
+                }
+        })
+    }
         return (
 <div className="index-main">
     <div className="index-header-container">
