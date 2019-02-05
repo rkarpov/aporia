@@ -38,10 +38,7 @@ class QuestionIndex extends React.Component {
                     pageType={this.props.pageType}
                     openModal={this.props.openModal}
                 />
-                debugger
-                if (this.props.pageType === 'unansweredQuestions' && question.answerIds.length === 0) {
-                    debugger
-                    
+                if ((this.props.pageType === 'unansweredQuestions') && (question.answerAuthorIds.length === 0)) {
                     questions.push(item);
                 } else if (this.props.pageType === 'mainIndex') {
                     questions.push(item);

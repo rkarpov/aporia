@@ -8,3 +8,4 @@
     json.id question.id
     json.date question.created_at.strftime("%b %d, %y")
     json.answerIds []
+    json.answerAuthorIds []
