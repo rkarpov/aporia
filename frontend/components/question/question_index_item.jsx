@@ -125,7 +125,7 @@ class QuestionIndexItem extends React.Component {
                             <p className="question-body testing">{this.props.question.body}</p>
                     </Link>
            
-                    <footer >
+                    <footer hidden={this.props.match.url.includes("content") ? "hidden" : null} >
                         <div hidden={this.props.formType === 'editQuestion' ? "hidden" : null}>
                             {this.dropdown()}
                             <span className="options-container">
