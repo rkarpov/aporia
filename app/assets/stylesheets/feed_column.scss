@@ -1,0 +1,39 @@
+.feed-container {
+    width: 125px;
+    // margin-left: 50px;
+    margin-right: 25px;
+}
+
+.feed-item {
+    min-width: 100px;
+    margin-top: 5px;
+        //    font-weight: 400;
+
+    color: gray;
+    font-family: "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.feed-content-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b9b9b9;
+    // font-size: 15px;
+    padding-left: 3px;
+    //    font-weight: 400;
+       font-family: "Helvetica Neue",
+       Helvetica,
+       Arial,
+       sans-serif;
+}
+
+.content-question-body{
+    color: #2b6dad;
+    font-size: 15px;
+}
+
+.content-feed-container {
+        // display: flex;
+        // flex-direction: column;
+}

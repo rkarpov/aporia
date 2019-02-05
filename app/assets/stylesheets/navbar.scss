@@ -4,12 +4,20 @@
     top: 0px;
     width: 100%;
     // max-width: 960px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-evenly;
     border-bottom: 1px solid #dadadae0;
     box-shadow: 0 0 3px #888;
     background: lightgoldenrodyellow;
+}
+
+.navbar-contents {
+    margin-left: 210px;
+    margin-right: 210px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
 }
 
 .app-title {
@@ -40,7 +48,7 @@
     display: flex;
 }
 
-.nav-answer-icon {
+.nav-icon {
     margin-top: 13px;
     color: rgba(6, 112, 6, 0.897);
     font-size: 18px;
@@ -49,19 +57,19 @@
     font-weight: bold;
 }
 
- .nav-home-icon {
-    margin-top: 13px;
-    color: rgba(6, 112, 6, 0.897);
-    font-size: 18px;
-    font-family: 'Libre Baskerville',
-    sans-serif;
-    font-weight: bold;
-}
+//  .nav-home-icon {
+//     margin-top: 13px;
+//     color: rgba(6, 112, 6, 0.897);
+//     font-size: 18px;
+//     font-family: 'Libre Baskerville',
+//     sans-serif;
+//     font-weight: bold;
+// }
 
 .app-search-bar-container {
    display: flex;
    flex-direction: row;
-   min-width: 180px;
+//    min-width: 180px;
    // background: image-url('search.png') no-repeat 10px center;
    background-size: 15px 15px;
    outline: 0;
@@ -118,25 +126,31 @@
 }
 
 .navbar-question-container {
-   height: 50px;
-   font-size: 20px;
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
-   margin-right: 50px;
-//    min-width: 250px;
+    margin-top: 8px;
 }
+// .navbar-question-container {
+//     padding-top: 8px;
+// //    height: 50px;
+//    font-size: 20px;
+// //    display: flex;
+   
+// //    justify-content: flex-end;
+// //    align-items: center;
+// //    margin-right: 50px;
+// //    min-width: 250px;
+// }
 
 .profile-modal-container {
-    // margin-left: 60px;
+    // margin-left: 10px;
     border: 1px solid rgba(0, 0, 255, 0.795);
-    margin-right: 30px;
+    // margin-right: 30px;
     width: 27px;
     height: 27px;
     border-radius: 50%;
     background: rgb(110, 120, 255);
     box-shadow: 0 0 3px black;
-    
+       font-size: 20px;
+       margin-top: 8px;
 }
 
 .navbar-avatar-initials:hover {
@@ -144,10 +158,11 @@
 }
 
 .navbar-avatar-initials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     margin-top: 4px;
+    margin-left: 3px;
     color: white;
     font-size: calc(75%);
     font-family: sans-serif;

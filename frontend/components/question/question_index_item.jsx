@@ -50,9 +50,9 @@ class QuestionIndexItem extends React.Component {
 
     // event listener for clicking outside <ClickOutHandler/> component
     onClickOut(e) {
-        if (this.state.toggleOptions) {
+        if (this.state.options) {
             this.setState({
-                toggleOptions: !this.state.toggleOptions
+                options: !this.state.options
             });
         }
     }
@@ -101,7 +101,7 @@ class QuestionIndexItem extends React.Component {
         // const names = this.props.author.split(' ')
         // authorInitials += names[0][0] + names[1][0];
         // authorInitials = authorInitials.toUpperCase();
-
+       
         return (
                 <div className="question-index-item-container" >
                     <header className="question-index-header-container">
@@ -125,7 +125,7 @@ class QuestionIndexItem extends React.Component {
                             <p className="question-body testing">{this.props.question.body}</p>
                     </Link>
            
-                    <footer hidden={this.props.location.pathname !== "/api/content" ? null : "hidden"} >
+                    <footer >
                         <div hidden={this.props.formType === 'editQuestion' ? "hidden" : null}>
                             {this.dropdown()}
                             <span className="options-container">

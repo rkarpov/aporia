@@ -62,44 +62,46 @@ class Navbar extends React.Component {
     
         return (
             <header className="navbar-container">
-                
-                <Link to="/" className="app-title">
-                    Aporia
-                </Link>
+                <div className="navbar-contents">
+                    <Link to="/" className="app-title">
+                        Aporia
+                    </Link>
 
-                {/* <Link to="/index">Home</Link> */}
-                <div className="navbar-icon-container">
-                    <img className="nav-news-svg" src={window.newsIcon} />
+                    {/* <Link to="/index">Home</Link> */}
+                    <div className="navbar-icon-container">
+                        <img className="nav-news-svg" src={window.newsIcon} />
 
-                    <Link to="/"
-                        // activeClassName="selected"
-                        className="nav-home-icon">Home</Link>
+                        <Link to="/"
+                            // activeClassName="selected"
+                            className="nav-icon">Home</Link>
+                    </div>
+
+                    <div className="navbar-icon-container">
+                        <img className="nav-answer-svg" src={window.answerIcon} />
+                        <Link className="nav-icon" to="/answer">Answer</Link>
+                    </div>
+
+                    <div className="app-search-bar-container">
+                        <img className="search-icon" src={window.searchIcon} />
+                        <textarea className="app-search-bar" placeholder="Search Aporia"></textarea>
+                    </div>
+
+
+                        {this.dropdown()}
+                    <div className="navbar-question-container">
+                        {/* </div> */}
+                    {/* <div> */}
+                        {/* <div className="profile-modal-container"> */}
+                            {/* <p className="avatar-initials" type="text">{initials}</p> */}
+                            {/* <button onClick={ () => this.props.logout()}>Logout</button> */}
+                        {/* </div> */}
+
+                        <button 
+                            className="navbar-question-modal"
+                            onClick={() => this.props.openModal('createQuestion')}
+                            >Add Question</button>
+                    </div>
                 </div>
-
-                <div className="navbar-icon-container">
-                    <img className="nav-answer-svg" src={window.answerIcon} />
-                    <Link className="nav-answer-icon" to="/answer">Answer</Link>
-                </div>
-
-                <div className="app-search-bar-container">
-                    <img className="search-icon" src={window.searchIcon} />
-                    <textarea className="app-search-bar" placeholder="Search Aporia"></textarea>
-                </div>
-
-
-                <div className="navbar-question-container">
-                    {this.dropdown()}
-                    {/* <div className="profile-modal-container"> */}
-                        {/* <p className="avatar-initials" type="text">{initials}</p> */}
-                        {/* <button onClick={ () => this.props.logout()}>Logout</button> */}
-                    {/* </div> */}
-
-                    <button 
-                        className="navbar-question-modal"
-                        onClick={() => this.props.openModal('createQuestion')}
-                        >Add Question</button>
-                </div>
-
             </header>
         )
     }

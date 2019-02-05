@@ -6,14 +6,14 @@
     # json.email question.author.email
     # json.id question.id
     # json.date question.created_at.strftime("%b %d, %y")
-  answerIds = []
+  answerAuthorIds = []
   question.answers.each do |answer|
-    answerIds << answer.id 
+    answerAuthorIds << answer.author_id 
   end 
 
   json.set! question.id do 
     json.partial! '/api/questions/question', question: question 
-    json.answerIds answerIds
+    json.answerAuthorIds answerAuthorIds
   end
 end
 

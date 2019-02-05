@@ -129,3 +129,32 @@
     border-right: 1px solid #b9b9b9;
     border-radius: 3px;
 }
+
+
+.user-content-header {
+    margin-top: 2px;
+    font-weight: 500;
+    // position: relative;
+    border-bottom: 1px solid #b9b9b9;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    // font-weight: bold;
+        font-family: "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+        
+}
+
+.content-index-item-container {
+       border-radius: 3px;
+       width: 585px;
+       // height: 80px;
+       padding-left: 15px;
+       padding-right: 15px;
+       // padding-right: 15px;
+       margin-top: 20px;
+    border-bottom: 1px solid #b9b9b9;
+    //    background: white;
+}

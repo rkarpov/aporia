@@ -7,18 +7,28 @@
     // width: 1000px;
     // width: 90%;
     // position: fixed;   
+    // min-width: 900px;
+}
+
+.index-body {
+     padding-left: 210px;
+     padding-right: 210px;
+       display: flex;
+       justify-content: space-between;
 }
 
 .index-body-container {
     padding-top: 80px;
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
     background: rgb(250, 250, 250);
     padding-bottom: 50px;
     height: fit-content;
     // min-height: 1000px;
     // position: absolute;
     width: 100%;
+    // margin-left: 210px;
+    // margin-right: 210px;
 }
 
 .placeholder-container {

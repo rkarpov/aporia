@@ -15,19 +15,22 @@ import userQuestionsContainer from '../components/content/user_questions_contain
 import QuestionUnansweredContainer from '../components/question/question_unanswered_container';
 import QuestionIndexContainer from './question/question_index_container';
 import QuestionShowContainer from './question/question_show_container';
+import ContentContainer from './content/content_container';
+import UserAnsweredContainer from './content/user_answered_container'
 
 const App = () => {
     return (
         <div className="app-main">
             <Modal />
-          
             <Switch>
                 <AuthRoute exact path="/" component={SessionFormContainer} />
                 {/* <ProtectedRoute exact path="/index" component={IndexPageContainer} />    */}
                 <ProtectedRoute exact path="/index" component={QuestionIndexContainer} />   
                 <ProtectedRoute exact path="/answer" component={QuestionUnansweredContainer} />   
                 {/* <ProtectedRoute exact path="/answers/:answerId/edit" component={EditAnswerContainer}/> */}
-                <ProtectedRoute exact path="/api/content" component={userQuestionsContainer} />
+                <ProtectedRoute exact path="/api/content/questions" component={userQuestionsContainer} />
+                <ProtectedRoute exact path="/api/content/answers" component={UserAnsweredContainer} />
+                <ProtectedRoute exact path="/api/content" component={ContentContainer} />
                 {/* <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} /> */}
                 <ProtectedRoute exact path="/api/questions/:questionId" component={QuestionShowContainer} />
             </Switch>
