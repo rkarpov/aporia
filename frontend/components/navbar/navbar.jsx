@@ -87,15 +87,8 @@ class Navbar extends React.Component {
                     </div>
 
 
-                        {this.dropdown()}
+                    {this.dropdown()}
                     <div className="navbar-question-container">
-                        {/* </div> */}
-                    {/* <div> */}
-                        {/* <div className="profile-modal-container"> */}
-                            {/* <p className="avatar-initials" type="text">{initials}</p> */}
-                            {/* <button onClick={ () => this.props.logout()}>Logout</button> */}
-                        {/* </div> */}
-
                         <button 
                             className="navbar-question-modal"
                             onClick={() => this.props.openModal('createQuestion')}

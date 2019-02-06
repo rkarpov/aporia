@@ -22,8 +22,6 @@ class ContentIndex extends React.Component {
                 openModal={this.props.openModal}
             />
         if ((this.props.pageType === 'Your Questions') && (this.props.currentUser.id === question.authorId)) {
-                // WHY IS THIS NOT GOOD ENOUGH TO FILTER THE QUESTION!?!?!?! WHY MUST I ADD CONDITIONAL LOGIC TO QUESTION INDEX ITEM
-                // if (item.props.currentUser.id === item.props.question.authorId) { questions.push(item); }
                 questions.push(item);
             } else if (this.props.pageType === 'Your Answers' && question.answerAuthorIds.includes(question.authorId)) {
                 questions.push(item);
@@ -41,8 +39,6 @@ class ContentIndex extends React.Component {
 
                 <div className="index-body-container">
                     <div className="index-body">
-                        
-                        
 
                         <div className="feed-container">
                             {/* <input type="text" /> */}

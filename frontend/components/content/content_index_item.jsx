@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 class ContentIndexItem extends React.Component {
 
     render() {
-        // debugger
         if (((this.props.pageType === 'Your Questions') && (this.props.question.authorId !== this.props.currentUser.id)) ||
             ((this.props.pageType === 'Your Answers') && !(this.props.question.answerAuthorIds.includes(this.props.currentUser.id)))) {
             // ((this.props.pageType === 'Your Answers') && (Object(this.props.question.answerAuthorIds).length !== 0))) {

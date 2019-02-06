@@ -6,7 +6,6 @@ import { openModal } from '../../actions/modal_actions';
 import ContentIndex from '../content/content_index';
 
 const msp = state => {
-    // debugger
     return {
         pageType: 'Your Answers',
         questions: Object.values(state.entities.questions),
