@@ -9,6 +9,10 @@ class Answer < ApplicationRecord
         foreign_key: :author_id,
         class_name: 'User'
 
+    has_many :comments,
+        foreign_key: :answer_id,
+        class_name: 'Comment'
+
     # has_one :author,          # => question author's id, not answer author id?
     #     through: :question,
     #     source: :author
