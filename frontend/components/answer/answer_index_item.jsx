@@ -88,15 +88,18 @@ class AnswerIndexItem extends React.Component {
                     {this.dropdown()}
                 </div>
                 
-                <div>
-                    <CreateCommentContiner
-                        answerId={this.props.answer.id}
-                    />
-                </div>
-                <div >
-                    <CommentIndexContainer
-                        answerId={this.props.answer.id}
-                    />
+                <div hidden={this.props.match.url.includes("/index") ? "hidden" : null}>
+                    <div>
+                        <CreateCommentContiner
+                            answerId={this.props.answer.id}
+                            />
+                    </div>
+                    <div >
+                        <CommentIndexContainer
+                            answerId={this.props.answer.id}
+                            />
+                        <div className="comment-footer"></div>
+                    </div>
                 </div>
            
             </li>

@@ -33,7 +33,7 @@ export default connect(msp, mdp)(ContentIndex)
 
 //     const currentUser = state.entities.users[state.session.id];
 //     let questions = [];
-//     debugger
+
 
 //     if (Object.entries(state.entities.questions).length !== 0) {
 //         let allQs = Object.values(state.entities.questions);

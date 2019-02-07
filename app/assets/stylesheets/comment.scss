@@ -1,0 +1,97 @@
+.comment-form {
+    // margin-left: 15px;
+    padding-left: 2px;
+    // width: 600px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    background: #f6f6f6;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 3px;
+    // margin-bottom: 15px;
+}
+
+.profile-comment-index-container {
+    border: 1px solid rgba(0, 0, 255, 0.795);
+    // margin-right: 7px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(110, 120, 255);
+    box-shadow: 0 0 3px black;
+}
+
+.comment-input-field {
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    resize: none;
+    height: 26px;
+    width: 370px;
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    background: white;  
+}
+
+.add-comment-button {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: white;
+    // margin-right: 20px;
+    // margin-left: 10px;
+    padding: 4px 6px;
+    background: blue;
+    border: 1px solid darkblue;
+    box-shadow: 0 0 5px #888;
+    font-family: sans-serif;
+    border-radius: 25px;
+}
+
+.comment-item-container {
+    // padding-top: 5px;
+    padding-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    background: #f6f6f6;
+}
+
+.comment-footer {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.comment-body-container {
+    padding-left: 43px;
+    margin-top: 5px;
+    //   display: flex;
+}
+
+.comment-authorname{
+    font-weight: bold;
+}
+.comment-body {
+    margin-top: 10px;
+    margin-left: 10px;
+    // padding-right: 10px;
+    font-size: 14px;
+    // font-weight: bold;
+    font-family: sans-serif;
+    //   resize: none;
+    //   height: 15px;
+      width:460px;
+      resize: none;
+      word-break: break-word;
+      display: inline-block;
+}
+
+.comment-options-container {
+    padding-left: 400px;
+}
