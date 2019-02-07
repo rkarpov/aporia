@@ -6,9 +6,10 @@ Rails.application.routes.draw do
       resources :questions, only: [:index, :create, :show, :update, :destroy] do 
         resources :answers, only: [:index, :create]
       end
-      resources :answers, only: [:show, :update, :destroy]
-
-
+      resources :answers, only: [:show, :update, :destroy] do
+        resources :comments, only: [:index, :create]
+     end 
+     resources :comments, only: [:update, :destroy]
     end 
     root "static_pages#root" 
 end

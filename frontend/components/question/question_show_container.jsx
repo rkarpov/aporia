@@ -9,7 +9,7 @@ const msp = (state, ownProps) => {
     const defaultQuestion = {}
     question = state.entities.questions[ownProps.match.params.questionId] || defaultQuestion
 
-    if (Object.values(state.entities.questions).length > 0) {
+    // if (Object.values(state.entities.questions).length > 0) {
         return {
             questions: state.entities.questions,
             pageType: 'showQuestion',
@@ -17,15 +17,15 @@ const msp = (state, ownProps) => {
             questionId: ownProps.match.params.questionId,
             currentUser: state.entities.users[state.session.id],
         }
-    } else {
-        return {
-            questions: {},
-            pageType: 'ignore',
-            question: question,
-            questionId: ownProps.match.params.questionId,
-            currentUser: state.entities.users[state.session.id],
-        }
-    }
+    // } else {
+    //     return {
+    //         questions: {},
+    //         pageType: 'ignore',
+    //         question: question,
+    //         questionId: ownProps.match.params.questionId,
+    //         currentUser: state.entities.users[state.session.id],
+    //     }
+    // }
 };
 
 const mdp = dispatch => ({
@@ -37,4 +37,3 @@ const mdp = dispatch => ({
 
 export default connect(msp, mdp)(QuestionShow)
 // export default connect(msp, mdp)(QuestionIndex)
-
