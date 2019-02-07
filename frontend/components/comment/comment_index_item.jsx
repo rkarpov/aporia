@@ -126,7 +126,7 @@ class CommentIndexItem extends React.Component {
                     </div>
                     <div hidden={this.props.comment.author_id === this.props.currentUser.id ? null : "hidden"} >
                     </div>
-                    <div className="comment-options-container">
+                    <div className="comment-options-container" hidden={this.props.currentUser.id === this.props.comment.author_id ? null : "hidden"}>
                         {this.options()}
                     </div>
                 </div>
