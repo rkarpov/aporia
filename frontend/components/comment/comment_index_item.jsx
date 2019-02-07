@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import EditCommentContainer from './edit_comment_container'; 
-import CreateCommentContainer from './create_comment_container'
 const ClickOutHandler = require('react-onclickout');
 
 
@@ -9,16 +8,17 @@ class CommentIndexItem extends React.Component {
     constructor(props) {
         super(props)
         this.state = { dropdown: false, options: false };
-        this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.toggleEdit = this.toggleEdit.bind(this);
 
         this.toggleOptions = this.toggleOptions.bind(this);
         this.onClickOut = this.onClickOut.bind(this);
     }
 
-    toggleDropdown(e) {
+    toggleEdit(e) {
         e.preventDefault();
         this.setState({
-            dropdown: !this.state.dropdown
+            dropdown: !this.state.dropdown,
+            options: !this.state.options
         });
     }
 
@@ -30,21 +30,14 @@ class CommentIndexItem extends React.Component {
         let dropdown;
         if (this.state.dropdown) {
             dropdown =
-                <CreateCommentContainer
-                    toggleDropdown={this.toggleDropdown}
-                    answerId={this.props.answer.id}
+                <EditCommentContainer
+                    toggleEdit={this.toggleEdit}
+                    commentId={this.props.comment.id}
                 />
-                // <h2>edit comment container</h2>
         }
 
         return (
             <div className="dropdown">
-                <div className="comment-index-container">
-                    <div className="answer-icon-container">
-                        <img className="answer-index-svg" onClick={this.toggleDropdown} src={window.answerIcon} />
-                    </div>
-                    <a className="answer-button" onClick={this.toggleDropdown} type="text">Comment</a>
-                </div>
                 {dropdown}
             </div>
         );
@@ -73,7 +66,7 @@ class CommentIndexItem extends React.Component {
                     <div className="dropdown-items-list">
                         <button
                             className="dropdown-item"
-                            onClick={() => this.props.openModal({ modal: 'editComment', commentId: this.props.comment.id })}
+                            onClick={this.toggleEdit}
                         >Edit Comment</button>
                         <button
                             className="dropdown-item"
@@ -130,8 +123,11 @@ class CommentIndexItem extends React.Component {
                         {this.options()}
                     </div>
                 </div>
-                <div className="comment-body-container">
+                <div className="comment-body-container" hidden={this.state.dropdown ? "hidden" : null}>
                     <p className="comment-body testing">{this.props.comment.body}</p>
+                </div>
+                <div hidden={this.props.comment.author_id === this.props.currentUser.id ? null : "hidden"} >
+                    {this.dropdown()}
                 </div>
             </li>
         )

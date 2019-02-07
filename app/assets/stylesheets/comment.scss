@@ -1,7 +1,7 @@
-.comment-form {
+.comment-Submit.Comment {
     // margin-left: 15px;
     padding-left: 2px;
-    // width: 600px;
+    width: 581px;
     padding-top: 15px;
     padding-bottom: 15px;
     margin-top: 15px;
@@ -11,7 +11,9 @@
     background: #f6f6f6;
     display: flex;
     justify-content: space-around;
-    border-radius: 3px;
+    // border-radius: 3px;
+     border-top-left-radius: 3px;
+     border-top-right-radius: 3px;
     // margin-bottom: 15px;
 }
 
@@ -37,7 +39,7 @@
     background: white;  
 }
 
-.add-comment-button {
+.Submit.Comment-comment-button {
     margin-top: 4px;
     font-size: 14px;
     font-weight: bold;
@@ -47,8 +49,8 @@
     // margin-right: 20px;
     // margin-left: 10px;
     padding: 4px 6px;
-    background: blue;
-    border: 1px solid darkblue;
+    background: rgb(71, 71, 255);
+    border: 1px solid blue;
     box-shadow: 0 0 5px #888;
     font-family: sans-serif;
     border-radius: 25px;
@@ -94,4 +96,44 @@
 
 .comment-options-container {
     padding-left: 400px;
+}
+
+.cancel-comment {
+        // margin-right: 5px;
+        padding-top: 9px;
+            margin-left: 10px;
+            margin-right: 10px;
+        font-size: 16px;
+        font-family: sans-serif;
+        font-weight: 500;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        color: rgb(145, 145, 145);
+        cursor: pointer;
+}
+
+.Update-comment-button {
+      margin-top: 4px;
+      font-size: 14px;
+      font-weight: bold;
+      font-family: sans-serif;
+      font-weight: 500;
+      color: white;
+      // margin-right: 20px;
+      // margin-left: 10px;
+      padding: 4px 6px;
+      background: rgb(71, 71, 255);
+      border: 1px solid blue;
+      box-shadow: 0 0 5px #888;
+      font-family: sans-serif;
+      border-radius: 25px;
+}
+
+.comment-Update {
+    margin-top: 15px;
+    padding-left: 10px;
+    width: 560px;
+    display: flex;
+    justify-content: space-around;
 }

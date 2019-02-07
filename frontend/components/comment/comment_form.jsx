@@ -29,17 +29,11 @@ class CommentForm extends React.Component {
         }
 
         return (
-            <form className="comment-form" onSubmit={this.handleSubmit}>
-         
-                    {/* <div className="current-user-container"> */}
-                    <div className="profile-comment-index-container">
+            <form className={`comment-${this.props.pageType}`} onSubmit={this.handleSubmit}>
+                    <div className="profile-comment-index-container" hidden={this.props.pageType === 'Update' ? "hidden" : null}>
                         <p className="avatar-initials" type="text">{initials}</p>
                     </div>
-                    {/* <p className="index-username">{username}</p> */}
-                    {/* </div> */}
-             
                
-              
                     <textarea
                         className="comment-input-field"
                         placeholder="Add a comment..."
@@ -47,11 +41,13 @@ class CommentForm extends React.Component {
                         value={this.state.body}>
                     </textarea>
    
-
-                <footer className="add-comment-footer">
-                    {/* <a className="cancel-answer" onClick={this.props.toggle} type="text">Cancel</a> */}
-                    <input className="add-comment-button" type="submit" value={this.props.formType === 'edit-form' ? "Update" : "Submit Comment"} />
-                </footer>
+                    <a 
+                        hidden={this.props.pageType === 'Update' ? null : "hidden"}
+                        className="cancel-comment"
+                        onClick={this.props.toggleEdit}
+                        type="text"
+                    >Cancel</a>
+                    <input className={`${this.props.pageType}-comment-button`} type="submit" value={this.props.pageType === 'Update' ? "Update" : "Submit Comment"} />
             </form>
         )
     }
