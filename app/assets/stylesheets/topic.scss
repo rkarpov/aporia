@@ -1,0 +1,31 @@
+.question-index-topics-container {
+
+}
+
+.question-topics {
+    margin-right: 5px;
+    padding: 5px;
+    text-transform: capitalize;
+    color: gray;
+    background: rgb(240, 240, 240);
+    border-radius: 3px;
+    word-break: break-word;
+    min-width: 50px;
+}
+
+.topics-background {
+    display: flex;
+    // background: white;
+    font-family: sans-serif;
+    font-size: 13px;
+    width: 585px;
+}
+
+.delete-topic-button:hover {
+    background: darkgray;
+}
+.delete-topic-button {
+    margin-left: 5px;
+    border: 1px solid gray;
+}
+

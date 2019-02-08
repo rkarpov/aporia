@@ -3,9 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateQuestionContainer from '../question/create_question_container';
 import EditQuestionContainer from '../question/edit_question_container';
-
-// import LoginFormContainer from '../session_form/login_form_container';
-// import SignupFormContainer from '../session_form/signup_form_container';
+import CreateTopicContainer from '../topic/create_topic_container';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) {
@@ -18,6 +16,11 @@ const Modal = ({ modal, closeModal }) => {
             break;
         case 'editQuestion':
             component = <EditQuestionContainer 
+            questionId={modal.questionId}
+            />
+            break;
+        case 'createTopic':
+            component = <CreateTopicContainer 
             questionId={modal.questionId}
             />
             break;

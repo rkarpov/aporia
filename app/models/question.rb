@@ -10,6 +10,15 @@ class Question < ApplicationRecord
     has_many :answers,
         foreign_key: :question_id,
         class_name: 'Answer'
+
+    has_many :question_topics,
+        foreign_key: :question_id,
+        class_name: 'QuestionTopic'
+
+    has_many :topics,
+        through: :question_topics,
+        source: :topic
+    
     # belongs_to :topic,
     #     foreign_key: :topic_id,
     #     class_name: 'Topic'

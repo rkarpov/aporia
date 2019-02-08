@@ -3,6 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import CreateAnswerContainer from '../../components/answer/create_answer_container';
 import AnswerIndexContainer from '../../components/answer/answer_index_container';
 const ClickOutHandler = require('react-onclickout');
+// import CreateTopicContainer from '../topic/create_topic_container';
+import TopicIndexContainer from '../topic/topic_index_container';
 
 class QuestionIndexItem extends React.Component {
     constructor(props) {
@@ -74,9 +76,13 @@ class QuestionIndexItem extends React.Component {
                             className="dropdown-item"  
                             onClick={() => this.props.openModal({ modal: 'editQuestion', questionId: this.props.question.id })}
                         >Edit Question</button>
+                        {/* <button
+                            className="dropdown-item"  
+                        >Edit Topics</button> */}
                         <button
                             className="dropdown-item"  
-                        >Edit Topics</button>
+                        onClick={() => this.props.openModal({ modal: 'createTopic', questionId: this.props.question.id })}
+                        >Add Topic</button>
                     </div>
                 </div>
         }
@@ -106,9 +112,9 @@ class QuestionIndexItem extends React.Component {
                 <div className="question-index-item-container" >
                     <header className="question-index-header-container">
                         <div className="question-index-topics-container">
-                            <p className="question-topics">
-                                General Topic
-                            </p>
+                            <div >
+                                <TopicIndexContainer />
+                            </div>
                         </div>
                         {/* Question avatar icon & username */}
                         {/* <div className="pleasework">
