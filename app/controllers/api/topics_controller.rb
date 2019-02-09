@@ -7,9 +7,15 @@ class Api::TopicsController < ApplicationController
     end
 
     def create
-        @topic = Topic.new(topic_params)
-
+        # debugger
+        @topic = Topic.new({"description" => params[:topic][:description]})
+        # @topic = Topic.new(topic_params)
+        # @topic = Topic.new(params[:topic][:description])
+        # @question = Question.find(params[:topic][:question_id])
         if @topic.save
+            # debugger
+            @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id]})
+            @joins.save
             render :show 
         else 
             render json: @topic.errors.full_messages, status: 401
@@ -40,7 +46,7 @@ class Api::TopicsController < ApplicationController
     end
 
     def topic_params
-        params.require(:topic).permit(:description, :question_id)
+        params.require(:topic).permit(:description)
     end
 
 end

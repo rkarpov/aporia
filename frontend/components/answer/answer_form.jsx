@@ -12,6 +12,7 @@ class AnswerForm extends React.Component {
         e.preventDefault();        
         // const answer = Object.assign({}, this.state);
         this.props.action(this.state)
+        this.props.toggle()
         // .then(this.setState(this.props.body))
     }
 
