@@ -14,8 +14,8 @@ class CommentIndexItem extends React.Component {
         this.onClickOut = this.onClickOut.bind(this);
     }
 
-    toggleEdit(e) {
-        e.preventDefault();
+    toggleEdit() {
+        // e.preventDefault();
         this.setState({
             dropdown: !this.state.dropdown,
             options: !this.state.options

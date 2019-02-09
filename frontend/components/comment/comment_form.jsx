@@ -11,6 +11,9 @@ class CommentForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state)
+        if (this.props.pageType === 'Update') {
+            this.props.toggleEdit();
+        }
     }
 
     update(field) {
