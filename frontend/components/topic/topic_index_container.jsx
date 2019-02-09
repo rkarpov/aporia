@@ -7,6 +7,8 @@ import { openModal } from '../../actions/modal_actions';
 const msp = (state, ownProps) => {
     return {
         pageType: 'topicIndex',
+        sourceType: ownProps.sourceType,
+        topicIds: ownProps.topicIds,
         topics: Object.values(state.entities.topics),
     }
 }

@@ -13,7 +13,6 @@ const receiveAllTopics = (topics) => {
 }
 
 const receiveTopic = (topic) => {
-    debugger
     return {
         type: RECEIVE_TOPIC,
         topic

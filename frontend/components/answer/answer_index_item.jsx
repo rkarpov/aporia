@@ -17,8 +17,8 @@ class AnswerIndexItem extends React.Component {
         // this.onClickOut = this.onClickOut.bind(this);
     }
 
-    toggleEdit(e) {
-        e.preventDefault();
+    toggleEdit() {
+        // e.preventDefault();
         this.setState({
             dropdown: !this.state.dropdown
         });

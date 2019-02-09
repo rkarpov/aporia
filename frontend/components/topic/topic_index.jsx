@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopicIndexItem from './topic_index_item';
+import { debug } from 'util';
 
 class TopicIndex extends React.Component {
 
@@ -18,7 +19,9 @@ class TopicIndex extends React.Component {
                 pageType={this.props.pageType}
                 openModal={this.props.openModal}
             />
-            topics.push(item);
+            if (this.props.sourceType === 'questionIndex' && this.props.topicIds.includes(topic.id)) {
+                topics.push(item);
+                }
             }
         )
         

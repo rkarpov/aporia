@@ -107,13 +107,16 @@ class QuestionIndexItem extends React.Component {
         // const names = this.props.author.split(' ')
         // authorInitials += names[0][0] + names[1][0];
         // authorInitials = authorInitials.toUpperCase();
-       
+       debugger
         return (
                 <div className="question-index-item-container" >
                     <header className="question-index-header-container">
                         <div className="question-index-topics-container">
                             <div >
-                                <TopicIndexContainer />
+                                <TopicIndexContainer 
+                                    topicIds={this.props.question.topicIds}
+                                    sourceType="questionIndex"
+                                />
                             </div>
                         </div>
                         {/* Question avatar icon & username */}
