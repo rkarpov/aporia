@@ -5,6 +5,7 @@ import TopicIndex from './topic_index'
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
+    debugger
     return {
         pageType: 'topicIndex',
         sourceType: ownProps.sourceType,

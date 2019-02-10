@@ -1,6 +1,10 @@
 json.partial! '/api/questions/question', question: @question 
 
-
+#   topicIds = []
+#   @question.topics.each do |topic|
+#     topicIds << topic.id 
+#   end 
+#   json.topicIds topicIds
 # BEFORE
 # json.question do
 #     json.partial! '/api/questions/question', question: @question 

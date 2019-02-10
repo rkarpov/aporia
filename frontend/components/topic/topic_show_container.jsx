@@ -8,6 +8,7 @@ import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
     // const topicDescription = ownProps.match.params.description
+    debugger
     let topic;
     const allTopics = Object.values(state.entities.topics);
     // allTopics.forEach(top => {
