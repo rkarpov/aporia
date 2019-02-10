@@ -28,9 +28,17 @@ export const updateTopic = (topic) => {
     })
 }
 
-export const deleteTopic = (id) => {
+// export const deleteTopic = (id) => {
+//     return $.ajax({
+//         method: `DELETE`,
+//         url: `/api/topics/${id}`
+//     })
+// }
+export const deleteTopic = ({topic_id, question_id}) => {
+    debugger
     return $.ajax({
         method: `DELETE`,
-        url: `/api/topics/${id}`
+        // url: `/api/topics/${({topic_id, question_id})}`
+       url: `/api/questions/${question_id}/topics/${topic_id}`
     })
 }

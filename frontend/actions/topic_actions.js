@@ -19,6 +19,7 @@ const receiveTopic = (topic) => {
 }
 
 const removeTopic = (topicId) => {
+    debugger
     return {
         type: REMOVE_TOPIC,
         topicId
@@ -51,6 +52,7 @@ export const updateTopic = (topic) => dispatch => {
 }
 
 export const deleteTopic = (topicId) => dispatch => {
+    debugger
     return (
         topicApiUtil.deleteTopic(topicId).then(() => dispatch(removeTopic(topicId)))
     )

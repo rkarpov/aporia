@@ -19,6 +19,7 @@ class TopicIndex extends React.Component {
                 pageType={this.props.pageType}
                 sourceType={this.props.sourceType}
                 openModal={this.props.openModal}
+                questionId={this.props.questionId}
             />
             
             if (this.props.pageType === 'showQuestion') {

@@ -10,6 +10,7 @@ const msp = (state, ownProps) => {
         sourceType: ownProps.sourceType,
         topicIds: ownProps.topicIds,
         topics: Object.values(state.entities.topics),
+        questionId: ownProps.questionId,
     }
 }
 

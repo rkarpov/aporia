@@ -5,12 +5,13 @@ Rails.application.routes.draw do
       resource :session, only: [:create, :destroy]  # user login, logout
       resources :questions, only: [:index, :create, :show, :update, :destroy] do 
         resources :answers, only: [:index, :create]
+        resources :topics, only: [:destroy]
       end
       resources :answers, only: [:show, :update, :destroy] do
         resources :comments, only: [:index, :create]
      end 
      resources :comments, only: [:show, :update, :destroy]
-     resources :topics, only: [:show, :create, :index, :update, :destroy]
+     resources :topics, only: [:show, :create, :index, :update]
     end 
     root "static_pages#root" 
 end

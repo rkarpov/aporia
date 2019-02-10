@@ -116,6 +116,7 @@ class QuestionIndexItem extends React.Component {
                                 <TopicIndexContainer 
                                     topicIds={this.props.question.topicIds}
                                     sourceType="questionIndex"
+                                    questionId={this.props.question.id}
                                 />
                             </div>
                         </div>
