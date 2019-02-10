@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopicIndexItem from './topic_index_item';
-import { debug } from 'util';
 
 class TopicIndex extends React.Component {
 
@@ -11,7 +10,7 @@ class TopicIndex extends React.Component {
     
     render() {
         let topics = [];
-        // debugger
+        debugger
         this.props.topics.forEach(topic => {
             const item = <TopicIndexItem
                 key={topic.id}
@@ -21,7 +20,11 @@ class TopicIndex extends React.Component {
                 sourceType={this.props.sourceType}
                 openModal={this.props.openModal}
             />
-            if (this.props.sourceType === 'feedIndex') {
+            debugger
+            if (this.props.pageType === 'showQuestion') {
+                debugger
+                topics.push(item);
+            } else if (this.props.sourceType === 'feedIndex') {
                 topics.push(item);
             } else if ((this.props.sourceType === 'questionIndex') && (this.props.topicIds.includes(topic.id))) {
                 topics.push(item); 

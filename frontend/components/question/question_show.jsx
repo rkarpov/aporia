@@ -2,7 +2,11 @@ import React from 'react';
 import QuestionIndex from './question_index';
 
 class QuestionShow extends React.Component {
-  componentDidMount() {
+//   componentDidMount() {
+//       this.props.fetchQuestion(this.props.match.params.questionId);
+//   }
+
+  componentWillMount(){
       this.props.fetchQuestion(this.props.match.params.questionId);
   }
 
