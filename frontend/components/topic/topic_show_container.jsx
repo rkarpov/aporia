@@ -7,33 +7,20 @@ import QuestionIndex from '../question/question_index';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    // const topicDescription = ownProps.match.params.description
-    
-    let topic;
+        // let topic;
+    let topic = { id: -0, description: '' };
     const allTopics = Object.values(state.entities.topics);
-    // allTopics.forEach(top => {
-    //     if (top.description === ownProps.match.params.description) {
-    //         topic = top;
-    //     }
-    // })
-    if (allTopics.length === 0) {
-        topic = { description: '' } 
-    } else {
+
         allTopics.forEach(topicItem => {
             if (topicItem.description === ownProps.match.params.description) {
             topic = topicItem;
             }
         })
-    }
-        
-    // let questions;
-    // const defaultQuestions = { [1]: { body: "" } }
-    // questions = state.entities.questions || defaultQuestions
+
     let allQuestions = Object.values(state.entities.questions);
     let questions = [];
-    // 
+
     allQuestions.forEach(question => {
-        // 
         if (question.topicIds.includes((topic.id)))  {
             questions.push(question);
         }

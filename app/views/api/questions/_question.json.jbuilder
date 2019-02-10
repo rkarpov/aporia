@@ -9,4 +9,4 @@
     json.date question.created_at.strftime("%b %d, %y")
     json.answerIds []
     json.answerAuthorIds []
-    json.topicIds question.topics # look up pluck method
+    json.topicIds [] # look up pluck method

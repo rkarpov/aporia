@@ -57,7 +57,7 @@ class QuestionIndex extends React.Component {
                     <div className="index-body">
                         <div className="feed-container">
 
-                            <div hidden={this.props.pageType === 'showQuestion' || !this.props.match.url.includes('content') ? null : "hidden"}>
+                            <div hidden={this.props.match.url.includes('content') ? "hidden" : null }>
                                 <p className="feed-header">Feed Topics</p>
                                 <TopicIndexContainer
                                     sourceType={"feedIndex"}

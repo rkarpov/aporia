@@ -1,10 +1,11 @@
 @topics.each do |topic|
-    topicQuestionIds = []
+    questionIds = []
     topic.questions.each do |question| 
-        topicQuestionIds << question.id 
+        questionIds << question.id 
     end 
     
     json.set! topic.id do 
         json.partial! '/api/topics/topic', topic: topic
+        json.questionIds questionIds
     end
 end
