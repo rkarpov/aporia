@@ -16,6 +16,9 @@ class Api::TopicsController < ApplicationController
                     break
                 end
             end
+            @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id]})
+            @joins.save
+            render :show
         elsif @topic.save
             @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id]})
             @joins.save
@@ -41,7 +44,8 @@ class Api::TopicsController < ApplicationController
 
     def destroy
         @topic = Topic.find(params[:id])
-        if @topic.destroy 
+        @question_topic = QuestionTopic.find_by(topic_id: @topic.id)
+        if @question_topic.destroy 
             render :show
         else 
             render json: @topic.errors.full_messages, status: 422

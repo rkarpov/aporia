@@ -9,6 +9,9 @@
 User.delete_all
 Answer.delete_all
 Question.delete_all
+Comment.delete_all
+Topic.delete_all
+QuestionTopic.delete_all
 
 # first seed file should dispatch action that logsi n the first seed user as demo user
 
