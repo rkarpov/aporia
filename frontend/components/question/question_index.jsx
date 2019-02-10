@@ -27,7 +27,6 @@ class QuestionIndex extends React.Component {
                 pageType={this.props.pageType}
                 openModal={this.props.openModal}
             />
-            debugger
             questions.push(item);
         } else {
             this.props.questions.forEach( question => {

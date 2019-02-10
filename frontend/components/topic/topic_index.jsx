@@ -10,7 +10,7 @@ class TopicIndex extends React.Component {
     
     render() {
         let topics = [];
-        debugger
+        
         this.props.topics.forEach(topic => {
             const item = <TopicIndexItem
                 key={topic.id}
@@ -20,9 +20,9 @@ class TopicIndex extends React.Component {
                 sourceType={this.props.sourceType}
                 openModal={this.props.openModal}
             />
-            debugger
+            
             if (this.props.pageType === 'showQuestion') {
-                debugger
+                
                 topics.push(item);
             } else if (this.props.sourceType === 'feedIndex') {
                 topics.push(item);

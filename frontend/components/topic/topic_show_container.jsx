@@ -8,7 +8,7 @@ import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
     // const topicDescription = ownProps.match.params.description
-    debugger
+    
     let topic;
     const allTopics = Object.values(state.entities.topics);
     // allTopics.forEach(top => {
@@ -31,9 +31,9 @@ const msp = (state, ownProps) => {
     // questions = state.entities.questions || defaultQuestions
     let allQuestions = Object.values(state.entities.questions);
     let questions = [];
-    // debugger
+    // 
     allQuestions.forEach(question => {
-        // debugger
+        // 
         if (question.topicIds.includes((topic.id)))  {
             questions.push(question);
         }
@@ -42,7 +42,7 @@ const msp = (state, ownProps) => {
     // let topic;
     // const defaultTopic = {}
     // topic = state.entities.topics[ownProps.match.params.topicId]
-// debugger
+// 
     return {
         // topics: state.entities.topics,
         questions: questions,
@@ -84,7 +84,7 @@ export default connect(msp, mdp)(QuestionIndex)
 //     let topic;
 //     const defaultTopic = {}
 //     topic = state.entities.topics[ownProps.match.params.topicId] || defaultTopic
-// debugger
+// 
 //     return {
 //         // topics: state.entities.topics,
 //         questions: defaultQuestions,

@@ -6,7 +6,7 @@
 // import { openModal } from '../../actions/modal_actions';
 
 // const msp = (state, ownProps) => {
-//     debugger
+//     
 //     return {
 //         pageType: 'questionsByTopic',
 //         questions: Object.values(state.entities.questions),
