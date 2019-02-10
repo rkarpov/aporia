@@ -46,7 +46,7 @@ class QuestionIndex extends React.Component {
                 } 
             })
         }
-debugger
+        
         return (
             <div className="index-main">
                 <div className="index-header-container">
