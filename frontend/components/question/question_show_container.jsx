@@ -8,9 +8,10 @@ const msp = (state, ownProps) => {
     let question;
     const defaultQuestion = {}
     question = state.entities.questions[ownProps.match.params.questionId] || defaultQuestion
-
+debugger
     // if (Object.values(state.entities.questions).length > 0) {
         return {
+            match: ownProps.match,
             questions: state.entities.questions,
             pageType: 'showQuestion',
             question: question,

@@ -13,7 +13,6 @@ export const fetchTopic = (id) => {
 }
 
 export const createTopic = (topic) => {
-    debugger
     return $.ajax({
         method: `POST`,
         url: `/api/topics`,

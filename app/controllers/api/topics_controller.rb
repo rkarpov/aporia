@@ -7,13 +7,16 @@ class Api::TopicsController < ApplicationController
     end
 
     def create
-        # debugger
-        @topic = Topic.new({"description" => params[:topic][:description]})
-        # @topic = Topic.new(topic_params)
-        # @topic = Topic.new(params[:topic][:description])
-        # @question = Question.find(params[:topic][:question_id])
-        if @topic.save
-            # debugger
+        @topic = (Topic.find_by(description: params[:topic][:description])) ||
+                 (Topic.new({"description" => params[:topic][:description]}))
+        if @topic.questions.length > 0
+            @topic.questions.each do |question| 
+                if question.id == params[:topic][:question_id].to_i
+                    render json: ["That topic already exists"], status: 401
+                    break
+                end
+            end
+        elsif @topic.save
             @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id]})
             @joins.save
             render :show 

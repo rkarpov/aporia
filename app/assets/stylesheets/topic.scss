@@ -1,4 +1,4 @@
-.question-topics {
+.question-questionIndex-topics {
     margin-right: 5px;
     padding: 5px;
     text-transform: capitalize;
@@ -9,7 +9,7 @@
     min-width: 50px;
 }
 
-.topics-background {
+.topics-questionIndex-background {
     display: flex;
     // background: white;
     font-family: sans-serif;
@@ -25,3 +25,57 @@
     border: 1px solid gray;
 }
 
+.feed-header {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgb(226, 226, 226);
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.question-feedIndex-topics {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    word-break: break-word;
+}
+
+.question-feedIndex-topics::first-letter {
+    text-transform: uppercase;
+}
+.question-topic-container {
+    border-radius: 3px;
+    width: 585px;
+    // padding-left: 15px;
+    // padding-right: 15px;
+    padding: 15px;
+    border: 1px solid #dadadae0;
+    background: white;
+}
+.question-topic-description {
+    display: flex;
+    font-family: 'q_serif',
+    Georgia,
+    Times,
+    "Times New Roman",
+    "Hiragino Kaku Gothic Pro",
+    "Meiryo",
+    serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.question-topic-description::first-letter {
+    text-transform: uppercase;
+}
+
+.topic-p::first-letter {
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+.topic-p {
+    word-break: break-word;
+}

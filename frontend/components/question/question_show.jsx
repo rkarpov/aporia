@@ -22,6 +22,7 @@ class QuestionShow extends React.Component {
             requestQuestions={this.props.requestQuestions}
             questions={this.props.questions}
             openModal={this.props.openModal}
+            match={this.props.match}
         />
     );
   }

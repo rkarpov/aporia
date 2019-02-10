@@ -4,7 +4,6 @@ import { createTopic } from '../../actions/topic_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         topic: { description: "" },
         formType: 'Add Topic',

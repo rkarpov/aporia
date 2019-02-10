@@ -9,7 +9,9 @@ import QuestionUnansweredContainer from '../components/question/question_unanswe
 import QuestionIndexContainer from './question/question_index_container';
 import QuestionShowContainer from './question/question_show_container';
 import ContentContainer from './content/content_container';
-import UserAnsweredContainer from './content/user_answered_container'
+import UserAnsweredContainer from './content/user_answered_container';
+// import QuestionTopicContainer from './question/question_topic_container';
+import TopicShowContainer from './topic/topic_show_container';
 
 const App = () => {
     return (
@@ -19,6 +21,7 @@ const App = () => {
                 <AuthRoute exact path="/" component={SessionFormContainer} />
                 <ProtectedRoute exact path="/index" component={QuestionIndexContainer} />   
                 <ProtectedRoute exact path="/answer" component={QuestionUnansweredContainer} />   
+                <ProtectedRoute exact path="/api/topics/:description" component={TopicShowContainer} />   
                 <ProtectedRoute exact path="/api/content/questions" component={userQuestionsContainer} />
                 <ProtectedRoute exact path="/api/content/answers" component={UserAnsweredContainer} />
                 <ProtectedRoute exact path="/api/content" component={ContentContainer} />
