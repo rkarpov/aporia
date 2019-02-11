@@ -21,7 +21,7 @@ class Api::TopicsController < ApplicationController
         else 
             @topic = Topic.new({"description" => params[:topic][:description]})
             if @topic.save
-                # debugger
+                # 
                 @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id].to_i})
                 @joins.save
                 render :show 
@@ -36,7 +36,7 @@ class Api::TopicsController < ApplicationController
     # def create
     #     @topic = (Topic.find_by(description: params[:topic][:description])) ||
     #              (Topic.new({"description" => params[:topic][:description]}))
-    #              debugger
+    #              
     #     if @topic.questions.length > 0
     #         @topic.questions.each do |question| 
     #             if question.id == params[:topic][:question_id].to_i
@@ -71,7 +71,7 @@ class Api::TopicsController < ApplicationController
     end
 
     def destroy
-        # debugger 
+        #  
         #  "rack.request.form_hash"=>{"topic"=>{"question_id"=>"217"}}
         #  @filtered_parameters={"topic"=>{"question_id"=>"217"
         # @_params=<ActionController::Parameters {"topic"=><ActionController::Parameters {"question_id"=>"217"}
@@ -85,7 +85,7 @@ class Api::TopicsController < ApplicationController
         # @question.topic_ids.delete(@topic.id)
         # @topic.save 
         # @question.save
-        # debugger
+        # 
         @question_topic.destroy
         render :show
         # if @question_topic.destroy
