@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import SearchContainer from './search_container';
 
 // npm install react-onclickout --save
 const ClickOutHandler = require('react-onclickout');
@@ -81,10 +82,12 @@ class Navbar extends React.Component {
                         <Link className="nav-icon" to="/answer">Answer</Link>
                     </div>
 
-                    <div className="app-search-bar-container">
-                        <img className="search-icon" src={window.searchIcon} />
-                        <textarea className="app-search-bar" placeholder="Search Aporia"></textarea>
-                    </div>
+                    {/* <div className="app-search-bar-container">
+                        <img className="search-icon" src={window.searchIcon} /> */}
+                        {/* <textarea className="app-search-bar" placeholder="Search Aporia"> */}
+                            <SearchContainer />
+                        {/* </textarea> */}
+                    {/* </div> */}
 
 
                     {this.dropdown()}
