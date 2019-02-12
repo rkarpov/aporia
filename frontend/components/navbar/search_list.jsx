@@ -50,7 +50,7 @@ class Search extends React.Component {
 
                     <div
                         className="dropdown-content"
-                        hidden={this.state.search === "" ? "hidden" : null}
+                        hidden={(results.length === 0) ? "hidden" : null}
                     >
                         { searchResult }
                     </div>
