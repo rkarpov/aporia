@@ -6,13 +6,11 @@ import CommentForm from './comment_form';
 const msp = (state, ownProps) => {
     const defaultComment = { body: '', }
     const comment = state.entities.comments[ownProps.commentId] || defaultComment;
-
     return ({
         comment,
         pageType: 'Update',
         currentUser: state.entities.users[state.session.id],
         toggleEdit: ownProps.toggleEdit,
-        
     })
 }
 

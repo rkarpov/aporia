@@ -15,10 +15,9 @@ class CommentIndexItem extends React.Component {
     }
 
     toggleEdit() {
-        // e.preventDefault();
         this.setState({
             dropdown: !this.state.dropdown,
-            options: !this.state.options
+            options: false
         });
     }
 
@@ -43,7 +42,7 @@ class CommentIndexItem extends React.Component {
         );
     }
 
-    onClickOut(e) {
+    onClickOut() {
         if (this.state.options) {
             this.setState({
                 options: !this.state.options
@@ -52,7 +51,6 @@ class CommentIndexItem extends React.Component {
     }
 
     toggleOptions(e) {
-        e.preventDefault();
         this.setState({
             options: !this.state.options
         })
