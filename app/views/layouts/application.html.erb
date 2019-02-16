@@ -3,7 +3,7 @@
   <head>
     <title>Aporia</title>
     <%= csrf_meta_tags %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script type="text/javascript"> window.answerIcon = '<%= image_url("answer-icon.svg") %>' </script>
@@ -11,6 +11,7 @@
     <script type="text/javascript"> window.searchIcon = '<%= image_url("search-icon.svg") %>' </script>
     <script type="text/javascript"> window.optionsIcon = '<%= image_url("options-icon.svg") %>' </script>
 
+    <%= favicon_link_tag asset_path('favicon.png') %>
   </head>
 
   <body>
