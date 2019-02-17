@@ -25,6 +25,14 @@
 
 }
 
+.ql-editor {
+    min-height: 158px !important;
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    font-size: 15px;
+}
 .answer-input-field {
     resize: none;
     height: 158px;
@@ -42,10 +50,6 @@
 background: rgb(255, 255, 227);
  padding-bottom: 1%;
  border-top: 1px solid #b9b9b9;
-}
-
-.add-answer-button-container {
-    //  border: 1px solid black;
 }
 
 .add-answer-button {

@@ -45,9 +45,15 @@
     cursor: pointer;
 }
 
-.answer-body { 
+.answer-body-container {
+    margin-left: 15px;
+    margin-right: 15px;
     margin-top: 10px;
-    margin-left: 10px;
+}
+
+.answer-body { 
+    // margin-top: 10px;
+    // margin-left: 10px;
     font-size: 14px;
     font-weight: bold;
     font-family: sans-serif;

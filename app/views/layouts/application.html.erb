@@ -6,11 +6,11 @@
     
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//cdn.quilljs.com/1.3.1/quill.snow.css">
     <script type="text/javascript"> window.answerIcon = '<%= image_url("answer-icon.svg") %>' </script>
     <script type="text/javascript"> window.newsIcon = '<%= image_url("news-icon.svg") %>' </script>
     <script type="text/javascript"> window.searchIcon = '<%= image_url("search-icon.svg") %>' </script>
     <script type="text/javascript"> window.optionsIcon = '<%= image_url("options-icon.svg") %>' </script>
-    <%# <script type="text/javascript"> window.closeIcon = '<%= image_url("close-icon.svg") %>' </script> %>
     <script type="text/javascript"> window.closeIcon = '<%= image_url("close_red.png") %>' </script>
 
     <%= favicon_link_tag asset_path('favicon.png') %>

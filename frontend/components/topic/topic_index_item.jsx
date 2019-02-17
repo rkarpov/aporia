@@ -13,11 +13,7 @@ class TopicIndexItem extends React.Component {
                 <div className="delete-topic-button-container" hidden={this.props.match.url.includes('question') ? null : "hidden"}>
                     <button 
                         className="delete-topic-button"
-                        // src={window.closeIcon}
-                        
-                        // onClick={() => this.props.deleteTopic(this.props.topic.id)}
                         onClick={() => this.props.deleteTopic({ topic_id: this.props.topic.id, question_id: this.props.questionId })}
-                        // onClick={() => this.doSomething()}
                         hidden={this.props.sourceType === 'feedIndex' ? "hidden" : null }    
                         >
                     {/* x */}

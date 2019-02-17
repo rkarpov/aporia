@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import AnswerEditContainer from './answer_edit_container';
-
+import ReactQuill from 'react-quill';
+import renderHTML from 'react-render-html'
 import CreateCommentContiner from '../comment/create_comment_container';
 import CommentIndexContainer from '../comment/comment_index_container';
 
@@ -81,7 +82,13 @@ class AnswerIndexItem extends React.Component {
                     </div>
                 </div>
                 <div className="answer-body-container">
-                    <p className="answer-body testing">{this.props.answer.body}</p>
+                    {/* <ReactQuill
+                        className="answer-body testing"
+                        readOnly
+                        modules={{ toolbar: null }}
+                        value={this.props.answer.body}
+                    /> */}
+                    <span className="answer-body testing">{renderHTML(this.props.answer.body)}</span>
                 </div>
 
                 <div hidden={this.props.answer.author_id === this.props.currentUser.id ? null : "hidden"} >
