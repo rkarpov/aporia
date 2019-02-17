@@ -19,10 +19,14 @@
 
 .delete-topic-button:hover {
     background: darkgray;
+      border: 1px solid gray;
 }
 .delete-topic-button {
     margin-left: 5px;
-    border: 1px solid gray;
+    // padding: 1px;
+    // border: 1px solid gray;
+    height: 17px;
+    width: 17px;
 }
 
 .feed-header {
