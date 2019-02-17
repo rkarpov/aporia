@@ -21,7 +21,6 @@ class Api::TopicsController < ApplicationController
         else 
             @topic = Topic.new({"description" => params[:topic][:description]})
             if @topic.save
-                # 
                 @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id].to_i})
                 @joins.save
                 render :show 
@@ -71,29 +70,11 @@ class Api::TopicsController < ApplicationController
     end
 
     def destroy
-        #  
-        #  "rack.request.form_hash"=>{"topic"=>{"question_id"=>"217"}}
-        #  @filtered_parameters={"topic"=>{"question_id"=>"217"
-        # @_params=<ActionController::Parameters {"topic"=><ActionController::Parameters {"question_id"=>"217"}
-        # "action_dispatch.request.parameters"=>{"topic"=>{"question_id"=>"217"}
         @topic = Topic.find(params[:id])
         @question = Question.find(params[:question_id])
         @question_topic = QuestionTopic.find_by(topic_id: @topic.id, question_id: @question.id)
-        # debcugger
-        # @question = Question.find_by(id: params[:topic][:question_id])
-        # @topic.question_ids.delete(@question.id)
-        # @question.topic_ids.delete(@topic.id)
-        # @topic.save 
-        # @question.save
-        # 
         @question_topic.destroy
         render :show
-        # if @question_topic.destroy
-
-        #     render :show
-        # else 
-        #     render json: @topic.errors.full_messages, status: 422
-        # end
     end
 
     def topic_params

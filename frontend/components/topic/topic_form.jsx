@@ -7,11 +7,12 @@ class TopicForm extends React.Component {
         this.state = this.props.topic
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    
     handleSubmit(e) {
         e.preventDefault;
         // this.props.action(this.state)
         this.props.action({ description: this.state.description, question_id: this.props.questionId })
+        this.props.requestQuestions();
         this.props.closeModal();
     }
 

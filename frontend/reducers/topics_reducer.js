@@ -10,7 +10,7 @@ const topicsReducer = ( oldState = {}, action) => {
         case RECEIVE_TOPIC:
             return merge(newState, { [action.topic.id]: action.topic });
         case REMOVE_TOPIC: 
-            delete newState[action.topicId];
+            delete newState[action.topicId.topic_id];
             return newState;
         default:
             return oldState;

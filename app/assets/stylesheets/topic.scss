@@ -36,9 +36,9 @@
 
 .question-feedIndex-topics {
     min-width: 130px;
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
     font-family: sans-serif;
     font-size: 14px;
     word-break: break-word;
@@ -79,4 +79,9 @@
 }
 .topic-p {
     word-break: break-word;
+}
+
+.selected-topic {
+    background: rgb(211, 211, 211);
+
 }
