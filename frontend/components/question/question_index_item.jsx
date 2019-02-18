@@ -31,14 +31,17 @@ class QuestionIndexItem extends React.Component {
         let dropdown;
         if (this.state.dropdown) {
             dropdown =
+                // <div className="answer-form-container">
+
                 <CreateAnswerContainer
                     toggleDropdown={this.toggleDropdown}
                     questionId={this.props.question.id}
-                />
+                    />
+                // </div>
         }
 
         return (
-            <div className="dropdown">
+            <div className="dropdown-answer-form">
                 <div className="answer-index-container">
                     <div className="answer-icon-container">
                         <img className="answer-index-svg" onClick={this.toggleDropdown} src={window.answerIcon} />
@@ -137,10 +140,14 @@ class QuestionIndexItem extends React.Component {
            
                     <footer hidden={this.props.match.url.includes("content") ? "hidden" : null} >
                         <div hidden={this.props.formType === 'editQuestion' ? "hidden" : null}>
-                            {this.dropdown()}
                             <span className="options-container">
                                 {this.options()}
                             </span>
+                            <div className="answer-index-container">
+                                <span>
+                                    {this.dropdown()}
+                                </span>  
+                            </div>
                         </div>
                         <div >
                             <AnswerIndexContainer 

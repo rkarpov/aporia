@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import Quil from './quil';
 import ReactQuill from 'react-quill';
 // import renderHTML from 'react-render-html';
 // import 'react-quill/dist/quill.snow.css'

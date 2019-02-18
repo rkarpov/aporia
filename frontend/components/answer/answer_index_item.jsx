@@ -14,14 +14,15 @@ class AnswerIndexItem extends React.Component {
         super(props)
         this.state = { dropdown: false, options: false };
         this.toggleEdit = this.toggleEdit.bind(this);
-        // this.toggleOptions = this.toggleOptions.bind(this);
-        // this.onClickOut = this.onClickOut.bind(this);
+        this.toggleOptions = this.toggleOptions.bind(this);
+        this.onClickOut = this.onClickOut.bind(this);
     }
 
     toggleEdit() {
         // e.preventDefault();
         this.setState({
-            dropdown: !this.state.dropdown
+            dropdown: !this.state.dropdown,
+            options: false
         });
     }
 
@@ -40,16 +41,55 @@ class AnswerIndexItem extends React.Component {
         }
 
         return (
-            <div className="dropdown">
-                <div className="answer-index-container">
-                    <a className="edit-answer-button" onClick={this.toggleEdit} type="text">Edit</a>
-                    <button className="delete-answer-button" onClick={() => this.props.deleteAnswer(this.props.answer.id)}>
-                        Delete
-                    </button>
-                </div>
+            <div>
                 {dropdown}
             </div>
         );
+    }
+
+    onClickOut(e) {
+        if (this.state.options) {
+            this.setState({
+                options: !this.state.options
+            });
+        }
+    }
+
+    toggleOptions(e) {
+        e.preventDefault();
+        this.setState({
+            options: !this.state.options
+        })
+    }
+
+    options() {
+        let options;
+        if (this.state.options) {
+            options =
+            <div className="options-content" >
+                <div className="dropdown-items-list">
+                    <button
+                        className="dropdown-item"
+                        onClick={() => this.toggleEdit()}
+                    >Edit Answer</button>
+                    <button
+                        className="dropdown-item"
+                        onClick={() => this.props.deleteAnswer(this.props.answer.id)}
+                    >Delete Answer</button>
+                </div>
+            </div>
+        }
+
+        return (
+            <ClickOutHandler onClickOut={() => this.onClickOut()}>
+                <div className="dropdown">
+                    <div className="options-icon-container">
+                        <img className="options-icon-svg" onClick={this.toggleOptions} src={window.optionsIcon} />
+                    </div>
+                    {options}
+                </div>
+            </ClickOutHandler>
+        )
     }
 
     render() {
@@ -81,20 +121,15 @@ class AnswerIndexItem extends React.Component {
                         <p>Answered {date}</p>
                     </div>
                 </div>
+                <div hidden={this.props.answer.author_id === this.props.currentUser.id ? null : "hidden"} >
+                    <div className="options-container">
+                        {this.options()}
+                    </div>
+                </div>
                 <div className="answer-body-container">
-                    {/* <ReactQuill
-                        className="answer-body testing"
-                        readOnly
-                        modules={{ toolbar: null }}
-                        value={this.props.answer.body}
-                    /> */}
                     <span className="answer-body testing">{renderHTML(this.props.answer.body)}</span>
                 </div>
-
-                <div hidden={this.props.answer.author_id === this.props.currentUser.id ? null : "hidden"} >
-                    {this.dropdown()}
-                </div>
-                
+                {this.dropdown()}
                 <div hidden={this.props.match.url.includes("/index") ? "hidden" : null}>
                     <div>
                         <CreateCommentContiner
