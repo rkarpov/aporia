@@ -5,6 +5,7 @@ import AnswerIndexContainer from '../../components/answer/answer_index_container
 const ClickOutHandler = require('react-onclickout');
 // import CreateTopicContainer from '../topic/create_topic_container';
 import TopicIndexContainer from '../topic/topic_index_container';
+import UserQuestionsContainer from '../content/user_questions_container';
 
 class QuestionIndexItem extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class QuestionIndexItem extends React.Component {
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.toggleOptions = this.toggleOptions.bind(this);
         this.onClickOut = this.onClickOut.bind(this);
-    };
+    }
 
     toggleDropdown() {
         // e.preventDefault();
@@ -86,6 +87,12 @@ class QuestionIndexItem extends React.Component {
                             className="dropdown-item"  
                         onClick={() => this.props.openModal({ modal: 'createTopic', questionId: this.props.question.id })}
                         >Add Topic</button>
+                        <Link
+                        to="/api/content/questions"
+                            hidden={this.props.currentUser.id === this.props.question.authorId && this.props.question.answerIds.length === 0 ? null : "hidden"}
+                            className="dropdown-item"  
+                            onClick={() => this.props.deleteQuestion(this.props.question.id)}
+                        >Delete Question</Link>
                     </div>
                 </div>
         }

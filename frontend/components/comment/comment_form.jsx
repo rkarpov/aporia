@@ -13,7 +13,7 @@ class CommentForm extends React.Component {
         this.props.action(this.state)
         if (this.props.pageType === 'Update') {
             this.props.toggleEdit();
-        }
+        } else { this.setState({body: ''}) }
     }
 
     update(field) {
