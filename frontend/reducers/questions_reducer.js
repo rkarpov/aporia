@@ -1,7 +1,9 @@
 import merge from 'lodash/merge';
 import { RECEIVE_ALL_QUESTIONS, RECEIVE_QUESTION, REMOVE_QUESTION } from '../actions/question_actions';
+import { RECEIVE_QUESTION_VOTE, REMOVE_QUESTION_VOTE } from '../actions/vote_actions';
 
 const questionsReducer = (oldState = {}, action) => {
+    debugger
     Object.freeze(oldState);
     let newState = merge({}, oldState);
     switch (action.type) {
@@ -12,6 +14,9 @@ const questionsReducer = (oldState = {}, action) => {
         case REMOVE_QUESTION: 
             delete newState[action.questionId];
             return newState;
+        case RECEIVE_QUESTION_VOTE:
+            return merge({[action.payload.vote.questionId]: action.payload.vote.votes})
+
         default:
             return oldState;
     }

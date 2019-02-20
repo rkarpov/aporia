@@ -18,6 +18,8 @@ class Question < ApplicationRecord
     has_many :topics,
         through: :question_topics,
         source: :topic
+
+    has_many :votes, as: :votable
     
     # belongs_to :topic,
     #     foreign_key: :topic_id,

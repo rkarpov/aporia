@@ -10,3 +10,4 @@
     json.answerIds []
     json.answerAuthorIds []
     json.topicIds [] # look up pluck method
+    json.votes question.vote_count
