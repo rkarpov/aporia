@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { requestQuestions, deleteQuestion } from '../../actions/question_actions';
+import { createQuestionVote } from '../../actions/vote_actions';
 
 import QuestionIndex from './question_index';
 import { openModal } from '../../actions/modal_actions';
@@ -17,6 +18,7 @@ const mdp = dispatch => {
     return {
         requestQuestions: () => dispatch(requestQuestions()),
         deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
+        createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
         openModal: (modal) => dispatch(openModal(modal)),
     }
 }

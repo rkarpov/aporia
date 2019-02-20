@@ -9,8 +9,8 @@ class QuestionTopicIndex extends React.Component {
     componentDidMount() {
         this.props.requestQuestions()
         this.props.requestTopics()
-
     }
+    
     componentWillMount() {
         this.props.requestQuestions()
         this.props.requestTopics();
@@ -43,6 +43,7 @@ class QuestionTopicIndex extends React.Component {
                 currentUser={this.props.currentUser}
                 pageType={this.props.pageType}
                 openModal={this.props.openModal}
+                createQuestionVote={this.props.createQuestionVote}
             />
             questions.push(item);
         } else {
@@ -55,6 +56,7 @@ class QuestionTopicIndex extends React.Component {
                     currentUser={this.props.currentUser}
                     pageType={this.props.pageType}
                     openModal={this.props.openModal}
+                    createQuestionVote={this.props.createQuestionVote}
                 />
                 if ((this.props.pageType === 'unansweredQuestions') && (question.answerAuthorIds.length === 0)) {
                     questions.push(item);

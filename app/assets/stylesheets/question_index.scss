@@ -157,3 +157,18 @@
     border-bottom: 1px solid #b9b9b9;
     //    background: white;
 }
+
+.vote-button {
+    margin: 20px;
+     font-size: 14px;
+     font-weight: bold;
+     font-family: sans-serif;
+     font-weight: 500;
+     // color: rgba(6, 112, 6, 0.897); // green letters for no button background
+     color: white;
+     background: #3e78ad;
+     border: 1px solid rgb(78, 83, 162);
+     box-shadow: 0 0 5px #888;
+     font-family: sans-serif;
+     border-radius: 3px;
+}

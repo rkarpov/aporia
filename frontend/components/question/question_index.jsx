@@ -25,6 +25,7 @@ class QuestionIndex extends React.Component {
                 currentUser={this.props.currentUser}
                 pageType={this.props.pageType}
                 openModal={this.props.openModal}
+                createQuestionVote={this.props.createQuestionVote}
             />
             questions.push(item);
         } else {
@@ -38,6 +39,7 @@ class QuestionIndex extends React.Component {
                     currentUser={this.props.currentUser}
                     pageType={this.props.pageType}
                     openModal={this.props.openModal}
+                    createQuestionVote={this.props.createQuestionVote}
                 />
                 if ((this.props.pageType === 'unansweredQuestions') && (question.answerAuthorIds.length === 0)) {
                     questions.push(item);
@@ -110,6 +112,7 @@ class QuestionIndex extends React.Component {
 
                         <div className="placeholder-container">
                             <input className="placeholder" type="text" />
+                            {/*  <PersonalLinks /> */}
                         </div>
                     </div>
                 </div>

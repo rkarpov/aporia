@@ -37,13 +37,15 @@ const msp = (state, ownProps) => {
     // }
 };
 
-const mdp = dispatch => ({
-    fetchQuestion: id => dispatch(fetchQuestion(id)),
-    deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
-    requestQuestions: () => dispatch(requestQuestions()),
-    createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
-    openModal: (modal) => dispatch(openModal(modal))
-});
+const mdp = dispatch => {
+    return ({
+        fetchQuestion: id => dispatch(fetchQuestion(id)),
+        deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
+        requestQuestions: () => dispatch(requestQuestions()),
+        createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
+        openModal: (modal) => dispatch(openModal(modal))
+    })
+};
 
 export default connect(msp, mdp)(QuestionShow)
 // export default connect(msp, mdp)(QuestionIndex)

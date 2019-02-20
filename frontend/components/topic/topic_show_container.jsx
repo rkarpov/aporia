@@ -6,6 +6,8 @@ import { requestTopic, deleteTopic, requestTopics } from '../../actions/topic_ac
 import TopicShow from './topic_show';
 import QuestionIndex from '../question/question_index';
 import { openModal } from '../../actions/modal_actions';
+import { createQuestionVote } from '../../actions/vote_actions';
+
 
 const msp = (state, ownProps) => {
     let topic = { id: -0, description: '' };
@@ -48,7 +50,8 @@ const mdp = dispatch => ({
     requestTopic: (id) => dispatch(requestTopic(id)),
     deleteTopic: () => dispatch(deleteTopic()),
     requestTopics: () => dispatch(requestTopics()),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
+    createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
 });
 
 export default connect(msp, mdp)(TopicShow)

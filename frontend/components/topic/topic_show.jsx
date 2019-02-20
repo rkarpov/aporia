@@ -22,6 +22,7 @@ class TopicShow extends React.Component {
                 pageType={this.props.pageType}
                 // requestQuestions={this.props.requestQuestions}
                 openModal={this.props.openModal}
+                createQuestionVote={this.props.createQuestionVote}
             />
         );
     }

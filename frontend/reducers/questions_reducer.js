@@ -14,7 +14,8 @@ const questionsReducer = (oldState = {}, action) => {
             delete newState[action.questionId];
             return newState;
         case RECEIVE_QUESTION_VOTE:
-            return merge({[action.payload.vote.questionId]: action.payload.vote.votes})
+            newState[action.payload.vote.questionId].votes = action.payload.vote.votes;
+            return newState;
         default:
             return oldState;
     }
