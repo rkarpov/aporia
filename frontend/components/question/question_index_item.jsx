@@ -163,7 +163,7 @@ class QuestionIndexItem extends React.Component {
                         <div>
                             <button 
                                 className="vote-button"
-                                hidden={this.props.question.answerAuthorIds.length === 0 ? "hidden" : null }
+                                // hidden={this.props.question.answerAuthorIds.length === 0 ? "hidden" : null } // set default length so its not undefined
                                 onClick={() => this.props.createQuestionVote({ 
                                     user_id: this.props.currentUser.id,
                                     question_id: this.props.question.id,

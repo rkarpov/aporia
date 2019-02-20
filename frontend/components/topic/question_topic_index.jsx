@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import QuestionIndexItem from '../question/question_index_item';
 import NavbarContainer from '../navbar/navbar_container';
 import TopicIndexContainer from './topic_index_container';
+import PersonalLinks from '../personal/personal_links';
 
 class QuestionTopicIndex extends React.Component {
 
@@ -103,8 +104,9 @@ class QuestionTopicIndex extends React.Component {
                             </div>
                         </div>
 
-                        <div className="placeholder-container">
-                            <input className="placeholder" type="text" />
+                        <div className="personal-container">
+                            <PersonalLinks />
+                            {/* <input className="placeholder" type="text" /> */}
                         </div>
                     </div>
                 </div>

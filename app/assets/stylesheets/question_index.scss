@@ -160,14 +160,17 @@
 
 .vote-button {
     margin: 20px;
+    padding: 5px;
      font-size: 14px;
      font-weight: bold;
      font-family: sans-serif;
      font-weight: 500;
      // color: rgba(6, 112, 6, 0.897); // green letters for no button background
-     color: white;
-     background: #3e78ad;
-     border: 1px solid rgb(78, 83, 162);
+    //  color: white;
+     color: rgba(6, 112, 6, 0.897);
+    //  background: #3e78ad;
+     background: lightgoldenrodyellow;
+    //  border: 1px solid rgb(78, 83, 162);
      box-shadow: 0 0 5px #888;
      font-family: sans-serif;
      border-radius: 3px;
