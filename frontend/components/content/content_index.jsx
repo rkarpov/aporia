@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ContentIndexItem from './content_index_item';
 import NavbarContainer from '../navbar/navbar_container';
-import PersonalLinks from '../personal/personal_links';
+// import PersonalLinks from '../personal/personal_links';
 
 class ContentIndex extends React.Component {
 
@@ -61,7 +61,24 @@ class ContentIndex extends React.Component {
                         </div>
 
                         <div className="personal-container">
-                            <PersonalLinks />
+                            {/* <PersonalLinks /> */}
+                            <div className="feed-container">
+                                <div className="">
+                                    <p className="feed-header">Contact Me</p>
+                                </div>
+                                <div className="question-feedIndex-topics">
+                                    <a href="//github.com/rkarpov">Github </a>
+                                </div>
+                                <div className="question-feedIndex-topics">
+                                    <a href="https://rkarpov.github.io./">Personal Site</a>
+                                </div>
+                                <div className="question-feedIndex-topics">
+                                    <a href="https://www.linkedin.com/in/roman-karpov-206182145/">Linked in</a>
+                                </div>
+                                <div className="question-feedIndex-topics">
+                                    <a href="https://angel.co/roman-karpov">Angel List</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
