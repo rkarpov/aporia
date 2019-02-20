@@ -20,7 +20,6 @@ const mdp = dispatch => {
         deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
         openModal: (modal) => dispatch(openModal(modal)),
         createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
-        // deleteQuestionVote: (voteId) => dispatch(deleteQuestionVote(voteId))
     }
 }
 

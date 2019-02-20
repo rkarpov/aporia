@@ -6,10 +6,3 @@ export const createQuestionVote = vote => {
         data: { vote }
     })
 }
-
-// export const removeQuestionVote = voteId => {
-//     return $.ajax({
-//         method: 'DELETE',
-//         url: `/api/questions/${voteId.question_id}/votes/${voteId.voteId}`,
-//     })
-// }

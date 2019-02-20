@@ -17,6 +17,7 @@ class QuestionShow extends React.Component {
   }
 
   render() {
+      debugger
     return (
         <QuestionIndex
             question={this.props.question}
@@ -24,6 +25,7 @@ class QuestionShow extends React.Component {
             currentUser={this.props.currentUser}
             pageType={this.props.pageType}
             requestQuestions={this.props.requestQuestions}
+            createQuestionVote={this.props.createQuestionVote}
             questions={this.props.questions}
             openModal={this.props.openModal}
             match={this.props.match}

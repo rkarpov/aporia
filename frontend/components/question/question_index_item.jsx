@@ -161,19 +161,22 @@ class QuestionIndexItem extends React.Component {
                                 questionId={this.props.question.id}
                             />
                         </div>
-                        <div>
-                            <button className="add-answer-button"
+                    <div hidden={(this.props.pageType === 'mainIndex') ? null : "hidden"}>
+                            <button 
+                                className="add-answer-button"
+                                // hidden={this.props.question.answerAuthorIds.length === 0 ? "hidden" : null }
                                 onClick={() => this.props.createQuestionVote({ 
                                     user_id: this.props.currentUser.id,
                                     question_id: this.props.question.id,
                                     votable_type: 'Question',
-                                    vote_type: 'up'
+                                    vote: 'up'
                                 })}>
                                 UpVote
                             </button>
                             <label>{this.props.question.votes}</label>
-                            <button className="add-answer-button"
-                            onClick={() => this.props.createQuestionVote({
+                            <button 
+                                className="add-answer-button"
+                                onClick={() => this.props.createQuestionVote({
                                     user_id: this.props.currentUser.id,
                                     question_id: this.props.question.id,
                                     votable_type: 'Question',

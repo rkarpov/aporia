@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchQuestion, deleteQuestion, requestQuestions } from '../../actions/question_actions';
+import { createQuestionVote } from '../../actions/vote_actions';
 import QuestionShow from './question_show';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
+    debugger
     let questions;
     let question;
     const defaultQuestion = { body: '' }
@@ -40,6 +42,7 @@ const mdp = dispatch => ({
     fetchQuestion: id => dispatch(fetchQuestion(id)),
     deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
     requestQuestions: () => dispatch(requestQuestions()),
+    createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
     openModal: (modal) => dispatch(openModal(modal))
 });
 

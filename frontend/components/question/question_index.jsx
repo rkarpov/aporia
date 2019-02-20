@@ -16,7 +16,7 @@ class QuestionIndex extends React.Component {
         let initials = ''
         initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
         initials = initials.toUpperCase();
-debugger
+// debugger
         let questions = [];
         if (this.props.pageType === 'showQuestion') {
             const item = <QuestionIndexItem
@@ -36,7 +36,6 @@ debugger
                     question={question}
                     deleteQuestion={this.props.deleteQuestion}
                     createQuestionVote={this.props.createQuestionVote}
-                    deleteQuestionVote={this.props.deleteQuestionVote}
                     currentUser={this.props.currentUser}
                     pageType={this.props.pageType}
                     openModal={this.props.openModal}
