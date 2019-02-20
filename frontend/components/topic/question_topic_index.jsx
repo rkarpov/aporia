@@ -106,7 +106,6 @@ class QuestionTopicIndex extends React.Component {
 
                         <div className="personal-container">
                             <PersonalLinks />
-                            {/* <input className="placeholder" type="text" /> */}
                         </div>
                     </div>
                 </div>
