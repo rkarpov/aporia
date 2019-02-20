@@ -14,7 +14,6 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = dispatch => {
-    debugger
     return {
         requestQuestions: () => dispatch(requestQuestions()),
         deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),

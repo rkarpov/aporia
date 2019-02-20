@@ -17,7 +17,6 @@ class QuestionShow extends React.Component {
   }
 
   render() {
-      debugger
     return (
         <QuestionIndex
             question={this.props.question}

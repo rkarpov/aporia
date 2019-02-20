@@ -3,7 +3,6 @@ import { RECEIVE_ALL_QUESTIONS, RECEIVE_QUESTION, REMOVE_QUESTION } from '../act
 import { RECEIVE_QUESTION_VOTE, REMOVE_QUESTION_VOTE } from '../actions/vote_actions';
 
 const questionsReducer = (oldState = {}, action) => {
-    debugger
     Object.freeze(oldState);
     let newState = merge({}, oldState);
     switch (action.type) {

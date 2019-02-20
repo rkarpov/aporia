@@ -16,7 +16,6 @@ class QuestionIndex extends React.Component {
         let initials = ''
         initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
         initials = initials.toUpperCase();
-// debugger
         let questions = [];
         if (this.props.pageType === 'showQuestion') {
             const item = <QuestionIndexItem

@@ -6,7 +6,6 @@ import QuestionShow from './question_show';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    debugger
     let questions;
     let question;
     const defaultQuestion = { body: '' }
