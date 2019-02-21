@@ -113,7 +113,7 @@ class QuestionIndex extends React.Component {
 
                         <div className="personal-container">
                              {/* <PersonalLinks /> */}
-                            <div className="feed-container">
+                            {/* <div className="feed-container"> */}
                                 <div className="">
                                     <p className="feed-header">Contact Me</p>
                                 </div>
@@ -129,7 +129,7 @@ class QuestionIndex extends React.Component {
                                 <div className="question-feedIndex-topics">
                                     <a href="https://angel.co/roman-karpov">Angel List</a>
                                 </div>
-                            </div>
+                            {/* </div> */}
                         </div>
                     </div>
                 </div>
