@@ -71,6 +71,7 @@ class QuestionIndexItem extends React.Component {
     }
 
     options() {
+        debugger
         let options;
         if (this.state.options) {
             options = 
@@ -88,8 +89,8 @@ class QuestionIndexItem extends React.Component {
                         onClick={() => this.props.openModal({ modal: 'createTopic', questionId: this.props.question.id })}
                         >Add Topic</button>
                         <Link
-                        to="/api/content/questions"
-                            hidden={this.props.currentUser.id === this.props.question.authorId && this.props.question.answerIds.length === 0 ? null : "hidden"}
+                            to="/api/content/questions"
+                            hidden={this.props.question.answerAuthorIds.length === 0 && this.props.currentUser.id === this.props.question.authorId ? null : "hidden"}
                             className="dropdown-item"  
                             onClick={() => this.props.deleteQuestion(this.props.question.id)}
                         >Delete Question</Link>
