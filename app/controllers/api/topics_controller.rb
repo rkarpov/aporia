@@ -8,7 +8,6 @@ class Api::TopicsController < ApplicationController
 
 
     def create
- 
         if Topic.find_by(description: params[:topic][:description])
             @topic = (Topic.find_by(description: params[:topic][:description])) 
             if @topic.question_ids.include?(params[:topic][:question_id].to_i)

@@ -71,8 +71,8 @@ class QuestionIndexItem extends React.Component {
     }
 
     options() {
-        debugger
         let options;
+        debugger
         if (this.state.options) {
             options = 
                 <div className="options-content" >
@@ -85,12 +85,26 @@ class QuestionIndexItem extends React.Component {
                             className="dropdown-item"  
                         >Edit Topics</button> */}
                         <button
-                            className="dropdown-item"  
+                            className="dropdown-item"
                         onClick={() => this.props.openModal({ modal: 'createTopic', questionId: this.props.question.id })}
                         >Add Topic</button>
                         <Link
                             to="/api/content/questions"
-                            hidden={this.props.question.answerAuthorIds.length === 0 && this.props.currentUser.id === this.props.question.authorId ? null : "hidden"}
+                            hidden={
+                                this.props.question.answerAuthorIds.length === 0 && 
+                                this.props.currentUser.id === this.props.question.authorId && 
+                                this.props.match.url.includes('question')
+                                ? null : "hidden"}
+                            className="dropdown-item"  
+                            onClick={() => this.props.deleteQuestion(this.props.question.id)}
+                        >Delete Question</Link>
+                        <Link
+                            to="/index"
+                            hidden={
+                                this.props.question.answerAuthorIds.length === 0 && 
+                                this.props.currentUser.id === this.props.question.authorId && 
+                                this.props.match.url.includes('index')
+                                ? null : "hidden"}
                             className="dropdown-item"  
                             onClick={() => this.props.deleteQuestion(this.props.question.id)}
                         >Delete Question</Link>
