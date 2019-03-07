@@ -12,7 +12,7 @@ class TopicForm extends React.Component {
         e.preventDefault;
         // this.props.action(this.state)
         this.props.action({ description: this.state.description, question_id: this.props.questionId })
-        this.props.requestQuestions();
+        // this.props.requestQuestions();
         this.props.closeModal();
     }
 

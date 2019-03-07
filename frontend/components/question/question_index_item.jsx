@@ -72,7 +72,6 @@ class QuestionIndexItem extends React.Component {
 
     options() {
         let options;
-        debugger
         if (this.state.options) {
             options = 
                 <div className="options-content" >

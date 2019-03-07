@@ -8,12 +8,12 @@ import TopicIndexContainer from './topic_index_container';
 class QuestionTopicIndex extends React.Component {
 
     componentDidMount() {
-        this.props.requestQuestions()
+        // this.props.requestQuestions()
         this.props.requestTopics()
     }
     
     componentWillMount() {
-        this.props.requestQuestions()
+        // this.props.requestQuestions()
         this.props.requestTopics();
     }
 
