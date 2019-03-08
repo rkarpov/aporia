@@ -6,7 +6,6 @@ class Api::VotesController < ApplicationController
         votable_id = params[:vote][:question_id]
         vote = params[:vote][:vote]
         user_id = params[:vote][:user_id]
-
         @question = Question.find_by(id: votable_id) # @vote.votable == @question || Question[:votable_id]
         @vote = Vote.find_by(votable_id: votable_id, votable_type: votable_type, user_id: current_user.id)
         if (@vote && (@vote.vote == vote))

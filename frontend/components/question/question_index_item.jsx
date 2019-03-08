@@ -88,7 +88,7 @@ class QuestionIndexItem extends React.Component {
                         onClick={() => this.props.openModal({ modal: 'createTopic', questionId: this.props.question.id })}
                         >Add Topic</button>
                         <Link
-                            to="/api/content/questions"
+                            to="/content/questions"
                             hidden={
                                 this.props.question.answerAuthorIds.length === 0 && 
                                 this.props.currentUser.id === this.props.question.authorId && 
@@ -154,7 +154,7 @@ class QuestionIndexItem extends React.Component {
                         </div> */}
                     </header>
 
-                    <Link to={`/api/questions/${this.props.question.id}`} className="question-body">
+                    <Link to={`/questions/${this.props.question.id}`} className="question-body">
                             <p className="question-body testing">{this.props.question.body}</p>
                     </Link>
            

@@ -7,7 +7,7 @@ class TopicIndexItem extends React.Component {
         return(
             <div className={this.props.match.params.description === `${this.props.topic.description}` ? `question-${this.props.sourceType}-topics selected-topic` : `question-${this.props.sourceType}-topics`}>
             {/* link to topic/topic.id url path to index questions that have that topics id*/}
-                <Link to={`/api/topics/${this.props.topic.description}`}>
+                <Link to={`/topics/${this.props.topic.description}`}>
                     { this.props.topic.description } 
                 </Link>
                 <div className="delete-topic-button-container" hidden={this.props.match.url.includes('question') ? null : "hidden"}>

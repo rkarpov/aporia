@@ -40,7 +40,7 @@ class Navbar extends React.Component {
                 <div className="dropdown-content" >
                     <div className="dropdown-items-list">
 
-                    <Link className="dropdown-item" to="/api/content">Your Content</Link>
+                    <Link className="dropdown-item" to="/content">Your Content</Link>
                     <button className="dropdown-item" onClick={() => this.props.logout()}>Logout</button>
                     </div>
                 </div>

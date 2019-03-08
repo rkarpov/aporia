@@ -45,9 +45,9 @@ class ContentIndex extends React.Component {
                             {/* <input type="text" /> */}
                             <div className="content-feed-container">
                                 <h2 className="feed-content-header">By Content Type</h2>
-                                <Link to="/api/content"><p className="feed-item">All Types</p></Link>
-                                <Link to="/api/content/questions"><p className="feed-item">Your Questions</p></Link>
-                                <Link to="/api/content/answers"><p className="feed-item">Your Answers</p></Link>
+                                <Link to="/content"><p className="feed-item">All Types</p></Link>
+                                <Link to="/content/questions"><p className="feed-item">Your Questions</p></Link>
+                                <Link to="/content/answers"><p className="feed-item">Your Answers</p></Link>
                             </div>
                         </div>
 

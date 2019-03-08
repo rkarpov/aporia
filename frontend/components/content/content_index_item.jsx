@@ -18,7 +18,7 @@ class ContentIndexItem extends React.Component {
                         <p hidden={!this.props.question.answerAuthorIds.includes(this.props.currentUser.id) && (this.props.question.authorId === this.props.currentUser.id) ? null : "hidden" }
                         >Asked on {this.props.question.date} </p>
 
-                        <Link to={`/api/questions/${this.props.question.id}`} className="question-body">
+                        <Link to={`/questions/${this.props.question.id}`} className="question-body">
                             <p className="content-question-body testing">{this.props.question.body}</p>
                         </Link>
                     </div>

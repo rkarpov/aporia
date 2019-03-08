@@ -21,11 +21,11 @@ const App = () => {
                 <AuthRoute exact path="/" component={SessionFormContainer} />
                 <ProtectedRoute exact path="/index" component={QuestionIndexContainer} />   
                 <ProtectedRoute exact path="/answer" component={QuestionUnansweredContainer} />   
-                <ProtectedRoute exact path="/api/topics/:description" component={TopicShowContainer} />   
-                <ProtectedRoute exact path="/api/content/questions" component={userQuestionsContainer} />
-                <ProtectedRoute exact path="/api/content/answers" component={UserAnsweredContainer} />
-                <ProtectedRoute exact path="/api/content" component={ContentContainer} />
-                <ProtectedRoute exact path="/api/questions/:questionId" component={QuestionShowContainer} />
+                <ProtectedRoute exact path="/topics/:description" component={TopicShowContainer} />   
+                <ProtectedRoute exact path="/content/questions" component={userQuestionsContainer} />
+                <ProtectedRoute exact path="/content/answers" component={UserAnsweredContainer} />
+                <ProtectedRoute exact path="/content" component={ContentContainer} />
+                <ProtectedRoute exact path="/questions/:questionId" component={QuestionShowContainer} />
             </Switch>
         </div>
     );

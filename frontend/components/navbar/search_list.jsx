@@ -27,7 +27,7 @@ class Search extends React.Component {
             return (
                 <Link
                     key={question.id}
-                    to={`/api/questions/${question.id}`}> 
+                    to={`/questions/${question.id}`}> 
                     <ul className="dropdown-item search-link">
                         {question.body}
                     </ul>

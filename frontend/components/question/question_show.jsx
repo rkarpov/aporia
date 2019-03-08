@@ -1,5 +1,6 @@
 import React from 'react';
 import QuestionIndex from './question_index';
+import QuestionIndexItem from './question_index_item';
 
 class QuestionShow extends React.Component {
   componentDidMount() {
@@ -11,14 +12,16 @@ class QuestionShow extends React.Component {
 //   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.question.id != this.props.match.params.questionId) {
+    // debugger
+    if (prevProps.questionId != this.props.match.params.questionId) {
         this.props.fetchQuestion(this.props.match.params.questionId);
     }
   }
 
   render() {
     return (
-        <QuestionIndex
+        <QuestionIndex // send to a separate question show page to prevent additional fetchquestions
+        // <QuestionIndexItem
             question={this.props.question}
             deleteQuestion={this.props.deleteQuestion}
             currentUser={this.props.currentUser}
