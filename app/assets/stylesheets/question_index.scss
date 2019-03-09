@@ -175,3 +175,21 @@
      font-family: sans-serif;
      border-radius: 3px;
 }
+
+.selected-vote-button {
+    margin: 20px;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-weight: 500;
+    // color: rgba(6, 112, 6, 0.897); // green letters for no button background
+    //  color: white;
+    color: rgba(6, 112, 6, 0.897);
+    //  background: #3e78ad;
+    background: lightgoldenrodyellow;
+     border: 1.5px solid blue;
+    box-shadow: 0 0 5px darkblue;
+    font-family: sans-serif;
+    border-radius: 3px;
+}

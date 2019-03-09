@@ -8,7 +8,7 @@ import { openModal } from '../../actions/modal_actions';
 const msp = (state, ownProps) => {
     let questions;
     let question;
-    const defaultQuestion = { body: '' }
+    const defaultQuestion = { body: '', upVoterIds: [], downVoterIds: [] }
     // question = state.entities.questions[ownProps.match.params.questionId] || defaultQuestion
     if (Object.values(state.entities.questions).length > 0) {
         questions = Object.values(state.entities.questions)

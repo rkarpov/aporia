@@ -131,6 +131,7 @@ class QuestionIndexItem extends React.Component {
         // const names = this.props.author.split(' ')
         // authorInitials += names[0][0] + names[1][0];
         // authorInitials = authorInitials.toUpperCase();
+        
         return (
                 <div className="question-index-item-container" >
                     <header className="question-index-header-container">
@@ -176,7 +177,8 @@ class QuestionIndexItem extends React.Component {
                         </div>
                         <div>
                             <button 
-                                className="vote-button"
+                            // className="vote-button"
+                                className={this.props.question.upVoterIds.includes(this.props.currentUser.id) ? "selected-vote-button" : "vote-button"}
                                 // hidden={this.props.question.answerAuthorIds.length === 0 ? "hidden" : null } // set default length so its not undefined
                                 onClick={() => this.props.createQuestionVote({ 
                                     user_id: this.props.currentUser.id,
@@ -188,7 +190,8 @@ class QuestionIndexItem extends React.Component {
                             </button>
                             <label>{this.props.question.votes}</label>
                             <button 
-                                className="vote-button"
+                                // className="vote-button"
+                                className={this.props.question.downVoterIds.includes(this.props.currentUser.id) ? "selected-vote-button" : "vote-button"}
                                 onClick={() => this.props.createQuestionVote({
                                     user_id: this.props.currentUser.id,
                                     question_id: this.props.question.id,
@@ -203,5 +206,9 @@ class QuestionIndexItem extends React.Component {
         )
     }
 }
-
+// QuestionIndexItem.defaultProps = {
+//     question: { 
+//         upVoterIds: []
+//     }
+// }
 export default withRouter(QuestionIndexItem);

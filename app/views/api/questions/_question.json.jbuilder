@@ -11,3 +11,19 @@
     json.answerAuthorIds []
     json.topicIds [] # look up pluck method
     json.votes question.vote_count
+
+    upVoterIds = []
+    downVoterIds = []
+    question.votes.each do |vote|
+    # Vote.all.each do |vote|
+        # upVoterIds << vote.user_id if vote.type === 'up'
+        if vote.votable_type === 'Question' && vote.vote === 'up'
+            upVoterIds << vote.user_id
+        elsif vote.votable_type === 'Question' && vote.vote === 'down'
+            downVoterIds << vote.user_id
+        end 
+    end
+
+    json.upVoterIds upVoterIds
+    json.downVoterIds downVoterIds
+    

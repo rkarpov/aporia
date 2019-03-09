@@ -12,26 +12,32 @@ class Api::VotesController < ApplicationController
             if (vote == 'up')
                 @question.vote_count -= 1 # @question.update(vote_count: @question.vote_count -= 1)
                 @question.save
-                render :votes
+                @vote.destroy
+                # render :votes
+                render 'api/questions/show'
             else 
                 @question.vote_count += 1
                 @question.save
-                render :votes
+                @vote.destroy
+                # render :votes
+                render 'api/questions/show'
             end
-            @vote.destroy
+            # @vote.destroy
         elsif (@vote && (@vote.vote != vote))
             if (vote == 'up')
                 @question.vote_count += 2
                 @question.save
                 @vote.vote = params[:vote][:vote]
                 @vote.save
-                render :votes
+                # render :votes
+                render 'api/questions/show'
             elsif (vote == 'down')
                 @question.vote_count -= 2
                 @question.save
                 @vote.vote = params[:vote][:vote]
                 @vote.save
-                render :votes
+                # render :votes
+                render 'api/questions/show'
             end
         else @vote = Vote.new(votable_id: votable_id, votable_type: votable_type, vote: vote, user_id: user_id)
             if @vote.save
@@ -42,7 +48,8 @@ class Api::VotesController < ApplicationController
                     @question.vote_count -= 1
                     @question.save 
                 end
-                render :votes
+                # render :votes
+                render 'api/questions/show'
             else
                 render json: @vote.errors.full_messages
             end 

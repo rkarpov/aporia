@@ -14,8 +14,9 @@ const questionsReducer = (oldState = {}, action) => {
             delete newState[action.questionId];
             return newState;
         case RECEIVE_QUESTION_VOTE:
-            newState[action.payload.vote.questionId].votes = action.payload.vote.votes;
-            return newState;
+        debugger
+            // newState[action.payload.vote.questionId].votes = action.payload.vote.votes;
+            return { ...newState, [action.payload.id]: action.payload };
         default:
             return oldState;
     }
