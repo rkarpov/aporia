@@ -12,7 +12,6 @@ const receiveAllTopics = (topics) => {
 }
 
 const receiveTopic = (topic) => {
-    debugger
     return {
         type: RECEIVE_TOPIC,
         topic
@@ -20,7 +19,6 @@ const receiveTopic = (topic) => {
 }
 
 const removeTopic = (payload) => {
-    debugger
     return {
         type: REMOVE_TOPIC,
         payload
@@ -40,7 +38,6 @@ export const requestTopic = (id) => dispatch => {
 }
 
 export const createTopic = (topic) => dispatch => {
-    debugger
     return (
         topicApiUtil.createTopic(topic).then((topic) => dispatch(receiveTopic(topic)))
         // have error call back dispatching receive errors

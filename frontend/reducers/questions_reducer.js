@@ -18,7 +18,6 @@ const questionsReducer = (oldState = {}, action) => {
             // newState[action.payload.vote.questionId].votes = action.payload.vote.votes;
             return { ...newState, [action.payload.id]: action.payload };
         case REMOVE_TOPIC:
-            debugger
             // const questionTopicIds = newState[action.payload.question.id].topicIds
             const questionTopicIds = action.payload.question.topicIds
             const topicId = action.payload.topic.id
@@ -28,7 +27,6 @@ const questionsReducer = (oldState = {}, action) => {
                 if (topId !== topicId) { newarr.push(topId) }
             })
             newState[action.payload.question.id].topicIds = newarr;
-            debugger
             return newState;
         default:
             return oldState;
