@@ -8,7 +8,9 @@ class Api::TopicsController < ApplicationController
 
 
     def create
+        
         if Topic.find_by(description: params[:topic][:description])
+            
             @topic = (Topic.find_by(description: params[:topic][:description])) 
             if @topic.question_ids.include?(params[:topic][:question_id].to_i)
                 render json: ["That topic already exists"], status: 401
@@ -19,6 +21,7 @@ class Api::TopicsController < ApplicationController
             end
         else 
             @topic = Topic.new({"description" => params[:topic][:description]})
+            
             if @topic.save
                 @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id].to_i})
                 @joins.save
@@ -59,20 +62,25 @@ class Api::TopicsController < ApplicationController
         render :show
     end
 
-    def update
-        @topic = Topic.find(params[:id])
-        if @topic.update_attributes(topic_params)
-           render :show 
-        else 
-            render json: @topic.errors.full_messages, status: 401
-        end
-    end
+    # def update
+    #     @topic = Topic.find(params[:id])
+    #     if @topic.update_attributes(topic_params)
+    #        render :show 
+    #     else 
+    #         render json: @topic.errors.full_messages, status: 401
+    #     end
+    # end
 
     def destroy
         @topic = Topic.find(params[:id])
         @question = Question.find(params[:question_id])
         @question_topic = QuestionTopic.find_by(topic_id: @topic.id, question_id: @question.id)
         @question_topic.destroy
+        # @question.save
+        # 
+        # @question.topics.delete(@topic.id)
+        # render :index
+        # render 'api/questions/show'
         render :show
     end
 

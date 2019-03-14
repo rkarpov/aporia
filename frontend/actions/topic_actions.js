@@ -12,16 +12,18 @@ const receiveAllTopics = (topics) => {
 }
 
 const receiveTopic = (topic) => {
+    debugger
     return {
         type: RECEIVE_TOPIC,
         topic
     }
 }
 
-const removeTopic = (topicId) => {
+const removeTopic = (payload) => {
+    debugger
     return {
         type: REMOVE_TOPIC,
-        topicId
+        payload
     }
 }
 
@@ -38,6 +40,7 @@ export const requestTopic = (id) => dispatch => {
 }
 
 export const createTopic = (topic) => dispatch => {
+    debugger
     return (
         topicApiUtil.createTopic(topic).then((topic) => dispatch(receiveTopic(topic)))
         // have error call back dispatching receive errors
@@ -52,6 +55,6 @@ export const updateTopic = (topic) => dispatch => {
 
 export const deleteTopic = (topicId) => dispatch => {
     return (
-        topicApiUtil.deleteTopic(topicId).then(() => dispatch(removeTopic(topicId)))
+        topicApiUtil.deleteTopic(topicId).then((payload) => dispatch(removeTopic(payload)))
     )
 }

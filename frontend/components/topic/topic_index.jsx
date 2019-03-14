@@ -26,7 +26,6 @@ class TopicIndex extends React.Component {
                 // state={this.state}
             />
             if (this.props.pageType === 'showQuestion') {
-                
                 topics.push(item);
             } else if (this.props.sourceType === 'feedIndex' && topic.questionIds.length > 0) {
                 topics.push(item);
