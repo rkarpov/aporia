@@ -8,21 +8,9 @@ const topicsReducer = ( oldState = {}, action) => {
         case RECEIVE_TOPICS: 
             return merge(newState, action.topics);
         case RECEIVE_TOPIC:
-            return merge(newState, { [action.topic.id]: action.topic });
-        case REMOVE_TOPIC: 
-            // delete newState[action.topicId.topic_id];
-            // delete
-
-            // before changing render to question payload
-            // const removedId = action.payload.topic.question_id
-            // const qTopicIds = newState[action.topicId.topic_id].questionIds
-            // let newarr = []
-            // qTopicIds.forEach(top => {
-            //     if (top != removedId) { newarr.push(top) }
-            // })
-            // newState[action.topicId.topic_id].questionIds = newarr
-            
-            
+            debugger
+            return merge(newState, { [action.payload.topic.id]: action.payload.topic });
+        case REMOVE_TOPIC:
             const removedId = action.payload.question.id
             const qTopicIds = newState[action.payload.topic.id].questionIds
 

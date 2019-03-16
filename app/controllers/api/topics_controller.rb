@@ -59,7 +59,8 @@ class Api::TopicsController < ApplicationController
 
     def show
         @topic = Topic.find(params[:id])
-        render :show
+        @questions = @topic.questions
+        render :topic_questions
     end
 
     # def update
@@ -80,8 +81,8 @@ class Api::TopicsController < ApplicationController
         # @question.topics.delete(@topic.id)
         # render :index
         # render 'api/questions/show'
-        render :show
-        # render :destroy
+        # render :show
+        render :destroy
     end
 
     def topic_params

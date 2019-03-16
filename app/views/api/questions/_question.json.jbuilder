@@ -7,9 +7,9 @@
     json.email question.author.email
     json.id question.id
     json.date question.created_at.strftime("%b %d, %y")
-    json.answerIds []
-    json.answerAuthorIds []
-    json.topicIds [] # look up pluck method
+    # json.answerIds []
+    # json.answerAuthorIds []
+    # json.topicIds [] # look up pluck method
     json.votes question.vote_count
 
     upVoterIds = []
@@ -27,3 +27,15 @@
     json.upVoterIds upVoterIds
     json.downVoterIds downVoterIds
     
+
+    topicIds = []
+  question.topics.each do |topic|
+    topicIds << topic.id 
+  end 
+  json.topicIds topicIds
+
+   answerAuthorIds = []
+    question.answers.each do |answer|
+      answerAuthorIds << answer.author_id 
+    end 
+      json.answerAuthorIds answerAuthorIds

@@ -11,10 +11,11 @@ const receiveAllTopics = (topics) => {
     }
 }
 
-const receiveTopic = (topic) => {
+const receiveTopic = (payload) => {
+    debugger
     return {
         type: RECEIVE_TOPIC,
-        topic
+        payload
     }
 }
 
