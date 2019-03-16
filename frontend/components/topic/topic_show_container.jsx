@@ -13,21 +13,13 @@ const msp = (state, ownProps) => {
     let topic = { id: -0, description: '' };
     const allTopics = Object.values(state.entities.topics);
 
-        allTopics.forEach(topicItem => {
-            if (topicItem.description === ownProps.match.params.description) {
-            topic = topicItem;
-            }
-        })
-
-    let allQuestions = Object.values(state.entities.questions);
-    let questions = [];
-
-    allQuestions.forEach(question => {
-        if (question.topicIds.includes((topic.id)))  {
-            questions.push(question);
+    allTopics.forEach(topicItem => {
+        if (topicItem.description === ownProps.match.params.description) {
+        topic = topicItem;
         }
     })
-
+        
+    const questions = Object.values(state.entities.questions) || [];
     return {
         // topics: state.entities.topics,
         questions: questions,
@@ -44,12 +36,12 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = dispatch => ({
-    fetchQuestion: id => dispatch(fetchQuestion(id)),
+    // fetchQuestion: id => dispatch(fetchQuestion(id)),
     deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
-    requestQuestions: () => dispatch(requestQuestions()),
+    // requestQuestions: () => dispatch(requestQuestions()),
     requestTopic: (id) => dispatch(requestTopic(id)),
     deleteTopic: () => dispatch(deleteTopic()),
-    requestTopics: () => dispatch(requestTopics()),
+    // requestTopics: () => dispatch(requestTopics()),
     openModal: (modal) => dispatch(openModal(modal)),
     createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
 });

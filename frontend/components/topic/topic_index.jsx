@@ -6,10 +6,11 @@ class TopicIndex extends React.Component {
 
     componentDidMount() {
         this.props.requestTopics()
-        this.props.requestQuestions()
+        // this.props.requestQuestions()
     }
 
     render() {
+        
         let topics = [];
         this.props.topics.forEach(topic => {
             const item = <TopicIndexItem

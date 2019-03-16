@@ -7,10 +7,10 @@ class TopicShow extends React.Component {
         return (
             <QuestionTopicIndex
                 // <QuestionIndex
-                fetchQuestion={this.props.fetchQuestion}
+                // fetchQuestion={this.props.fetchQuestion}
                 deleteQuestion={this.props.deleteQuestion}
-                requestQuestions={this.props.requestQuestions}
-                requestTopics={this.props.requestTopics}
+                // requestQuestions={this.props.requestQuestions}
+                // requestTopics={this.props.requestTopics}
                 requestTopic={this.props.requestTopic}
                 questions={this.props.questions}
                 topic={this.props.topic}

@@ -6,6 +6,7 @@ import TopicIndex from './topic_index'
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
+    
     return {
         pageType: 'topicIndex',
         sourceType: ownProps.sourceType,
@@ -20,8 +21,8 @@ const mdp = dispatch => {
         requestTopics: () => dispatch(requestTopics()),
         deleteTopic: (topicId) => dispatch(deleteTopic(topicId)),
         openModal: (modal) => dispatch(openModal(modal)),
-        fetchQuestion: (id) => dispatch(fetchQuestion(id)),
-        requestQuestions: () => dispatch(requestQuestions())
+        // fetchQuestion: (id) => dispatch(fetchQuestion(id)),
+        // requestQuestions: () => dispatch(requestQuestions())
     }
 }
 

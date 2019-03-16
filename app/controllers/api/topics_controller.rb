@@ -2,7 +2,17 @@ class Api::TopicsController < ApplicationController
     before_action :require_login
 
     def index
+        
+        # select all topics that have at least 1 question id
+        # all_topics = Topic.all
+        # Topic.find_by_sql("
+        #     SELECT *
+        #     FROM topics
+        #     JOIN questionTopics ON topics WHERE questionTopic.topicId = topic.id
+        #     JOIN questions ON questionTopics WHERE questions.topicId = questionTopic.questionId
+        #     ")
         @topics = Topic.all
+        # @topics = topics.select( |topic| topic.questionIds.length != 0 )
         render :index
     end
 

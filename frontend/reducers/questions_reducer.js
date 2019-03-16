@@ -1,7 +1,7 @@
 import merge from 'lodash/merge';
 import { RECEIVE_ALL_QUESTIONS, RECEIVE_QUESTION, REMOVE_QUESTION } from '../actions/question_actions';
 import { RECEIVE_QUESTION_VOTE, REMOVE_QUESTION_VOTE } from '../actions/vote_actions';
-import { REMOVE_TOPIC } from '../actions/topic_actions';
+import { REMOVE_TOPIC, RECEIVE_TOPIC } from '../actions/topic_actions';
 
 const questionsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -17,6 +17,8 @@ const questionsReducer = (oldState = {}, action) => {
         case RECEIVE_QUESTION_VOTE:
             // newState[action.payload.vote.questionId].votes = action.payload.vote.votes;
             return { ...newState, [action.payload.id]: action.payload };
+        case RECEIVE_TOPIC:
+            return newState = action.payload.questions;
         case REMOVE_TOPIC:
             // const questionTopicIds = newState[action.payload.question.id].topicIds
             const questionTopicIds = action.payload.question.topicIds

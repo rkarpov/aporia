@@ -9,12 +9,12 @@ class QuestionTopicIndex extends React.Component {
 
     componentDidMount() {
         // this.props.requestQuestions()
-        this.props.requestTopics()
+        // this.props.requestTopics()
     }
     
     componentWillMount() {
         // this.props.requestQuestions()
-        this.props.requestTopics();
+        // this.props.requestTopics();
     }
 
     componentDidUpdate(prevProps) {
