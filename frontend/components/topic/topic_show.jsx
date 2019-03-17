@@ -4,8 +4,11 @@ import QuestionTopicIndex from './question_topic_index';
 class TopicShow extends React.Component {
 
     componentDidMount(){
-        this.props.requestTopic(this.props.topic.id)
-        this.props.requestTopics()
+        this.props.requestTopic(this.props.topic.id);
+        this.props.requestTopics();
+
+        // dummy id to fetch answers because nested route under questionId
+        this.props.requestAnswers(-0);
     }
 
     render() {
