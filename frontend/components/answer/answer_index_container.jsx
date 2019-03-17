@@ -37,7 +37,7 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
     return {
         // action: (answer) => dispatch(updateAnswer(answer)),
-        requestAnswers: (questionId) => dispatch(requestAnswers(questionId)),
+        // requestAnswers: (questionId) => dispatch(requestAnswers(questionId)),
         deleteAnswer: (answerId) => dispatch(deleteAnswer(answerId))
     }
 }

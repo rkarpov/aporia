@@ -5,7 +5,7 @@ import AnswerIndexItem from './answer_index_item';
 
 class AnswerIndex extends React.Component {
     componentDidMount(){
-        this.props.requestAnswers(this.props.questionId)
+        // this.props.requestAnswers(this.props.questionId)
     }
 
     render() {
