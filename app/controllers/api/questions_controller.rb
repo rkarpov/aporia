@@ -18,12 +18,20 @@ class Api::QuestionsController < ApplicationController
 
     def show
         @question = Question.find(params[:id])
+        @topicIds = []
+        @question.topics.each do |topic|
+            @topicIds << topic.id
+        end 
         render :show
     end
 
     def update  
         @question = Question.find(params[:id])
         if @question.update_attributes(question_params)
+            @topicIds = []
+            @question.topics.each do |topic|
+                @topicIds << topic.id
+            end 
             render :show
         else 
             render json: @question.errors.full_messages, status: 422
@@ -33,6 +41,10 @@ class Api::QuestionsController < ApplicationController
     def destroy
         # @question = Question.find(params[:id])    # provide demo user playground to delete anything
         @question = current_user.questions.find(params[:id]) # restrain demo uesers from going crazy
+        @topicIds = []
+        @question.topics.each do |topic|
+            @topicIds << topic.id
+        end 
         @question.destroy 
         render :show
     end 

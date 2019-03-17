@@ -19,10 +19,10 @@ const receiveQuestion = (question) => {
     }
 }
 
-const removeQuestion = (questionId) => {
+const removeQuestion = (question) => {
     return {
         type: REMOVE_QUESTION,
-        questionId
+        question
     }
 }
 
@@ -51,6 +51,6 @@ export const updateQuestion = (question) => dispatch => {
 }
 
 export const deleteQuestion = (questionId) => dispatch => {
-    return QuestionApiUtil.deleteQuestion(questionId).then(() => dispatch(removeQuestion(questionId))),
+    return QuestionApiUtil.deleteQuestion(questionId).then((question) => dispatch(removeQuestion(question))),
         error => (dispatch(receiveErrors(error.responseJSON)))
 }
