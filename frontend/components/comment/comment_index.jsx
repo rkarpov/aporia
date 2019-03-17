@@ -3,7 +3,7 @@ import CommentIndexItem from './comment_index_item';
 
 class CommentIndex extends React.Component {
     componentDidMount() {
-        this.props.requestComments(this.props.questionId)
+        // this.props.requestComments(this.props.questionId)
     }
 
     render() {

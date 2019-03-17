@@ -9,6 +9,7 @@ class TopicShow extends React.Component {
 
         // dummy id to fetch answers because nested route under questionId
         this.props.requestAnswers(-0);
+        this.props.requestComments(-0);
     }
 
     render() {

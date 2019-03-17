@@ -11,6 +11,7 @@ class QuestionIndex extends React.Component {
         this.props.requestQuestions();
         this.props.requestTopics();
         this.props.requestAnswers();
+        this.props.requestComments(-0);
     }
 
     render() {

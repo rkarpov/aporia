@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { requestQuestions, deleteQuestion } from '../../actions/question_actions';
 import { requestAnswers } from '../../actions/answer_actions';
+import { requestComments } from '../../actions/comment_actions';
 import { requestTopics } from '../../actions/topic_actions';
 import { createQuestionVote } from '../../actions/vote_actions';
 import QuestionIndex from './question_index'
@@ -23,6 +24,7 @@ const mdp = dispatch => {
         createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
         requestTopics: () => dispatch(requestTopics()),
         requestAnswers: (questionId) => dispatch(requestAnswers(questionId)),
+        requestComments: (answerId) => dispatch(requestComments(answerId)),
     }
 }
 

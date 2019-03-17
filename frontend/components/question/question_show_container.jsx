@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchQuestion, deleteQuestion, requestQuestions } from '../../actions/question_actions';
 import { requestAnswers } from '../../actions/answer_actions';
+import { requestComments } from '../../actions/comment_actions';
 import { requestTopics } from '../../actions/topic_actions';
 import { createQuestionVote } from '../../actions/vote_actions';
 import { openModal } from '../../actions/modal_actions';
@@ -49,6 +50,7 @@ const mdp = dispatch => {
         openModal: (modal) => dispatch(openModal(modal)),
         requestTopics: () => dispatch(requestTopics()),
         requestAnswers: (questionId) => dispatch(requestAnswers(questionId)),
+        requestComments: (answerId) => dispatch(requestComments(answerId)),
     })
 };
 

@@ -21,7 +21,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return {
-        requestComments: (answerId) => dispatch(requestComments(answerId)),
+        // requestComments: (answerId) => dispatch(requestComments(answerId)),
         deleteComment: (commentId) => dispatch(deleteComment(commentId))
     }
 }

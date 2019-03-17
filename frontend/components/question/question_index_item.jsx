@@ -173,6 +173,7 @@ class QuestionIndexItem extends React.Component {
                         <div >
                             <AnswerIndexContainer 
                                 questionId={this.props.question.id}
+                                comments={this.props.comments}
                             />
                         </div>
                         <div>

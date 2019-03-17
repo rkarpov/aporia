@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchQuestion, deleteQuestion, requestQuestions } from '../../actions/question_actions';
 import { requestTopic, deleteTopic, requestTopics } from '../../actions/topic_actions';
 import { requestAnswers } from '../../actions/answer_actions';
+import { requestComments } from '../../actions/comment_actions';
 // import { fetchTopic, deleteTopic, requestTopics } from '../../actions/topic_actions';
 import TopicShow from './topic_show';
 import QuestionIndex from '../question/question_index';
@@ -41,6 +42,7 @@ const mdp = dispatch => ({
     deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
     // requestQuestions: () => dispatch(requestQuestions()),
     requestAnswers: (questionId) => dispatch(requestAnswers(questionId)),
+    requestComments: (answerId) => dispatch(requestComments(answerId)),
     requestTopic: (id) => dispatch(requestTopic(id)),
     deleteTopic: () => dispatch(deleteTopic()),
     requestTopics: () => dispatch(requestTopics()),
