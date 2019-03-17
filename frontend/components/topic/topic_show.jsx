@@ -5,6 +5,7 @@ class TopicShow extends React.Component {
 
     componentDidMount(){
         this.props.requestTopic(this.props.topic.id)
+        this.props.requestTopics()
     }
 
     render() {

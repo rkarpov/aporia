@@ -16,7 +16,6 @@ const msp = (state, ownProps) => {
     allTopics.forEach(topicItem => {
         if (topicItem.description === ownProps.match.params.description) {
         topic = topicItem;
-        debugger
         }
     })
         
@@ -42,7 +41,7 @@ const mdp = dispatch => ({
     // requestQuestions: () => dispatch(requestQuestions()),
     requestTopic: (id) => dispatch(requestTopic(id)),
     deleteTopic: () => dispatch(deleteTopic()),
-    // requestTopics: () => dispatch(requestTopics()),
+    requestTopics: () => dispatch(requestTopics()),
     openModal: (modal) => dispatch(openModal(modal)),
     createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
 });

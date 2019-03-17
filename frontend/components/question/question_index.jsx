@@ -8,7 +8,8 @@ import TopicIndexContainer from '../topic/topic_index_container';
 class QuestionIndex extends React.Component {
 
     componentDidMount(){
-        this.props.requestQuestions()
+        this.props.requestQuestions();
+        this.props.requestTopics();
     }
 
     render() {
