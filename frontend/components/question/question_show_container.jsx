@@ -2,8 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchQuestion, deleteQuestion, requestQuestions } from '../../actions/question_actions';
 import { createQuestionVote } from '../../actions/vote_actions';
-import QuestionShow from './question_show';
 import { openModal } from '../../actions/modal_actions';
+import { requestTopics } from '../../actions/topic_actions';
+// import QuestionShow from './question_show';
+import QuestionIndex from './question_index';
 
 const msp = (state, ownProps) => {
     let questions;
@@ -43,9 +45,10 @@ const mdp = dispatch => {
         deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
         requestQuestions: () => dispatch(requestQuestions()),
         createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
-        openModal: (modal) => dispatch(openModal(modal))
+        openModal: (modal) => dispatch(openModal(modal)),
+        requestTopics: () => dispatch(requestTopics()),
     })
 };
 
-export default connect(msp, mdp)(QuestionShow)
-// export default connect(msp, mdp)(QuestionIndex)
+// export default connect(msp, mdp)(QuestionShow)
+export default connect(msp, mdp)(QuestionIndex)
