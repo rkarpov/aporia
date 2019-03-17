@@ -50,7 +50,7 @@ const mdp = dispatch => {
         openModal: (modal) => dispatch(openModal(modal)),
         requestTopics: () => dispatch(requestTopics()),
         requestAnswers: (questionId) => dispatch(requestAnswers(questionId)),
-        requestComments: (answerId) => dispatch(requestComments(answerId)),
+        requestComments: () => dispatch(requestComments()),
     })
 };
 

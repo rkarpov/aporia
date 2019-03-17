@@ -2,9 +2,9 @@ import React from 'react';
 import CommentIndexItem from './comment_index_item';
 
 class CommentIndex extends React.Component {
-    componentDidMount() {
-        // this.props.requestComments(this.props.questionId)
-    }
+    // componentDidMount() {
+    //     // this.props.requestComments(this.props.questionId)
+    // }
 
     render() {
         const commentItems = this.props.comments.map(comment => {

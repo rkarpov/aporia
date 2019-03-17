@@ -6,10 +6,10 @@ class TopicShow extends React.Component {
     componentDidMount(){
         this.props.requestTopic(this.props.topic.id);
         this.props.requestTopics();
+        this.props.requestComments();
 
         // dummy id to fetch answers because nested route under questionId
         this.props.requestAnswers(-0);
-        this.props.requestComments(-0);
     }
 
     render() {

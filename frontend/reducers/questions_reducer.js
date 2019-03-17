@@ -18,7 +18,9 @@ const questionsReducer = (oldState = {}, action) => {
             // newState[action.payload.vote.questionId].votes = action.payload.vote.votes;
             return { ...newState, [action.payload.id]: action.payload };
         case RECEIVE_TOPIC:
-            return newState = action.payload.questions;
+            if (action.payload.questions) {
+                return newState = action.payload.questions
+            } else { return newState }
         case REMOVE_TOPIC:
             // const questionTopicIds = newState[action.payload.question.id].topicIds
             const questionTopicIds = action.payload.question.topicIds

@@ -9,9 +9,9 @@ Rails.application.routes.draw do
         resources :votes, only: [:create, :destroy]
       end
       resources :answers, only: [:show, :update, :destroy] do
-        resources :comments, only: [:index, :create]
+        resources :comments, only: [:create]
      end 
-     resources :comments, only: [:show, :update, :destroy]
+     resources :comments, only: [:index, :show, :update, :destroy]
      resources :topics, only: [:show, :create, :index, :update]
     end 
     root "static_pages#root" 

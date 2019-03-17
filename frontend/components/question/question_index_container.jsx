@@ -24,7 +24,7 @@ const mdp = dispatch => {
         createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
         requestTopics: () => dispatch(requestTopics()),
         requestAnswers: (questionId) => dispatch(requestAnswers(questionId)),
-        requestComments: (answerId) => dispatch(requestComments(answerId)),
+        requestComments: () => dispatch(requestComments()),
     }
 }
 

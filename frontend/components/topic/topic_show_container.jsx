@@ -42,7 +42,7 @@ const mdp = dispatch => ({
     deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
     // requestQuestions: () => dispatch(requestQuestions()),
     requestAnswers: (questionId) => dispatch(requestAnswers(questionId)),
-    requestComments: (answerId) => dispatch(requestComments(answerId)),
+    requestComments: () => dispatch(requestComments()),
     requestTopic: (id) => dispatch(requestTopic(id)),
     deleteTopic: () => dispatch(deleteTopic()),
     requestTopics: () => dispatch(requestTopics()),
