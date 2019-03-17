@@ -25,7 +25,7 @@ class Api::TopicsController < ApplicationController
                 @joins.save
                 @topic = Topic.find(@joins.topic_id)
                 @questions = [Question.find(@joins.question_id)]
-                render :show
+                render :new
             end
         else 
             @topic = Topic.new({"description" => params[:topic][:description]})
@@ -35,7 +35,7 @@ class Api::TopicsController < ApplicationController
                 @joins.save
                 @topic = Topic.find(@joins.topic_id)
                 @questions = [Question.find(@joins.question_id)]
-                render :show
+                render :new
             else 
                 render json: @topic.errors.full_messages, status: 401
             end
