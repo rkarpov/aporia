@@ -6,12 +6,12 @@ import TopicIndex from './topic_index'
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    
+    const topics = Object.values(state.entities.topics) || [];
     return {
         pageType: 'topicIndex',
         sourceType: ownProps.sourceType,
         topicIds: ownProps.topicIds,
-        topics: Object.values(state.entities.topics),
+        topics: topics,
         questionId: ownProps.questionId,
     }
 }

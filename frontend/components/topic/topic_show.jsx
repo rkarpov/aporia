@@ -3,6 +3,10 @@ import QuestionIndex from '../question/question_index';
 import QuestionTopicIndex from './question_topic_index';
 class TopicShow extends React.Component {
 
+    componentDidMount(){
+        this.props.requestTopic(this.props.topic.id)
+    }
+
     render() {
         return (
             <QuestionTopicIndex

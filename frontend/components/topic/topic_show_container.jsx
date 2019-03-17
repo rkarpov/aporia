@@ -10,12 +10,13 @@ import { createQuestionVote } from '../../actions/vote_actions';
 
 
 const msp = (state, ownProps) => {
-    let topic = { id: -0, description: '' };
+    let topic = { id: 'none', description: '' };
     const allTopics = Object.values(state.entities.topics);
 
     allTopics.forEach(topicItem => {
         if (topicItem.description === ownProps.match.params.description) {
         topic = topicItem;
+        debugger
         }
     })
         

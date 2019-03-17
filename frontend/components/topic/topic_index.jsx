@@ -5,7 +5,10 @@ import TopicIndexItem from './topic_index_item';
 class TopicIndex extends React.Component {
 
     componentDidMount() {
+        debugger
+        if (this.props.topics.length === 0 ) {
         this.props.requestTopics()
+        }
         // this.props.requestQuestions()
     }
 

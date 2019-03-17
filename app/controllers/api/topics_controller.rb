@@ -2,7 +2,6 @@ class Api::TopicsController < ApplicationController
     before_action :require_login
 
     def index
-        
         # select all topics that have at least 1 question id
         # all_topics = Topic.all
         # Topic.find_by_sql("
@@ -16,17 +15,16 @@ class Api::TopicsController < ApplicationController
         render :index
     end
 
-
     def create
-        
         if Topic.find_by(description: params[:topic][:description])
-            
             @topic = (Topic.find_by(description: params[:topic][:description])) 
             if @topic.question_ids.include?(params[:topic][:question_id].to_i)
                 render json: ["That topic already exists"], status: 401
             else 
                 @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id]})
                 @joins.save
+                @topic = Topic.find(@joins.topic_id)
+                @questions = [Question.find(@joins.question_id)]
                 render :show
             end
         else 
@@ -35,52 +33,20 @@ class Api::TopicsController < ApplicationController
             if @topic.save
                 @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id].to_i})
                 @joins.save
-                render :show 
+                @topic = Topic.find(@joins.topic_id)
+                @questions = [Question.find(@joins.question_id)]
+                render :show
             else 
                 render json: @topic.errors.full_messages, status: 401
             end
         end
     end
 
-
-
-    # def create
-    #     @topic = (Topic.find_by(description: params[:topic][:description])) ||
-    #              (Topic.new({"description" => params[:topic][:description]}))
-    #              
-    #     if @topic.questions.length > 0
-    #         @topic.questions.each do |question| 
-    #             if question.id == params[:topic][:question_id].to_i
-    #                 render json: ["That topic already exists"], status: 401
-    #                 break
-    #             end
-    #         end
-    #         @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id]})
-    #         @joins.save
-    #         redirect_to :show
-    #     elsif @topic.save
-    #         @joins = QuestionTopic.new({topic_id: @topic.id, question_id: params[:topic][:question_id]})
-    #         @joins.save
-    #         render :show 
-    #     else 
-    #         render json: @topic.errors.full_messages, status: 401
-    #     end
-    # end
-
     def show
         @topic = Topic.find(params[:id])
         @questions = @topic.questions
-        render :topic_questions
+        render :show
     end
-
-    # def update
-    #     @topic = Topic.find(params[:id])
-    #     if @topic.update_attributes(topic_params)
-    #        render :show 
-    #     else 
-    #         render json: @topic.errors.full_messages, status: 401
-    #     end
-    # end
 
     def destroy
         @topic = Topic.find(params[:id])
