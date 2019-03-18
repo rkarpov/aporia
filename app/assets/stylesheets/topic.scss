@@ -12,7 +12,6 @@
 
 .topics-questionIndex-background {
     display: flex;
-    // background: white;
     font-family: sans-serif;
     font-size: 13px;
     width: 585px;
@@ -20,13 +19,11 @@
 
 .delete-topic-button:hover {
     background: darkgray;
-      border: 1px solid gray;
+    border: 1px solid gray;
 }
 .delete-topic-button {
     margin-left: 5px;
     margin-top: 2px;
-    // padding: 1px;
-    // border: 1px solid gray;
     height: 11px;
     width: 11px;
 }
@@ -61,8 +58,6 @@
 .question-topic-container {
     border-radius: 3px;
     width: 585px;
-    // padding-left: 15px;
-    // padding-right: 15px;
     padding: 15px;
     border: 1px solid #dadadae0;
     background: white;
@@ -88,11 +83,11 @@
     text-transform: uppercase;
     margin-left: 10px;
 }
+
 .topic-p {
     word-break: break-word;
 }
 
 .selected-topic {
     background: rgb(211, 211, 211);
-
 }

@@ -1,15 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateAnswer, requestAnswer } from '../../actions/answer_actions';
-// import AnswerEditForm from './answer_edit_form';
 import AnswerForm from './answer_form';
 
 const msp = (state, ownProps) => {
     const defaultAnswer = { body: '', }
-    // const answer = state.entities.answers[ownProps.match.params.answerId] || defaultAnswer;
     const answer = state.entities.answers[ownProps.answerId] || defaultAnswer;
-    
-    
     return ({
         answer,
         formType: 'edit-form',
@@ -27,7 +23,6 @@ const mdp = dispatch => {
 
 class AnswerEditForm extends React.Component {
     componentDidMount() {
-        // this.props.requestAnswer(this.props.match.params.answerId)
         this.props.requestAnswer(this.props.answer.id)
     }
 
@@ -38,9 +33,7 @@ class AnswerEditForm extends React.Component {
     }
 
     render() {
-        // const { action, formType, answer } = this.props;
         return (
-            // <AnswerEditForm
             <AnswerForm
                 action={this.props.action}
                 formType={this.props.formType}
@@ -49,11 +42,7 @@ class AnswerEditForm extends React.Component {
                 toggle={this.props.toggle}
             />
         );
-
-
-
     }
 }
 
 export default connect(msp, mdp)(AnswerEditForm);
-// export default connect(msp, mdp)(AnswerEditForm);

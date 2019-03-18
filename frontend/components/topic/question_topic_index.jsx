@@ -3,31 +3,15 @@ import { Link } from 'react-router-dom';
 import QuestionIndexItem from '../question/question_index_item';
 import NavbarContainer from '../navbar/navbar_container';
 import TopicIndexContainer from './topic_index_container';
-// import PersonalLinks from '../personal/personal_links';
 
 class QuestionTopicIndex extends React.Component {
 
-    componentDidMount() {
-        // this.props.requestQuestions()
-        // this.props.requestTopics()
-    }
-    
-    componentWillMount() {
-        // this.props.requestQuestions()
-        // this.props.requestTopics();
-    }
-
     componentDidUpdate(prevProps) {
-        
-        // if (prevProps.topic.id != this.props.match.params.topicId) {
-        //     this.props.fetchTopic(this.props.match.params.topicId);
-        // }
         if (prevProps.topic.description != this.props.topic.description) {
             this.props.requestTopic(this.props.topic.id);
         }
-
-    
     }
+
     render() {
         let username = (this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name);
 
@@ -51,7 +35,6 @@ class QuestionTopicIndex extends React.Component {
             this.props.questions.forEach(question => {
                 const item = <QuestionIndexItem
                     key={`question-${question.id}`}
-                    // key={question.id}
                     question={question}
                     deleteQuestion={this.props.deleteQuestion}
                     currentUser={this.props.currentUser}
@@ -76,20 +59,16 @@ class QuestionTopicIndex extends React.Component {
                 <div className="index-body-container">
                     <div className="index-body">
                         <div className="feed-container">
-
                             <div >
                                 <p className="feed-header">Feed Topics</p>
                                 <TopicIndexContainer
                                     sourceType={"feedIndex"}
                                 />
-                            </div>
-                            {/* <input type="text" /> */}
-                           
+                            </div>                           
                         </div>
 
                         <div className="index-page-container">
                             <header
-                                
                                 className="question-topic-container">
                                 <h2
                                     className="question-topic-description">
@@ -105,7 +84,6 @@ class QuestionTopicIndex extends React.Component {
                         </div>
 
                         <div className="personal-container">
-                            {/* <PersonalLinks /> */}
                             <div className="feed-container">
                                 <div className="">
                                     <p className="feed-header">Contact Me</p>

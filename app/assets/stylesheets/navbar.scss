@@ -3,10 +3,6 @@
     position: fixed;
     top: 0px;
     width: 100%;
-    // max-width: 960px;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-evenly;
     border-bottom: 1px solid #dadadae0;
     box-shadow: 0 0 3px #888;
     background: lightgoldenrodyellow;
@@ -15,9 +11,9 @@
 .navbar-contents {
     margin-left: 210px;
     margin-right: 210px;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .app-title {
@@ -34,7 +30,6 @@
     padding-bottom: 2px;
     height: 40px;
     width: 35px;
-
 }
 
 .nav-news-svg {
@@ -57,20 +52,9 @@
     font-weight: bold;
 }
 
-//  .nav-home-icon {
-//     margin-top: 13px;
-//     color: rgba(6, 112, 6, 0.897);
-//     font-size: 18px;
-//     font-family: 'Libre Baskerville',
-//     sans-serif;
-//     font-weight: bold;
-// }
-
 .app-search-bar-container {
    display: flex;
    flex-direction: row;
-//    min-width: 180px;
-   // background: image-url('search.png') no-repeat 10px center;
    background-size: 15px 15px;
    outline: 0;
    border: 1px solid #e2e2e2;
@@ -82,14 +66,11 @@
 .search-icon {
     position: absolute;
     padding-left: 5px;
-    // background: white;
     height: 23px;
     margin-top: 8px;
-    padding-top: 5px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
     width: 20px;
-//   border: 1px solid #dadadae0;
-//    box-shadow: inset 0 1px 1px rgba(200, 200, 200, 0.3);
-    //    border-radius: 3px;
 }
 
 .app-search-bar {
@@ -98,7 +79,8 @@
     font-family: sans-serif;
     font-size: 15px;
     color: rgb(175, 175, 175);
-    padding-top: 5px; 
+    padding-top: 2.5px; 
+    padding-bottom: 2.5px; 
     margin-top: 7px;
     height: 23px;
     min-width: 245px;
@@ -114,9 +96,7 @@
     font-weight: bold;
     font-family: sans-serif;
     font-weight: 500;
-    // color: rgba(6, 112, 6, 0.897); // green letters for no button background
     color: white;
-    // margin-right: 30px;
     padding: 4px 8px;
     background: rgba(6, 112, 6, 0.897);
     border: 1px solid darkgreen;
@@ -132,29 +112,16 @@
 .search-link {
     width: 255px;
 }
-// .navbar-question-container {
-//     padding-top: 8px;
-// //    height: 50px;
-//    font-size: 20px;
-// //    display: flex;
-   
-// //    justify-content: flex-end;
-// //    align-items: center;
-// //    margin-right: 50px;
-// //    min-width: 250px;
-// }
 
 .profile-modal-container {
-    // margin-left: 10px;
     border: 1px solid rgba(0, 0, 255, 0.795);
-    // margin-right: 30px;
     width: 27px;
     height: 27px;
     border-radius: 50%;
     background: rgb(110, 120, 255);
     box-shadow: 0 0 3px black;
-       font-size: 20px;
-       margin-top: 8px;
+    font-size: 20px;
+    margin-top: 8px;
 }
 
 .navbar-avatar-initials:hover {
@@ -162,9 +129,6 @@
 }
 
 .navbar-avatar-initials {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
     margin-top: 4px;
     margin-left: 3px;
     color: white;
@@ -177,10 +141,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 6px;
-        // vertical-align: middle;
-        // font-size: calc(86.545%);
-    // margin-top: 5px;
-    // margin-left: 5px;
     color: white;
     font-size: calc(95%);
     font-family: sans-serif;

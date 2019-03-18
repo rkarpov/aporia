@@ -1,10 +1,8 @@
 .answer-item-container {
-    // margin-top: 15px;
     padding-top: 15px;
     margin-bottom: 15px;
-        border-top: 1px solid #b9b9b9;
-        // border-bottom: 1px solid #b9b9b9;
-       border-radius: 3px;
+    border-top: 1px solid #b9b9b9;
+    border-radius: 3px;
     padding-bottom: 10px;
 }
 
@@ -14,7 +12,6 @@
     font-weight: bold;
     font-family: sans-serif;
     font-weight: 500;
-    // color: rgba(6, 112, 6, 0.897); // green letters for no button background
     color: white;
     margin-right: 20px;
     margin-left: 10px;
@@ -32,7 +29,6 @@
     font-weight: bold;
     font-family: sans-serif;
     font-weight: 500;
-    // color: rgba(6, 112, 6, 0.897); // green letters for no button background
     color: white;
     margin-right: 5px;
     margin-left: 10px;
@@ -52,10 +48,7 @@
 }
 
 .answer-body { 
-    // margin-top: 10px;
-    // margin-left: 10px;
     font-size: 14px;
-    // font-weight: bold;
     font-family: sans-serif;
     word-break: break-word;
 }
@@ -75,7 +68,6 @@
 
 .answer-index-container {
     padding-bottom: 5px;
-    // padding: 5px;
     margin-left: 20px;
 }
 

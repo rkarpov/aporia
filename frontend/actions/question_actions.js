@@ -10,7 +10,7 @@ const receiveAllQuestions = (questions) => {
         type: RECEIVE_ALL_QUESTIONS,
         questions
     }
-} // THIS IS THE LOGGER ACTION
+}
 
 const receiveQuestion = (question) => {
     return {
@@ -32,7 +32,6 @@ const receiveErrors = (errors) => {
 }
 
 export const requestQuestions = () => dispatch => {
-    
     return QuestionApiUtil.fetchQuestions().then((questions) => dispatch(receiveAllQuestions(questions)))
 }
 

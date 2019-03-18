@@ -7,7 +7,7 @@ const answersReducer = ( oldState = {}, action) => {
     switch (action.type) {
         case RECEIVE_ANSWERS: 
             return merge(newState, action.answers);
-        case RECEIVE_ANSWER: // we receive all answers including properly edited. we get 2 answers with same answer, merge fails to replace one
+        case RECEIVE_ANSWER:
             return merge(newState, { [action.answer.id]: action.answer });
         case REMOVE_ANSWER: 
             delete newState[action.answerId];

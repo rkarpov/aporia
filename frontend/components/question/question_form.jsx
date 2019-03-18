@@ -10,7 +10,7 @@ class QuestionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault;
-        this.props.action(this.state)//.then(this.props.closeModal())
+        this.props.action(this.state)
         this.props.closeModal();
     }
 
@@ -21,7 +21,6 @@ class QuestionForm extends React.Component {
     }
 
     render() {
-        // const currentUserName = this.props.currentUser.first_name + ' ' + this.props.currentUser.last_name;
         return (
             <div>
                 <form className="question-modal" onSubmit={this.handleSubmit}>
@@ -44,10 +43,7 @@ class QuestionForm extends React.Component {
                         />
                     </div>
                     <footer className="question-modal-footer">
-                        {/* <div className="cancel-question"> */}
-                            < input className="cancel-question" onClick={() => this.props.closeModal()}type="submit" value="Cancel"/>
-                        {/* </div> */}
-
+                        <input className="cancel-question" onClick={() => this.props.closeModal()}type="submit" value="Cancel"/>
                         <div className="add-question-container">
                             <input className="add-question-button" type="submit" value={this.props.formType === 'Edit Question' ? "Update Question" : "Add Question"} />
                         </div>

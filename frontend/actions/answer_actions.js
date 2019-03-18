@@ -4,16 +4,7 @@ export const RECEIVE_ANSWERS = 'RECEIVE_ANSWERS';
 export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
 export const REMOVE_ANSWER = 'REMOVE_ANSWER';
 
-// const receiveAllAnswers = ({answers, question}) => {
-//     return {
-//         type: RECEIVE_ANSWERS,
-//         answers,
-//         question,
-//     }
-// }
-
 const receiveAllAnswers = (answers) => {
-    
     return {
         type: RECEIVE_ANSWERS,
         answers
@@ -33,12 +24,6 @@ const removeAnswer = (answerId) => {
         answerId
     }
 }
-
-// export const requestAnswers = (questionId) => dispatch => {
-//     return (
-//         AnswerApiUtil.fetchAnswers(questionId).then((payload) => dispatch(receiveAllAnswers(payload)))
-//     )
-// }
 
 export const requestAnswers = (questionId) => dispatch => {
     return (

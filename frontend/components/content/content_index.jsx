@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ContentIndexItem from './content_index_item';
 import NavbarContainer from '../navbar/navbar_container';
-// import PersonalLinks from '../personal/personal_links';
 
 class ContentIndex extends React.Component {
 

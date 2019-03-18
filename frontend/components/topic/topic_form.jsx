@@ -10,9 +10,7 @@ class TopicForm extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault;
-        // this.props.action(this.state)
         this.props.action({ description: this.state.description, question_id: this.props.questionId })
-        // this.props.requestQuestions();
         this.props.closeModal();
     }
 
@@ -45,9 +43,7 @@ class TopicForm extends React.Component {
                         />
                     </div>
                     <footer className="question-modal-footer">
-                        {/* <div className="cancel-question"> */}
                         < input className="cancel-question" onClick={() => this.props.closeModal()} type="submit" value="Cancel" />
-                        {/* </div> */}
 
                         <div className="add-question-container">
                             <input className="add-question-button" type="submit" value={this.props.formType === 'Edit Topic' ? "Update Topic" : "Add Topic"} />

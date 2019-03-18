@@ -8,7 +8,6 @@ class Api::QuestionsController < ApplicationController
 
     def create
         @question = Question.new(question_params)
-        # @question.author_id = current_user.id 
         if @question.save
             render :show
         else 
@@ -39,8 +38,7 @@ class Api::QuestionsController < ApplicationController
     end
         
     def destroy
-        # @question = Question.find(params[:id])    # provide demo user playground to delete anything
-        @question = current_user.questions.find(params[:id]) # restrain demo uesers from going crazy
+        @question = current_user.questions.find(params[:id])
         @topicIds = []
         @question.topics.each do |topic|
             @topicIds << topic.id
@@ -53,5 +51,4 @@ class Api::QuestionsController < ApplicationController
     def question_params
         params.require(:question).permit(:body, :author_id)
     end
-
 end

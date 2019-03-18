@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import AnswerEditContainer from './answer_edit_container';
-import ReactQuill from 'react-quill';
 import renderHTML from 'react-render-html'
 import CreateCommentContiner from '../comment/create_comment_container';
 import CommentIndexContainer from '../comment/comment_index_container';
@@ -19,7 +18,6 @@ class AnswerIndexItem extends React.Component {
     }
 
     toggleEdit() {
-        // e.preventDefault();
         this.setState({
             dropdown: !this.state.dropdown,
             options: false

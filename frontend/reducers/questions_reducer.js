@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 import { RECEIVE_ALL_QUESTIONS, RECEIVE_QUESTION, REMOVE_QUESTION } from '../actions/question_actions';
-import { RECEIVE_QUESTION_VOTE, REMOVE_QUESTION_VOTE } from '../actions/vote_actions';
+import { RECEIVE_QUESTION_VOTE } from '../actions/vote_actions';
 import { REMOVE_TOPIC, RECEIVE_TOPIC } from '../actions/topic_actions';
 
 const questionsReducer = (oldState = {}, action) => {
@@ -15,17 +15,14 @@ const questionsReducer = (oldState = {}, action) => {
             delete newState[action.question.id];
             return newState;
         case RECEIVE_QUESTION_VOTE:
-            // newState[action.payload.vote.questionId].votes = action.payload.vote.votes;
             return { ...newState, [action.payload.id]: action.payload };
         case RECEIVE_TOPIC:
             if (action.payload.questions) {
                 return newState = action.payload.questions
             } else { return newState }
         case REMOVE_TOPIC:
-            // const questionTopicIds = newState[action.payload.question.id].topicIds
             const questionTopicIds = action.payload.question.topicIds
             const topicId = action.payload.topic.id
-            // delete question.topicIds[topicId]
             let newarr = []
             questionTopicIds.forEach(topId => {
                 if (topId !== topicId) { newarr.push(topId) }

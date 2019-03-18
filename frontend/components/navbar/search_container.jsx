@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import Navbar from './navbar';
 import SearchList from './search_list';
 import { requestQuestions } from '../../actions/question_actions';
 

@@ -10,7 +10,6 @@ import QuestionIndexContainer from './question/question_index_container';
 import QuestionShowContainer from './question/question_show_container';
 import ContentContainer from './content/content_container';
 import UserAnsweredContainer from './content/user_answered_container';
-// import QuestionTopicContainer from './question/question_topic_container';
 import TopicShowContainer from './topic/topic_show_container';
 
 const App = () => {

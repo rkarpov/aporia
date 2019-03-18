@@ -1,18 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ReactQuill from 'react-quill';
-// import renderHTML from 'react-render-html';
-// import 'react-quill/dist/quill.snow.css'
-
 
 class AnswerForm extends React.Component {
     constructor(props){
         super(props)
         this.state = this.props.answer;
         this.handleSubmit = this.handleSubmit.bind(this);
-
-
         this.handleChange = this.handleChange.bind(this);
+
         this.modules = {
             toolbar: [
                 [{ font: [] }],
@@ -34,10 +30,8 @@ class AnswerForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();      
-        // const answer = Object.assign({}, this.state);
         this.props.action(this.state)
         this.props.toggle()
-        // .then(this.setState(this.props.body))
     }
 
     handleChange(e){
@@ -56,18 +50,14 @@ class AnswerForm extends React.Component {
         return(
                 <form className="answer-form" onSubmit={this.handleSubmit}>
                     <div className="add-answer-header-container">
-                        {/* <div className="current-user-container"> */}
-                            <div className="profile-index-container">
-                                <p className="avatar-initials" type="text">{initials}</p>
-                            </div>
-                            <p className="index-username">{username}</p>
-                        {/* </div> */}
+                        <div className="profile-index-container">
+                            <p className="avatar-initials" type="text">{initials}</p>
+                        </div>
+                        <p className="index-username">{username}</p>
                     </div>
+
                     <div className="answer-input-container">
-                            {/* <div className="enriched-text"> */}
                         <ReactQuill
-                            // className="answer-input-field"
-                            // className="answer-input-container"
                             height='500'
                             theme={'snow'}
                             value={this.state.body}
@@ -75,15 +65,10 @@ class AnswerForm extends React.Component {
                             modules={this.modules}
                             formats={this.formats}
                             placeholder="Write your answer"
-                            // onChange={this.update('body')}
                             onChange={this.handleChange}>
                         </ReactQuill>
-                        {/* </div> */}
                     </div>
-
-                                {/* <div> */}
-                                {/* </div> */}
-                                {/* <div onChange={this.update('body')}> */}
+                    
                     <footer className="add-answer-footer">
                         <span className="cancel-answer" onClick={this.props.toggle} type="text">Cancel</span>
                         <button className="add-answer-button" type="submit" >
@@ -92,8 +77,6 @@ class AnswerForm extends React.Component {
                             </span>
                         </button>
                     </footer>
-                                
-                                {/* </div> */}
                 </form>
         )         
     }

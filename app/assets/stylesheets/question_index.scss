@@ -1,7 +1,6 @@
 .ask-question-container {
     background: white;
     border: 1px solid #dadadae0;
-    // margin-top: 80px;
     width: 600px;
     height: 80px;
     padding-left: 15px;
@@ -10,19 +9,18 @@
 }
 
 .current-user-container {
-    // margin-left: 10px;
     margin-top: 15px;
     display: flex;
 }
 
 .profile-index-container {
-       border: 1px solid rgba(0, 0, 255, 0.795);
-       margin-right: 7px;
-       width: 30px;
-       height: 30px;
-       border-radius: 50%;
-       background: rgb(110, 120, 255);
-       box-shadow: 0 0 3px black;
+    border: 1px solid rgba(0, 0, 255, 0.795);
+    margin-right: 7px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(110, 120, 255);
+    box-shadow: 0 0 3px black;
 }
 
 .index-username {
@@ -32,7 +30,6 @@
     font-size: 15px;
     font-family: sans-serif;
     color: rgb(160, 160, 160);
-    // font-weight: bold;
 }
 
 .ask-question-button {
@@ -46,28 +43,16 @@
     font-weight: bold;
 }
 
-// .question-item-box {
-//     padding-right: 10px;
-// }
-
-// .index-page-container {
-//     padding-right: 50px;
-// }
-
-
 .question-index-item-container {
     border-radius: 3px;
     width: 585px;
-        // height: 80px;
     padding-left: 15px;
     padding-right: 15px;
-    // padding-right: 15px;
     margin-top: 20px;
     border: 1px solid #dadadae0;
     background: white;
 }
 
-// how do i make first letter of question caps?
 .testing::first-letter {
      text-transform: uppercase;
 }
@@ -97,7 +82,6 @@
     text-transform: capitalize;
 }
 
-
 .options-icon-svg {
     height: 28px;
     width: 28px;
@@ -109,18 +93,12 @@
     float: right;
 }
 
-// .options-items-list {
-//     display: flex;
-//     flex-direction: column;
-    
-// }
 .options-content {
     position: absolute;
     right: 0px;
     top: 23px;
     background-color: #f9f9f9;
     width: 175px;
-    // height: 63px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-top: 1px solid #b9b9b9;
@@ -129,52 +107,40 @@
     border-radius: 3px;
 }
 
-
 .user-content-header {
     margin-top: 2px;
     font-weight: 500;
-    // position: relative;
     border-bottom: 1px solid #b9b9b9;
     margin-bottom: 16px;
     padding-bottom: 8px;
     font-size: 15px;
-    // font-weight: bold;
-        font-family: "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
-        
+    font-family: "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;  
 }
 
 .content-index-item-container {
     border-radius: 3px;
     width: 585px;
-    // height: 80px;
     padding-left: 15px;
     padding-right: 15px;
-    // padding-right: 15px;
     margin-top: 20px;
     border-bottom: 1px solid #b9b9b9;
-    //    background: white;
 }
 
 .vote-button {
     margin: 20px;
     padding: 5px;
-     font-size: 14px;
-     font-weight: bold;
-     font-family: sans-serif;
-     font-weight: 500;
-     // color: rgba(6, 112, 6, 0.897); // green letters for no button background
-    //  color: white;
-     color: rgba(6, 112, 6, 0.897);
-    //  background: #3e78ad;
-     background: lightgoldenrodyellow;
-    //  border: 1px solid rgb(78, 83, 162);
-        //  border: 1.5px solid lightgoldenrodyellow;
-     box-shadow: 0 0 5px #888;
-     font-family: sans-serif;
-     border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: rgba(6, 112, 6, 0.897);
+    background: lightgoldenrodyellow;
+    box-shadow: 0 0 5px #888;
+    font-family: sans-serif;
+    border-radius: 3px;
 }
 
 .selected-vote-button {
@@ -184,12 +150,8 @@
     font-weight: bold;
     font-family: sans-serif;
     font-weight: 500;
-    // color: rgba(6, 112, 6, 0.897); // green letters for no button background
-    //  color: white;
     color: rgba(6, 112, 6, 0.897);
-    //  background: #3e78ad;
     background: goldenrod;
-    //  border: 1.5px solid blue;
     box-shadow: 0 0 5px darkblue;
     font-family: sans-serif;
     border-radius: 3px;

@@ -1,7 +1,6 @@
 import React from 'react';
 import LogInFormContainer from './login_form_container';
 import SignUpFormContainer from './signup_form_container';
-// import DemoFormContainer from './demo_form_container';
 
 const sessionFormContainer = () => (
     <div className="splash-img">
@@ -13,9 +12,6 @@ const sessionFormContainer = () => (
             <div className="form-boxes">
                 <SignUpFormContainer />
                 <LogInFormContainer />
-                {/* <div> */}
-                {/* <DemoFormContainer/> */}
-                {/* </div> */}
             </div>
         </div>
     </div>

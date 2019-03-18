@@ -18,9 +18,6 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: 'Comment'
 
-    # has_many :votes,
-    #     foreign_key: :author_id,
-    #     class_name: 'Vote'
     has_many :votes, as: :votable
 
     def self.find_by_credentials(email, password)

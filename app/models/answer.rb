@@ -12,8 +12,4 @@ class Answer < ApplicationRecord
     has_many :comments,
         foreign_key: :answer_id,
         class_name: 'Comment'
-
-    # has_one :author,          # => question author's id, not answer author id?
-    #     through: :question,
-    #     source: :author
 end

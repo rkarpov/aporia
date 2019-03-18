@@ -1,8 +1,4 @@
 import React from 'react';
-// import SessionForm from './session_form';
-// import { login } from '../../actions/session_actions';
-// import LoginForm from './login_form';
-
 
 class DemoForm extends React.Component {
     constructor(props) {
@@ -20,7 +16,6 @@ class DemoForm extends React.Component {
     }
 
     render() {
-
         return(
             <div className="demo-container">
                 <button className="demo-button" onClick={this.handleSubmit}>

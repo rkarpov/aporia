@@ -68,12 +68,10 @@ class Navbar extends React.Component {
                         Aporia
                     </Link>
 
-                    {/* <Link to="/index">Home</Link> */}
                     <div className="navbar-icon-container">
                         <img className="nav-news-svg" src={window.newsIcon} />
 
                         <Link to="/"
-                            // activeClassName="selected"
                             className="nav-icon">Home</Link>
                     </div>
 
@@ -82,15 +80,9 @@ class Navbar extends React.Component {
                         <Link className="nav-icon" to="/answer">Answer</Link>
                     </div>
 
-                    {/* <div className="app-search-bar-container">
-                        <img className="search-icon" src={window.searchIcon} /> */}
-                        {/* <textarea className="app-search-bar" placeholder="Search Aporia"> */}
-                            <SearchContainer />
-                        {/* </textarea> */}
-                    {/* </div> */}
-
-
+                    <SearchContainer />
                     {this.dropdown()}
+                    
                     <div className="navbar-question-container">
                         <button 
                             className="navbar-question-modal"

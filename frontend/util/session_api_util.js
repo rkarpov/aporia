@@ -1,5 +1,4 @@
 export const signup = user => {
-    
     return ($.ajax({
         method: 'POST',
         url: '/api/users',
@@ -25,33 +24,3 @@ export const logout = () => (
         url: '/api/session'
     })
 );
-
-// $.ajax({
-//     method: 'POST',
-//     url: `/api/users`,
-//     data: {
-//         user: {
-//             username: 'bob1',
-//             password: 'password',
-//             email: 'bob1@aol.com'
-//         }
-//     }
-// })
-
-
-// $.ajax({
-//     method: 'POST',
-//     url: `/api/session`,
-//     data: {
-//         user: {
-//             username: 'bob1',
-//             password: 'password',
-//             email: 'bob1@aol.com'
-//         }
-//     }
-// })
-//why doesnt this work
-
-
-
-

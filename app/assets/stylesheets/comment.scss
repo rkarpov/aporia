@@ -1,5 +1,4 @@
 .comment-Submit.Comment {
-    // margin-left: 15px;
     padding-left: 2px;
     width: 581px;
     padding-top: 15px;
@@ -11,15 +10,12 @@
     background: #f6f6f6;
     display: flex;
     justify-content: space-around;
-    // border-radius: 3px;
-     border-top-left-radius: 3px;
-     border-top-right-radius: 3px;
-    // margin-bottom: 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .profile-comment-index-container {
     border: 1px solid rgba(0, 0, 255, 0.795);
-    // margin-right: 7px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -46,8 +42,6 @@
     font-family: sans-serif;
     font-weight: 500;
     color: white;
-    // margin-right: 20px;
-    // margin-left: 10px;
     padding: 4px 6px;
     background: rgb(71, 71, 255);
     border: 1px solid blue;
@@ -57,7 +51,6 @@
 }
 
 .comment-item-container {
-    // padding-top: 5px;
     padding-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
@@ -73,7 +66,6 @@
 .comment-body-container {
     padding-left: 43px;
     margin-top: 5px;
-    //   display: flex;
 }
 
 .comment-authorname{
@@ -82,16 +74,12 @@
 .comment-body {
     margin-top: 10px;
     margin-left: 10px;
-    // padding-right: 10px;
     font-size: 14px;
-    // font-weight: bold;
     font-family: sans-serif;
-    //   resize: none;
-    //   height: 15px;
-      width:460px;
-      resize: none;
-      word-break: break-word;
-      display: inline-block;
+    width:460px;
+    resize: none;
+    word-break: break-word;
+    display: inline-block;
 }
 
 .comment-options-container {
@@ -99,18 +87,14 @@
 }
 
 .cancel-comment {
-        // margin-right: 5px;
-        padding-top: 9px;
-            margin-left: 10px;
-            margin-right: 10px;
-        font-size: 16px;
-        font-family: sans-serif;
-        font-weight: 500;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        color: rgb(145, 145, 145);
-        cursor: pointer;
+    padding-top: 9px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: rgb(145, 145, 145);
+    cursor: pointer;
 }
 
 .Update-comment-button {
@@ -120,8 +104,6 @@
       font-family: sans-serif;
       font-weight: 500;
       color: white;
-      // margin-right: 20px;
-      // margin-left: 10px;
       padding: 4px 6px;
       background: rgb(71, 71, 255);
       border: 1px solid blue;

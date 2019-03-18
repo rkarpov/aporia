@@ -20,57 +20,22 @@ class SessionForm extends React.Component {
     }
 
     renderErrors() {
-     
-        // if (this.props.formType === 'Login') {
-        //     // if (this.props.loginErrors.length === 0) {
-        //     return (
-        //         <ul>
-        //             {this.props.loginErrors.map((error, i) => (
-        //                 <li key={`error-${i}`}>
-        //                     {error}
-        //                 </li>
-        //             ))}
-        //         </ul>
-        //     );
-        // }  else {
-        //     return (
-        //         <ul>
-        //             {this.props.signupErrors.map((error, i) => (
-        //                 <li key={`error-${i}`}>
-        //                     {error}
-        //                 </li>
-        //             ))}
-        //         </ul>
-        //     );
-        // }
-
-        // const errors = this.props.errors.map((error, i) => (
-            
-        // )
-
         if (this.props.formType === 'Login'){
-        return (
-            <div className={`${this.props.formType}-errors`}>
-              
-                <ul>
-                    {this.props.errors.map((error, i) => (
-                        <li key={`error-${i}`}>
-                            {error}
-                        </li>
-                    ))}
-                </ul>
-               
-
-            </div>
-        );
-                }
+            return (
+                <div className={`${this.props.formType}-errors`}>
+                    <ul>
+                        {this.props.errors.map((error, i) => (
+                            <li key={`error-${i}`}>
+                                {error}
+                            </li>
+                        ))}
+                    </ul> 
+                </div>
+            );
+        }
     }
 
-
-
     render() {
-        // const code snippet function can return either 
-        // nothing or code, and return will render const snippet
         return (
             <>
             <form className={`${this.props.formType}-form`} onSubmit={this.handleSubmit}>
@@ -116,7 +81,6 @@ class SessionForm extends React.Component {
                         By clicking "Sign Up" you indicate that you have read and
                         agree to the Terms of Service and Privacy Policy.
                     </p>
-                    {/* <DemoFormContainer hidden={this.props.formType === 'Sign Up' ? null : "hidden"}/> */}
                 
                     <div className={`${this.props.formType}-button-container`}>
                         <input className={`${this.props.formType}-button`} type="submit" value={this.props.formType} />
@@ -124,15 +88,10 @@ class SessionForm extends React.Component {
                     <div hidden={this.props.formType === "Login" ? null : "hidden"}>
                         <DemoFormContainer />
                     </div>
-                {/* <div className="errors" hidden={this.props.formType === 'Sign Up' ? "hidden" : null}>
-                    {this.renderErrors()}
-                </div> */}
+            
                 </div>
                     {this.props.errors ? this.renderErrors() : null}
-                {/* <div hidden={this.props.formType === 'Sign Up' ? "hidden" : null} className={`${this.props.formType}-errors`}> */}
             </form>
-                {/* <div className={`${this.props.formType}-errors`}> */}
-                {/* </div> */}
             </>
         );
     }

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
-import { requestComments, deleteComment } from '../../actions/comment_actions';
+import { deleteComment } from '../../actions/comment_actions';
 
 const commentsByAnswerId = (state, ownProps) => {
     const comments = [];
@@ -21,7 +21,6 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return {
-        // requestComments: (answerId) => dispatch(requestComments(answerId)),
         deleteComment: (commentId) => dispatch(deleteComment(commentId))
     }
 }

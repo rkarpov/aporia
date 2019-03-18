@@ -3,9 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import CreateAnswerContainer from '../../components/answer/create_answer_container';
 import AnswerIndexContainer from '../../components/answer/answer_index_container';
 const ClickOutHandler = require('react-onclickout');
-// import CreateTopicContainer from '../topic/create_topic_container';
 import TopicIndexContainer from '../topic/topic_index_container';
-import UserQuestionsContainer from '../content/user_questions_container';
 
 class QuestionIndexItem extends React.Component {
     constructor(props) {
@@ -17,28 +15,19 @@ class QuestionIndexItem extends React.Component {
     }
 
     toggleDropdown() {
-        // e.preventDefault();
         this.setState({
             dropdown: !this.state.dropdown
         });
     }
 
     dropdown() {
-
-        // let initials = ''
-        // initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
-        // initials = initials.toUpperCase();
-
         let dropdown;
         if (this.state.dropdown) {
             dropdown =
-                // <div className="answer-form-container">
-
                 <CreateAnswerContainer
                     toggleDropdown={this.toggleDropdown}
                     questionId={this.props.question.id}
-                    />
-                // </div>
+                />
         }
 
         return (
@@ -54,7 +43,6 @@ class QuestionIndexItem extends React.Component {
         );
     }
 
-    // event listener for clicking outside <ClickOutHandler/> component
     onClickOut(e) {
         if (this.state.options) {
             this.setState({
@@ -79,14 +67,15 @@ class QuestionIndexItem extends React.Component {
                         <button
                             className="dropdown-item"  
                             onClick={() => this.props.openModal({ modal: 'editQuestion', questionId: this.props.question.id })}
-                        >Edit Question</button>
-                        {/* <button
-                            className="dropdown-item"  
-                        >Edit Topics</button> */}
+                            >Edit Question
+                        </button>
+
                         <button
                             className="dropdown-item"
-                        onClick={() => this.props.openModal({ modal: 'createTopic', questionId: this.props.question.id })}
-                        >Add Topic</button>
+                            onClick={() => this.props.openModal({ modal: 'createTopic', questionId: this.props.question.id })}
+                            >Add Topic
+                        </button>
+
                         <Link
                             to="/content/questions"
                             hidden={
@@ -96,7 +85,9 @@ class QuestionIndexItem extends React.Component {
                                 ? null : "hidden"}
                             className="dropdown-item"  
                             onClick={() => this.props.deleteQuestion(this.props.question.id)}
-                        >Delete Question</Link>
+                        >Delete Question
+                        </Link>
+
                         <Link
                             to="/index"
                             hidden={
@@ -106,7 +97,8 @@ class QuestionIndexItem extends React.Component {
                                 ? null : "hidden"}
                             className="dropdown-item"  
                             onClick={() => this.props.deleteQuestion(this.props.question.id)}
-                        >Delete Question</Link>
+                            >Delete Question
+                        </Link>
                     </div>
                 </div>
         }
@@ -124,92 +116,68 @@ class QuestionIndexItem extends React.Component {
     }
 
     render(){
-        // renders undefined undefined upon creating an answer,
-        // unless using similar logic to answerIndexItem
-        
-        // let authorInitials = ''
-        // const names = this.props.author.split(' ')
-        // authorInitials += names[0][0] + names[1][0];
-        // authorInitials = authorInitials.toUpperCase();
-        
         return (
-                <div className="question-index-item-container" >
-                    <header className="question-index-header-container">
-                        <div className="question-index-topics-container">
-                            <div >
-                                <TopicIndexContainer 
-                                    topicIds={this.props.question.topicIds}
-                                    sourceType="questionIndex"
-                                    questionId={this.props.question.id}
-                                />
-                            </div>
-                        </div>
-                        {/* Question avatar icon & username */}
-                        {/* <div className="pleasework">
-                            <div className="profile-index-container">
-                                <p className="avatar-initials" type="text">
-                                    {authorInitials}
-                                </p>
-                            </div>
-                            <p className="authorname">{this.props.author}</p>
-                        </div> */}
-                    </header>
-
-                    <Link to={`/questions/${this.props.question.id}`} className="question-body">
-                            <p className="question-body testing">{this.props.question.body}</p>
-                    </Link>
-           
-                    <footer hidden={this.props.match.url.includes("content") ? "hidden" : null} >
-                        <div hidden={this.props.formType === 'editQuestion' ? "hidden" : null}>
-                            <span className="options-container">
-                                {this.options()}
-                            </span>
-                            <div className="answer-index-container">
-                                <span>
-                                    {this.dropdown()}
-                                </span>  
-                            </div>
-                        </div>
+            <div className="question-index-item-container" >
+                <header className="question-index-header-container">
+                    <div className="question-index-topics-container">
                         <div >
-                            <AnswerIndexContainer 
+                            <TopicIndexContainer 
+                                topicIds={this.props.question.topicIds}
+                                sourceType="questionIndex"
                                 questionId={this.props.question.id}
-                                comments={this.props.comments}
                             />
                         </div>
-                        <div>
-                            <button 
-                            // className="vote-button"
-                                className={this.props.question.upVoterIds.includes(this.props.currentUser.id) ? "selected-vote-button" : "vote-button"}
-                                // hidden={this.props.question.answerAuthorIds.length === 0 ? "hidden" : null } // set default length so its not undefined
-                                onClick={() => this.props.createQuestionVote({ 
-                                    user_id: this.props.currentUser.id,
-                                    question_id: this.props.question.id,
-                                    votable_type: 'Question',
-                                    vote: 'up'
-                                })}>
-                                UpVote
-                            </button>
-                            <label>{this.props.question.votes}</label>
-                            <button 
-                                // className="vote-button"
-                                className={this.props.question.downVoterIds.includes(this.props.currentUser.id) ? "selected-vote-button" : "vote-button"}
-                                onClick={() => this.props.createQuestionVote({
-                                    user_id: this.props.currentUser.id,
-                                    question_id: this.props.question.id,
-                                    votable_type: 'Question',
-                                    vote: 'down'
-                                })}>
-                                DownVote
-                            </button>
+                    </div>
+                </header>
+
+                <Link to={`/questions/${this.props.question.id}`} className="question-body">
+                        <p className="question-body testing">{this.props.question.body}</p>
+                </Link>
+
+                <footer hidden={this.props.match.url.includes("content") ? "hidden" : null} >
+                    <div hidden={this.props.formType === 'editQuestion' ? "hidden" : null}>
+                        <span className="options-container">
+                            {this.options()}
+                        </span>
+                        <div className="answer-index-container">
+                            <span>
+                                {this.dropdown()}
+                            </span>  
                         </div>
-                    </footer>
-                </div>
+                    </div>
+                    <div >
+                        <AnswerIndexContainer 
+                            questionId={this.props.question.id}
+                            comments={this.props.comments}
+                        />
+                    </div>
+                    <div>
+                        <button 
+                            className={this.props.question.upVoterIds.includes(this.props.currentUser.id) ? "selected-vote-button" : "vote-button"}
+                            onClick={() => this.props.createQuestionVote({ 
+                                user_id: this.props.currentUser.id,
+                                question_id: this.props.question.id,
+                                votable_type: 'Question',
+                                vote: 'up'
+                            })}>
+                            UpVote
+                        </button>
+                        <label>{this.props.question.votes}</label>
+                        <button 
+                            className={this.props.question.downVoterIds.includes(this.props.currentUser.id) ? "selected-vote-button" : "vote-button"}
+                            onClick={() => this.props.createQuestionVote({
+                                user_id: this.props.currentUser.id,
+                                question_id: this.props.question.id,
+                                votable_type: 'Question',
+                                vote: 'down'
+                            })}>
+                            DownVote
+                        </button>
+                    </div>
+                </footer>
+            </div>
         )
     }
 }
-// QuestionIndexItem.defaultProps = {
-//     question: { 
-//         upVoterIds: []
-//     }
-// }
+
 export default withRouter(QuestionIndexItem);

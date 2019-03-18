@@ -33,24 +33,24 @@ class CommentForm extends React.Component {
 
         return (
             <form className={`comment-${this.props.pageType}`} onSubmit={this.handleSubmit}>
-                    <div className="profile-comment-index-container" hidden={this.props.pageType === 'Update' ? "hidden" : null}>
-                        <p className="avatar-initials" type="text">{initials}</p>
-                    </div>
-               
-                    <textarea
-                        className="comment-input-field"
-                        placeholder="Add a comment..."
-                        onChange={this.update('body')}
-                        value={this.state.body}>
-                    </textarea>
-   
-                    <a 
-                        hidden={this.props.pageType === 'Update' ? null : "hidden"}
-                        className="cancel-comment"
-                        onClick={this.props.toggleEdit}
-                        type="text"
-                    >Cancel</a>
-                    <input className={`${this.props.pageType}-comment-button`} type="submit" value={this.props.pageType === 'Update' ? "Update" : "Submit Comment"} />
+                <div className="profile-comment-index-container" hidden={this.props.pageType === 'Update' ? "hidden" : null}>
+                    <p className="avatar-initials" type="text">{initials}</p>
+                </div>
+            
+                <textarea
+                    className="comment-input-field"
+                    placeholder="Add a comment..."
+                    onChange={this.update('body')}
+                    value={this.state.body}>
+                </textarea>
+
+                <a 
+                    hidden={this.props.pageType === 'Update' ? null : "hidden"}
+                    className="cancel-comment"
+                    onClick={this.props.toggleEdit}
+                    type="text"
+                >Cancel</a>
+                <input className={`${this.props.pageType}-comment-button`} type="submit" value={this.props.pageType === 'Update' ? "Update" : "Submit Comment"} />
             </form>
         )
     }

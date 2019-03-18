@@ -7,39 +7,16 @@
 }
 
 .session-form-container {
-    /* justify-content: center; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* text-align: center; */
-    /* display: block; */
-    // border: 1px solid #e2e2e2;
-
     margin: 0 auto;
     width: 650px;
     height: 500px;
     border: solid rgba(160, 160, 160, 0.945) 1px;
-    // background: white;
     display: flex;
     justify-content: center;
     margin-top: 125px;
     border-radius: 5px;
-    // box-shadow: 0 0 5px #888; prior to black change
     box-shadow: 0 0 5px rgb(0, 0, 0);
-
-
     background: rgba(230, 230, 230, 0.904); 
-    /* border: 1px solid #e2e2e2; */
-    /* border-radius: 4px; */
-    /* margin: 0 auto; */
-    /* width: 650px; */
-
-    /* padding-top: 25px; */
-    /* bottom: initial; */
-    // position: absolute; 
-    // left: 0;
-    // right: 0;
-    /* overflow-y: hidden; */
-    // top: 10%;
 }
 
 .session-description {
@@ -67,19 +44,13 @@
     justify-content: space-around;
     align-items: flex-end;
     margin-bottom: 50px;
-    // box-shadow: 0 0 1px #686868;
-    // justify-content: center;
-    // align-items: flex-start;
 }
 
 .session-logo {
     color: rgba(6, 112, 6, 0.897);
-    // color: rgb(37, 129, 109);
     font-size: 70px;
     font-family: 'Libre Baskerville', serif;
-    font-weight: bold;
-    /* text-shadow: 0 0 1px #8a0b0b; */
-    
+    font-weight: bold;    
 }
 
 .Sign.Up-button {
@@ -94,12 +65,7 @@
     margin-top: 13px;
 }
 
-
-
-
 .signup-label {
-    /* font-size: 13px; */
-    // margin-bottom: 50px;
     font-size: 11px;
     color: #666;
     text-transform: uppercase;
@@ -116,58 +82,42 @@
     margin-left: 3px;
 }
 
-
-
-/* .session-form-body {
-    flex-direction: row;
-    width: 200px;
-} */
-
 .Sign.Up-name-field {
-    // border: 1px solid black;
-    // display: inline-block;
     display: flex;
     margin-top: 10px;
-   
 }
 
 .Login-name-field {
     float: right;
     display: none;
     border: 1px solid black;
-    // display: inline-block;
-    // display: flex;
-    // margin-top: 5px;
 }
 
 .credentials-field {
-    // margin-top: 10px;
     padding: 5px;
 }
 
 .session-text-box{
     padding-left: 10px;
-     height: 28px;
-     width: 260px;
-     border-radius: 3px;
-     border: 1px solid #e2e2e2;
-     background-color: #f6f6f6;
-    //  display: block;
-     box-sizing: border-box;
-     box-shadow: inset 0 1px 1px rgba(88, 88, 88, 0.550);
-     font-size: 13px;
-     margin-bottom: 13px;
+    height: 28px;
+    width: 260px;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+    background-color: #f6f6f6;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 1px rgba(88, 88, 88, 0.550);
+    font-size: 13px;
+    margin-bottom: 13px;
 }
 
 .username-text-box {
-     padding-left: 10px;
+    padding-left: 10px;
     margin-left: 2px;
     height: 28px;
     width: 130px;
     border-radius: 3px;
     border: 1px solid #e2e2e2;
     background-color: #f6f6f6;
-    //  display: block;
     box-sizing: border-box;
     box-shadow: inset 0 1px 1px rgba(88, 88, 88, 0.550);
     font-size: 13px;
@@ -182,60 +132,26 @@
 }
 
 .session-title {
-  color: black;
-  font-size: 15px;
-  font-weight: bold;
-  margin-left: 4px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 4px;
 }
 
 
 .Login-form {
     margin-bottom: 110px;
     padding-left: 20px;
-    // margin: -10px;
-    // padding-bottom: 50px;
-    // display: flex;
-    // align-content: flex-start;
-    // justify-content: flex-start;
-    //  box-sizing: border-box;
-    //  border-box-left: 1px solid black
 }
 
 .Sign.Up-form{
     border-right: 1px solid gray;
     padding-right: 20px;
-    // width: 325px;
 }
 
 .Sign.Up-errors{
     display: none;
 }
-
-
-
-// .Login-button-container::before {
-//     clear: both;
-//     content: "";
-//     display: table;
-//     margin-top: -1px;
-//     height: 0;
-//     padding-bottom:
-// }
-// .Login-button-container::after {
-//     clear: both;
-//     content: "";
-//     display: table;
-//     margin-top: -1px;
-//     height: 0;
-// }
-
-.Login-button-container {
-    // padding-bottom: 100px;
-    // padding-inline-end: 50px;
-    // padding-block-end: 50px;
-    
-}
-
 
 .Login-button {
     padding: 5px 8px 5px 6px;
@@ -247,60 +163,25 @@
     box-shadow: 0 0 5px #888;
     float: right;
     margin-top: 13px;
-    // margin-bottom: 106px;
-    // margin-right: 38px;
-    // margin-bottom: 105px;
-    // overflow: auto;
-    // position: fixed;
-        //  position: fixed;
 }
-// .demo-container {
-//     position: absolute;
-//     top: 451px;
-//     left: 540px;
-//              width: 370px;
-
-// }
 
 .demo-button {
-     padding: 5px 8px 5px 6px;
-     font-family: sans-serif;
-     border-radius: 3px;
-     color: white;
-     background: #3e78ad;
-     border: 1px solid rgb(78, 83, 162);
-     box-shadow: 0 0 5px #888;
-     float: right;
-     margin-top: 13px;
+    padding: 5px 8px 5px 6px;
+    font-family: sans-serif;
+    border-radius: 3px;
+    color: white;
+    background: #3e78ad;
+    border: 1px solid rgb(78, 83, 162);
+    box-shadow: 0 0 5px #888;
+    float: right;
+    margin-top: 13px;
     margin-right: 10px;
 }
 
-
 .Login-errors {
-   position: absolute;
-   top: 490px;
-//    left: 225px;
-   height: 50px;
-//    width: 300px;
-//    background: red;
-    // margin-top: 0;
-    // // overflow: auto;
+    position: absolute;
+    top: 490px;
+    height: 50px;
     width: 260px;
     color: red;
-    // float: right;
-    // // position: absolute;
-    // // right: 0px;
-    // // margin-right: 170px;
-    // // width: 260px;
-    // // padding: 10px;
-    // // border: 2px solid black;
-    // font-size: 14px;
-    // // text-align: left;
-    // margin-top: 50px;
-    // padding-top: 10px;
-    // display: flex;
-    // justify-content: flex-start;
-        // position: fixed;
-     
-
 }
