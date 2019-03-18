@@ -69,14 +69,16 @@ class Navbar extends React.Component {
                     </Link>
 
                     <div className="navbar-icon-container">
-                        <img className="nav-news-svg" src={window.newsIcon} />
-
-                        <Link to="/"
-                            className="nav-icon">Home</Link>
+                        <Link to="/" className="nav-icon">
+                            <img className="nav-news-svg" src={window.newsIcon} />
+                        </Link>
+                        <Link to="/" className="nav-icon">Home</Link>
                     </div>
 
                     <div className="navbar-icon-container">
-                        <img className="nav-answer-svg" src={window.answerIcon} />
+                        <Link className="nav-icon" to="/answer">
+                            <img className="nav-answer-svg" src={window.answerIcon}/>
+                        </Link>
                         <Link className="nav-icon" to="/answer">Answer</Link>
                     </div>
 

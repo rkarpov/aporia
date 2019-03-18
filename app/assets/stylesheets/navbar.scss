@@ -33,7 +33,6 @@
 }
 
 .nav-news-svg {
-    padding-top: 9px;
     height: 27px;
     width: 35px;
     margin-right: 5px;
@@ -41,10 +40,10 @@
 
 .navbar-icon-container {
     display: flex;
+    align-items: center;
 }
 
 .nav-icon {
-    margin-top: 13px;
     color: rgba(6, 112, 6, 0.897);
     font-size: 18px;
     font-family: 'Libre Baskerville',
