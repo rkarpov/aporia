@@ -10,9 +10,18 @@ import QuestionIndex from './question_index';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state) => {
+    let question = { id: -1, body: '', upVoterIds: [], downVoterIds: [], answerAuthorIds: [] };
+    let questions = Object.values(state.entities.questions) || [question];
+    let unansweredQuestions = [];
+    questions.forEach(question => {
+        if (question.answerAuthorIds.length === 0) {
+            unansweredQuestions.push(question);
+        }
+    })
+    questions = unansweredQuestions
     return {
         pageType: 'unansweredQuestions',
-        questions: Object.values(state.entities.questions),
+        questions: questions,
         currentUser: state.entities.users[state.session.id],
     }
 }

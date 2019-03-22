@@ -19,37 +19,19 @@ class QuestionIndex extends React.Component {
         let initials = ''
         initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
         initials = initials.toUpperCase();
-        let questions = [];
-        if (this.props.pageType === 'showQuestion') {
-            const item = <QuestionIndexItem
-                key={`question-${this.props.question.id}`}
-                question={this.props.question}
+
+        const questions = this.props.questions.map( question => {
+            return <QuestionIndexItem
+                key={`question-${question.id}`}
+                question={question}
                 deleteQuestion={this.props.deleteQuestion}
+                createQuestionVote={this.props.createQuestionVote}
                 currentUser={this.props.currentUser}
                 pageType={this.props.pageType}
                 openModal={this.props.openModal}
                 createQuestionVote={this.props.createQuestionVote}
             />
-            questions.push(item);
-        } else {
-            this.props.questions.forEach( question => {
-                const item = <QuestionIndexItem
-                    key={`question-${question.id}`}
-                    question={question}
-                    deleteQuestion={this.props.deleteQuestion}
-                    createQuestionVote={this.props.createQuestionVote}
-                    currentUser={this.props.currentUser}
-                    pageType={this.props.pageType}
-                    openModal={this.props.openModal}
-                    createQuestionVote={this.props.createQuestionVote}
-                />
-                if ((this.props.pageType === 'unansweredQuestions') && (question.answerAuthorIds.length === 0)) {
-                    questions.push(item);
-                } else if ((this.props.pageType === 'mainIndex') || (this.props.pageType === 'showQuestionTopic')) {
-                    questions.push(item);
-                } 
-            })
-        }
+        })
         
         return (
             <div className="index-main">
@@ -81,7 +63,7 @@ class QuestionIndex extends React.Component {
                             className="question-topic-container">
                                 <h2
                                     className="question-topic-description">
-                                Questions by Topic: <p className="topic-p">{this.props.match.params.description}</p>
+                                    Questions by Topic: <p className="topic-p">{this.props.match.params.description}</p>
                                 </h2>
                             </header>
 
@@ -98,8 +80,8 @@ class QuestionIndex extends React.Component {
 
                                 <button
                                     className="ask-question-button"
-                                    onClick={() => this.props.openModal('createQuestion')}
-                                    >What is your question? Click here to ask...
+                                    onClick={() => this.props.openModal('createQuestion')}>
+                                    What is your question? Click here to ask...
                                 </button>
                             </div>
 

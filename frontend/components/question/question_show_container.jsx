@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchQuestion, deleteQuestion, requestQuestions } from '../../actions/question_actions';
+import { deleteQuestion, requestQuestions } from '../../actions/question_actions';
 import { requestAnswers } from '../../actions/answer_actions';
 import { requestComments } from '../../actions/comment_actions';
 import { requestTopics } from '../../actions/topic_actions';
@@ -9,21 +9,15 @@ import { openModal } from '../../actions/modal_actions';
 import QuestionIndex from './question_index';
 
 const msp = (state, ownProps) => {
-    let questions;
-    let question;
-    const defaultQuestion = { body: '', upVoterIds: [], downVoterIds: [] }
-    if (Object.values(state.entities.questions).length > 0) {
-        questions = Object.values(state.entities.questions)
-        question = state.entities.questions[ownProps.match.params.questionId]
-    } else {
-        questions = defaultQuestion;
-        question = defaultQuestion;
-    }
+    let questions = [];
+    const defaultQuestion = state.entities.questions[ownProps.match.params.questionId] ||
+        // assign question dummy id of -1 until component mounts after 1st life cycle
+        { id: -1, body: '', upVoterIds: [], downVoterIds: [] }
+    questions.push(defaultQuestion);
     return {
         match: ownProps.match,
         questions: questions,
         pageType: 'showQuestion',
-        question: question,
         questionId: ownProps.match.params.questionId,
         currentUser: state.entities.users[state.session.id],
     }
@@ -31,14 +25,13 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return ({
-        fetchQuestion: id => dispatch(fetchQuestion(id)),
-        deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
         requestQuestions: () => dispatch(requestQuestions()),
-        createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
-        openModal: (modal) => dispatch(openModal(modal)),
+        deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
         requestTopics: () => dispatch(requestTopics()),
         requestAnswers: (questionId) => dispatch(requestAnswers(questionId)),
         requestComments: () => dispatch(requestComments()),
+        createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
+        openModal: (modal) => dispatch(openModal(modal)),
     })
 };
 
