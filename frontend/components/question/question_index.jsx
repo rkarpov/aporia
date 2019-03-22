@@ -11,6 +11,16 @@ class QuestionIndex extends React.Component {
         this.props.requestTopics();
         this.props.requestAnswers();
         this.props.requestComments();
+
+        if (this.props.pageType === 'showQuestionTopic') {
+            this.props.requestTopic(this.props.topic.id);
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if ((this.props.pageType === 'showQuestionTopic') && (prevProps.topic.description != this.props.topic.description)) {
+            this.props.requestTopic(this.props.topic.id);
+        }
     }
 
     render() {
@@ -19,7 +29,7 @@ class QuestionIndex extends React.Component {
         let initials = ''
         initials += this.props.currentUser.first_name[0] + this.props.currentUser.last_name[0];
         initials = initials.toUpperCase();
-
+        
         const questions = this.props.questions.map( question => {
             return <QuestionIndexItem
                 key={`question-${question.id}`}
