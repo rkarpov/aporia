@@ -128,7 +128,7 @@ class AnswerIndexItem extends React.Component {
                     <span className="answer-body testing">{renderHTML(this.props.answer.body)}</span>
                 </div>
                 {this.dropdown()}
-                <div hidden={this.props.match.url.includes("/index") ? "hidden" : null}>
+                <div hidden={this.props.match.url.includes("/index") || this.props.match.url.includes("/topics") ? "hidden" : null}>
                     <div>
                         <CreateCommentContiner
                             answerId={this.props.answer.id}
