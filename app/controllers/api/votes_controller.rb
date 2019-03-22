@@ -7,6 +7,12 @@ class Api::VotesController < ApplicationController
         vote = params[:vote][:vote]
         user_id = params[:vote][:user_id]
         @question = Question.find_by(id: votable_id)
+
+        @topicIds = []
+        @question.topics.each do |topic|
+            @topicIds << topic.id
+        end 
+
         @vote = Vote.find_by(votable_id: votable_id, votable_type: votable_type, user_id: current_user.id)
         if (@vote && (@vote.vote == vote))
             if (vote == 'up')

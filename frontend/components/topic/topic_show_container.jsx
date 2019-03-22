@@ -4,15 +4,12 @@ import { requestQuestions, deleteQuestion } from '../../actions/question_actions
 import { requestTopic, deleteTopic, requestTopics } from '../../actions/topic_actions';
 import { requestAnswers } from '../../actions/answer_actions';
 import { requestComments } from '../../actions/comment_actions';
-// import TopicShow from './topic_show';
 import QuestionIndex from '../question/question_index';
 import { openModal } from '../../actions/modal_actions';
 import { createQuestionVote } from '../../actions/vote_actions';
 
 
 const msp = (state, ownProps) => {
-    // let topic = ownProps.match.params.description ||
-    //             { id: -1, description: '' }
     let topic = { id: -1, description: '' }
     const allTopics = Object.values(state.entities.topics);
     allTopics.forEach(topicItem => {
@@ -22,7 +19,6 @@ const msp = (state, ownProps) => {
     })
 
     const allQuestions = Object.values(state.entities.questions);
-
     let questions = []
     allQuestions.forEach(question => {
         if (question.topicIds.includes(topic.id)) { questions.push(question) }
@@ -53,5 +49,4 @@ const mdp = dispatch => ({
     createQuestionVote: (vote) => dispatch(createQuestionVote(vote)),
 });
 
-// export default connect(msp, mdp)(TopicShow)
 export default connect(msp, mdp)(QuestionIndex)
